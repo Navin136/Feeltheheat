@@ -4,8 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FTH-Melting</title>
+    <script src="js/melting.js"></script>
+    <link rel="stylesheet" href="css/melting.css">
 </head>
 <body>
-    
+    <div id="header">
+        <h1>Holder Chemistry</h1>
+        <label for="hlevel">Holder Level</label>
+        <input type="text" id="hlevel" name="hlevel">
+        <label for="tweight">Tapping Weight</label>
+        <input type="text" id="tweight" name="tweight">
+
+    </div>
+    <div id="calccon">
+        <div id="patternspec">
+            <label for="pattern">Running Pattern</label>
+            <input type="text" name="pattern" id="pattern" class="comp"><br>
+            <label for="pcarbon">C%</label>
+            <input type="text" name="pcarbon" id="pcarbon" class="comp"><br>
+            <label for="psilicon">Si%</label>
+            <input type="text" name="psilicon" id="psilicon" class="comp"><br>
+            <label for="pcopper">Cu%</label>
+            <input type="text" name="pcopper" id="pcopper" class="comp"><br>
+            <label for="ptin">Sn%</label>
+            <input type="text" name="ptin" id="ptin" class="comp"><br>
+            <label for="pmanganese">Mn%</label>
+            <input type="text" name="pmanganese" id="pmanganese" class="comp"><br>
+            <label for="pmolybdenum">Mo%</label>
+            <input type="text" name="pmolybdenum" id="pmolybdenum" class="comp"><br>
+            <label for="pnickel">Ni%</label>
+            <input type="text" name="pnickel" id="pnickel" class="comp"><br>
+        </div>
+        <div id="holdercalc">
+        <table>
+                <tr>
+                    <th class="boxtitle">Elements</th>
+                    <th class="boxtitle">Holder Chemistry</th>
+                    <th class="boxtitle">Required Chemistry</th>
+                    <th class="boxtitle">Furnace Chemistry</th>
+                    <th class="boxtitle">Additions to be Added (Kgs.)</th>
+                </tr>
+                <tr>
+                    <td>C%</td>
+                    <td><input type="text" name="hc" id="hc"></td>
+                    <td><input type="text" name="rc" id="rc" readonly></td>
+                    <td><input type="text" name="fc" id="fc"></td>
+                    <td><input type="text" name="wc" id="wc" readonly></td>
+                </tr>
+                <tr>
+                    <td>Si%</td>
+                    <td><input type="text" name="hsi" id="hsi"></td>
+                    <td><input type="text" name="rsi" id="rsi" readonly></td>
+                    <td><input type="text" name="fsi" id="fsi"></td>
+                    <td><input type="text" name="wsi" id="wsi" readonly></td>
+                </tr>
+                <tr>
+                    <td>Cu%</td>
+                    <td><input type="text" name="hcu" id="hcu"></td>
+                    <td><input type="text" name="rcu" id="rcu" readonly></td>
+                    <td><input type="text" name="fcu" id="fcu"></td>
+                    <td><input type="text" name="wcu" id="wcu" readonly></td>
+                </tr>
+                <tr>
+                    <td>Sn%</td>
+                    <td><input type="text" name="hsn" id="hsn"></td>
+                    <td><input type="text" name="rsn" id="rsn" readonly></td>
+                    <td><input type="text" name="fsn" id="fsn"></td>
+                    <td><input type="text" name="wsn" id="wsn" readonly></td>
+                </tr>
+                <tr>
+                    <td>Mn%</td>
+                    <td><input type="text" name="hmn" id="hmn"></td>
+                    <td><input type="text" name="rmn" id="rmn" readonly></td>
+                    <td><input type="text" name="fmn" id="fmn"></td>
+                    <td><input type="text" name="wmn" id="wmn" readonly></td>
+                </tr>
+                <tr>
+                    <td>Mo%</td>
+                    <td><input type="text" name="hmo" id="hmo"></td>
+                    <td><input type="text" name="rmo" id="rmo" readonly></td>
+                    <td><input type="text" name="fmo" id="fmo"></td>
+                    <td><input type="text" name="wmo" id="wmo" readonly></td>
+                </tr>
+                <tr>
+                    <td>Ni%</td>
+                    <td><input type="text" name="hni" id="hni"></td>
+                    <td><input type="text" name="rni" id="rni" readonly></td>
+                    <td><input type="text" name="fni" id="fni"></td>
+                    <td><input type="text" name="wni" id="wni" readonly></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <button onclick="calculate()">Calculate</button>
 </body>
 </html>
