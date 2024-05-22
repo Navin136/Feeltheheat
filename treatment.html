@@ -4,8 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treatment Area</title>
+    <link rel="stylesheet" href="css/treatment.css">
+    <script src="js/treatment.js"></script>
 </head>
 <body>
-    
+    <div id="mainheader">
+        <p id="FTH"><img src="fth.png" alt="" id="fthicon"> Feel the Heat</p>
+        <a class="dept" href="melting.html">Melting</a>
+        <a class="dept" href="spectrolab.html">SpectroLab</a>
+        <a class="dept" href="treatment.html">Treatment</a>
+        <a class="dept" href="nodlab.html">Nodularity Lab</a>
+        <a class="dept" href="moulding.html">Moulding</a>
+    </div>
+    <div class="content">
+		<label for="mtwt" id="lmtwt">Metal Weight: </label>
+		<input type="text" name="mtwt" id="mtwt" onchange="calculate()">
+		<table id="alloy_steel" onchange="calculate()">
+			<tr>
+				<th>Alloying Element</th>
+				<th>Percentage</th>
+				<th>Weight in Kgs. </th>
+			</tr>
+			<tr>
+				<td>FeSiMg Alloy</td>
+				<td><input name="alloyp" id="alloyp" value="0.92"></td>
+				<td><input name="alloyw" id="alloyw"></td>
+			</tr>
+			<tr>
+				<td>Covering Steel</td>
+				<td><input name="steelp" id="steelp" value="0.8"></td>
+				<td><input name="steelw" id="steelw" =></td>
+			</tr>
+		</table>
+		<table id="other_alloys" onchange="calculate()">
+			<tr>
+				<th>Alloying Element</th>
+				<th>Holder composition</th>
+				<th>Final composition</th>
+				<th>Weight in Kgs. </th>
+			</tr>
+			<tr>
+				<td>FeSi</td>
+				<td><input name="fesia" id="fesia"></td>
+				<td><input name="fesir" id="fesir"></td>
+				<td><input name="fesiw" id="fesiw"></td>
+			</tr>
+			<tr>
+				<td>Copper</td>
+				<td><input name="coppera" id="coppera"></td>
+				<td><input name="copperr" id="copperr"></td>
+				<td><input name="copperw" id="copperw"></td>
+			</tr>
+			<tr>
+				<td>Tin</td>
+				<td><input name="tina" id="tina"></td>
+				<td><input name="tinr" id="tinr"></td>
+				<td><input name="tinw" id="tinw"></td>
+			</tr>
+			<tr>
+				<td>Manganese</td>
+				<td><input name="manganesea" id="manganesea"></td>
+				<td><input name="manganeser" id="manganeser"></td>
+				<td><input name="manganesew" id="manganesew"></td>
+			</tr>
+		</table>
+<!--	<input type="button" value="Calculate" id="calbtn" onclick="calculate()">  -->
+
+	</div>
+    <div id="footer">
+        <h2><b>Designed by Navin Kumar</b></h2>
+        <p>&#169 Copyright 2024. All rights reserved.</p>
+    </div>
 </body>
 </html>

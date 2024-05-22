@@ -3,6 +3,7 @@ body{
     padding: 0px;
     background-color: lightcyan;
 }
+
 div#mainheader{
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
@@ -10,6 +11,9 @@ div#mainheader{
     padding-right: 10px;
     background-color: aquamarine;
     max-height: 70px;
+}
+#header div{
+    display: inline;
 }
 p#FTH{
     font-size: 2rem;
@@ -91,4 +95,35 @@ button{
     font-size: 1rem;
     width: 200px;
     height: 50px;
+}
+@media only screen and (max-width: 500px){
+    div#mainheader {
+        display: flex;
+    }
+    p#FTH{
+        font-size: 20px;
+        font-weight: bolder;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    #header div{
+        display: block;
+    }
+    a.dept{
+        display: none;
+    }
+    div.threebar{
+        position: relative;
+        top: 25px;
+        left: 90px;
+        width: 40px;
+        height: 30px;
+    }
+    .bars{
+        width: 30px;
+        height: 5px;
+        margin: 3px;
+        background-color: black;
+    }
 }
