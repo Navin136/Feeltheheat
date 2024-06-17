@@ -1,8 +1,5 @@
 function calculate(){
 	metalWeight = document.getElementById("mtwt").value;
-	if(metalWeight==''){
-		alert("Enter Metal Weight !!");
-	}
 	alloyPercentage = document.getElementById("alloyp").value;
 	steelPercentage = document.getElementById("steelp").value;
 	document.getElementById("alloyw").value = (metalWeight*alloyPercentage*0.01).toFixed(2);
