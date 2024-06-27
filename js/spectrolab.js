@@ -51,7 +51,14 @@ function calculate(){
     document.getElementById("rni").value = ((((tweight+hlevel)*pnickel)-(hni*hlevel))/tweight).toFixed(2);
 
     // calculate weight of additions
-    document.getElementById("wc").value  = ((document.getElementById("rc").value-fc)*tweight*1000/60).toFixed(2) + " Hi-Carbon";
+    if(document.getElementById("carbsel").value == 'hic'){
+        document.getElementById("wc").value  = ((document.getElementById("rc").value-fc)*tweight*1000/60).toFixed(2) + " Hi-Carbon";
+
+    }
+    if(document.getElementById("carbsel").value == 'neo'){
+        document.getElementById("wc").value  = ((document.getElementById("rc").value-fc)*tweight*1000/90).toFixed(2) + " Neograf";
+
+    }
     if(document.getElementById("rc").value<fc){
         document.getElementById("wc").value = ((fc*tweight*1000/document.getElementById("rc").value)-tweight*1000).toFixed(1) + " Steel";
     }
