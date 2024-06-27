@@ -1,19 +1,43 @@
+
 function calculate(){
-	metalWeight = document.getElementById("mtwt").value;
-	alloyPercentage = document.getElementById("alloyp").value;
-	steelPercentage = document.getElementById("steelp").value;
-	document.getElementById("alloyw").value = (metalWeight*alloyPercentage*0.01).toFixed(2);
-	document.getElementById("steelw").value = (metalWeight*steelPercentage*0.01).toFixed(2);
-	fesiActual = document.getElementById("fesia").value;
-	fesiRequired = document.getElementById("fesir").value;
-	document.getElementById("fesiw").value = (((fesiRequired-fesiActual-(0.45*alloyPercentage))*metalWeight)/70).toFixed(2);
-	copperActual = document.getElementById("coppera").value;
-	copperRequired = document.getElementById("copperr").value;
-	document.getElementById("copperw").value = ((copperRequired-copperActual)*metalWeight/95).toFixed(2);
-	tinActual = document.getElementById("tina").value;
-	tinRequired = document.getElementById("tinr").value;
-	document.getElementById("tinw").value = ((tinRequired-tinActual)*metalWeight/95).toFixed(3);
-	manganeseActual = document.getElementById("manganesea").value;
-	manganeseRequired = document.getElementById("manganeser").value;
-	document.getElementById("manganesew").value = ((manganeseRequired-manganeseActual)*metalWeight/68).toFixed(2);
+	// hsi = document.getElementById("fesia").value;
+	// hcu = document.getElementById("coppera").value;
+	// hsn = document.getElementById("tina").value;
+	// hmn = document.getElementById("manganesea").value;
+	document.getElementById("fesia").value = hsi;
+    document.getElementById("coppera").value = hcu;
+    document.getElementById("tina").value = hsn;
+    document.getElementById("manganesea").value = hmn;
+	document.getElementById("pattern").value = pattern;
+	document.getElementById("mtwt").value = mtwt;
+	document.getElementById("alloyp").value = alloyp;
+	document.getElementById("steelp").value = steelp;
+	document.getElementById("fesir").value = psilicon;
+	document.getElementById("copperr").value = pcopper;
+	document.getElementById("tinr").value = ptin;
+	document.getElementById("manganeser").value = pmanganese;
+	document.getElementById("alloyw").value = (mtwt*alloyp*0.01).toFixed(2);
+	document.getElementById("steelw").value = (mtwt*steelp*0.01).toFixed(2);
+	let fesiActual = hsi;
+	document.getElementById("fesiw").value = (((psilicon-fesiActual-(0.45*alloyp))*mtwt)/70).toFixed(2);
+	if(document.getElementById("fesiw").value <= 0){
+		document.getElementById("fesiw").value = 'NA';
+	}
+	let copperActual = hcu;
+	document.getElementById("copperw").value = ((pcopper-copperActual)*mtwt/95).toFixed(2);
+	if(document.getElementById("copperw").value <= 0){
+		document.getElementById("copperw").value = 'NA';
+	}
+	let tinActual = hsn;
+	document.getElementById("tinw").value = ((ptin-tinActual)*mtwt/95).toFixed(3);
+	if(document.getElementById("tinw").value <= 0){
+		document.getElementById("tinw").value = 'NA';
+	}
+	let manganeseActual = hmn;
+	document.getElementById("manganesew").value = ((pmanganese-manganeseActual)*mtwt/68).toFixed(2);
+	if(document.getElementById("manganesew").value <= 0){
+		document.getElementById("manganesew").value = 'NA';
+	}
+	document.getElementById("mischmetal").value = mischmetal;
+	document.getElementById("laddition").value = laddition;
 }

@@ -1,0 +1,18 @@
+USE MASTER;
+CREATE TABLE part_details(
+	part_number INT PRIMARY KEY,
+	carbon DECIMAL(4,3),
+    silicon DECIMAL(4,3),
+    copper DECIMAL(4,3),
+    tin DECIMAL(4,3),
+    molybdenum DECIMAL(4,3),
+    nickel DECIMAL(4,3),
+    mischmetal DECIMAL(4,3),
+    laddition varchar(50),
+    inoculant varchar(30),
+    flow_rate decimal(2,1),
+   	grade varchar(20),
+    pouring_temperature varchar(15),
+    taddition varchar(50)
+);
+insert into part_details VALUES(7654, 3.90, 2.15, 0.15, 0.0024, 0.01, 0.015, 0, 'NA', 'Reseed', 6.8, 'sg-azterlan', '1400-1415', 'NA');

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FTH-Melting</title>
     <link rel="stylesheet" href="css/melting.css">
+    <script src="js/melting.js"></script>
 </head>
 <body>
     <div id="mainheader">
@@ -15,6 +16,81 @@
         <a class="dept" href="nodlab.html">Nodularity Lab</a>
         <a class="dept" href="moulding.html">Moulding</a>
     </div>
+    <div class="grids">
+        <div class="gradeselector" onchange="chargemix()">
+        <label for="grade">Grade: </label>
+        <select id="grade" name="grade">
+            <option value="sg-tin">SG - Tin Route</option>
+            <option value="sg-copper">SG - Copper Route</option>
+            <option value="sg-azterlan">SG - Azterlan</option>
+            <option value="sg-moly">SG - Molybdenum</option>
+            <option value="cg-moly">CG - Molybdenum</option>
+            <option value="simoni">CG - SiMoNi</option>
+        </select>
+    </div>
+    <div class="chargemix">
+        <table>
+            <tr>
+                <th>Raw Material</th>
+                <th>Proportion</th>
+                <th>Weight</th>
+            </tr>
+            <tr>
+                <td>Steel</td>
+                <td><input id="psteel" ></td>
+                <td><input id="wsteel" ></td>
+            </tr>
+            <tr>
+                <td>Foundry Returns</td>
+                <td><input id="preturns" ></td>
+                <td><input id="wreturns" ></td>
+            </tr>
+            <tr>
+                <td>Borings</td>
+                <td><input id="pborings" ></td>
+                <td><input id="wborings" ></td>
+            </tr>
+            <tr>
+                <td>Pig Iron</td>
+                <td><input id="ppigiron" ></td>
+                <td><input id="wpigiron" ></td>
+            </tr>
+        </table>
+        <h2>Carburizer and Ferros</h2>
+    </div>
+    <div>
+        <table class="spec">
+            <td>
+                <tr>Pattern</tr>
+                <tr><input name="pattern"></tr></br>
+            </td>
+            <td>
+                <tr>Si%</tr>
+                <tr><input name="psilicon"></tr></br>
+            </td>
+            <td>
+                <tr>Cu%</tr>
+                <tr><input name="pcopper"></tr></br>
+            </td>
+            <td>
+                <tr>Sn%</tr>
+                <tr><input name="ptin"></tr></br>
+            </td>
+            <td>
+                <tr>Mn%</tr>
+                <tr><input name="pmanganese"></tr></br>
+            </td>
+            <td>
+                <tr>Mo%</tr>
+                <tr><input name="pmolybdenum"></tr></br>
+            </td>
+            <td>
+                <tr>Ni%</tr>
+                <tr><input name="pnickel"></tr></br>
+            </td>
+        </table>
+    </div>
+</div>
     <div id="footer">
         <h2><b>Designed by Navin Kumar</b></h2>
         <p>&#169 Copyright 2024. All rights reserved.</p>
