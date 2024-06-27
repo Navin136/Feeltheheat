@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FTH- Nodularity Lab</title>
     <link rel="stylesheet" href="css/nodlab.css">
+    <script defer src="js/spec.js"></script>
+    <script defer src="js/nodlab.js"></script>
 </head>
 <body>
     <div id="mainheader">
@@ -15,24 +17,31 @@
         <a class="dept" href="nodlab.html">Nodularity Lab</a>
         <a class="dept" href="moulding.html">Moulding</a>
     </div>
-    <div class="labcontent">
-        <div>
-            <label for="pattern">Running Part Number</label>
-            <input type="text" name="pattern" id="pattern" readonly>
+        <div class="labcontent">
+            <table>
+                <tr>
+                    <td><label for="pattern">Running Part Number</label></td>
+                    <td><input type="text" name="pattern" id="pattern" readonly></td>
+                </tr>
+                <tr>
+                    <td><label for="inoculant">Inoculant</label></td>
+                    <td><input type="text" name="inoculant" id="inoculant" readonly></td>
+                </tr>
+                <tr>
+                    <td><label for="flowrate">Flow Rate in Gms/Sec</label></td>
+                    <td><input type="text" name="flowrate" id="flowrate" readonly></td>
+                </tr>
+                <tr>
+                    <td><label for="temperature">Pouring temperature</label></td>
+                    <td><input type="text" name="temperature" id="temperature" readonly></td>
+                </tr>
+                <tr>
+                    <td><label for="taddition">Tundish Addition</label></td>
+                    <td><input type="text" name="taddition" id="taddition" readonly></td>
+                </tr>
+            </table>
+            <button id="gather" onclick="getdata()">Get Data</button>
         </div>
-        <div>
-            <label for="inoculant">Inoculant</label>
-            <input type="text" name="inoculant" id="inoculant" readonly>
-        </div>
-        <div>
-            <label for="flowrate">Flow Rate in Gms/Sec</label>
-            <input type="text" name="flowrate" id="flowrate" readonly>
-        </div>
-        <div>
-            <label for="temperature">Pouring temperature</label>
-            <input type="text" name="temperature" id="temperature" readonly>
-        </div>
-    </div>
     <div id="footer">
         <h2><b>Designed by Navin Kumar</b></h2>
         <p>&#169 Copyright 2024. All rights reserved.</p>

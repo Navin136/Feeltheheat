@@ -57,7 +57,7 @@ input{
 }
 #lpattern{
 	font-size: 30px;
-	font-weight: bolder;
+	font-weight: bolder;    
 }
 #lmtwt{
 	font-size: 30px;
@@ -81,4 +81,7 @@ input#calbtn{
 	width: 150px;
 	font-size: 20px;
 	font-weight: bold;
+}
+#mischmetal, #laddition{
+    width: 500px;
 }

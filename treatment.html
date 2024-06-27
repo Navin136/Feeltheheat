@@ -6,6 +6,8 @@
     <title>Treatment Area</title>
     <link rel="stylesheet" href="css/treatment.css">
     <script src="js/treatment.js"></script>
+	<script src="js/holderchemistry.js"></script>
+	<script defer src="js/spec.js"></script>
 </head>
 <body>
     <div id="mainheader">
@@ -18,10 +20,10 @@
     </div>
     <div class="content">
 		<label for="pattern" id="lpattern">Running pattern </label>
-		<input type="text" name="pattern" id="pattern" onchange="calculate()">
+		<input name="pattern" id="pattern">
 		<label for="mtwt" id="lmtwt">Metal Weight: </label>
-		<input type="text" name="mtwt" id="mtwt" onchange="calculate()">
-		<table id="alloy_steel" onchange="calculate()">
+		<input type="text" name="mtwt" id="mtwt">
+		<table id="alloy_steel">
 			<tr>
 				<th>Alloying Element</th>
 				<th>Percentage</th>
@@ -29,16 +31,16 @@
 			</tr>
 			<tr>
 				<td>FeSiMg Alloy</td>
-				<td><input name="alloyp" id="alloyp" value="0.92"></td>
+				<td><input name="alloyp" id="alloyp"></td>
 				<td><input name="alloyw" id="alloyw"></td>
 			</tr>
 			<tr>
 				<td>Covering Steel</td>
-				<td><input name="steelp" id="steelp" value="0.8"></td>
+				<td><input name="steelp" id="steelp"></td>
 				<td><input name="steelw" id="steelw"></td>
 			</tr>
 		</table>
-		<table id="other_alloys" onchange="calculate()">
+		<table id="other_alloys">
 			<tr>
 				<th>Alloying Element</th>
 				<th>Holder composition</th>
@@ -69,8 +71,16 @@
 				<td><input name="manganeser" id="manganeser"></td>
 				<td><input name="manganesew" id="manganesew" readonly></td>
 			</tr>
+			<tr>
+				<td>Mischmetal</td>
+				<td colspan="3"><input name="mischmetal" id="mischmetal"></td>
+			</tr>
+			<tr>
+				<td>Ladle Addition</td>
+				<td colspan="3"><input name="laddition" id="laddition"></td>
+			</tr>
 		</table>
-<!--	<input type="button" value="Calculate" id="calbtn" onclick="calculate()">  -->
+	<input type="button" value="Calculate" id="calbtn" onclick="calculate()"> 
 
 	</div>
     <div id="footer">

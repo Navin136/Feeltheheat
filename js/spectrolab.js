@@ -1,16 +1,26 @@
+function getdata(){
+    document.getElementById("pattern").value = pattern;
+    document.getElementById("pcarbon").value = pcarbon;
+    document.getElementById("psilicon").value = psilicon;
+    document.getElementById("pcopper").value = pcopper;
+    document.getElementById("ptin").value = ptin;
+    document.getElementById("pmanganese").value = pmanganese;
+    document.getElementById("pmolybdenum").value = pmolybdenum;
+    document.getElementById("pnickel").value = pnickel;
+}
 function calculate(){
     let hlevel = parseInt(document.getElementById("hlevel").value);
     let tweight = parseInt(document.getElementById("tweight").value);
-    let pattern = document.getElementById("pattern").value;
+    document.getElementById("pattern").value = pattern;
     
     // variables for pattern specific chemistry
-    let pcarbon = document.getElementById("pcarbon").value;
-    let psilicon = document.getElementById("psilicon").value;
-    let pcopper = document.getElementById("pcopper").value;
-    let ptin = document.getElementById("ptin").value;
-    let pmanganese = document.getElementById("pmanganese").value;
-    let pmolybdenum = document.getElementById("pmolybdenum").value;
-    let pnickel = document.getElementById("pnickel").value;
+    document.getElementById("pcarbon").value = pcarbon;
+    document.getElementById("psilicon").value = psilicon;
+    document.getElementById("pcopper").value = pcopper;
+    document.getElementById("ptin").value = ptin;
+    document.getElementById("pmanganese").value = pmanganese;
+    document.getElementById("pmolybdenum").value = pmolybdenum;
+    document.getElementById("pnickel").value = pnickel;
     
     // furnace chemistry variables
     let fc = document.getElementById("fc").value;
@@ -22,13 +32,13 @@ function calculate(){
     let fni = document.getElementById("fni").value;
 
     // holder chemistry variables
-    let hc = document.getElementById("hc").value;
-    let hsi = document.getElementById("hsi").value;
-    let hcu = document.getElementById("hcu").value;
-    let hsn = document.getElementById("hsn").value;
-    let hmn = document.getElementById("hmn").value;
-    let hmo = document.getElementById("hmo").value;
-    let hni = document.getElementById("hni").value;
+    document.getElementById("hc").value = hc;
+    document.getElementById("hsi").value = hsi;
+    document.getElementById("hcu").value = hcu;
+    document.getElementById("hsn").value = hsn;
+    document.getElementById("hmn").value = hmn;
+    document.getElementById("hmo").value = hmo;
+    document.getElementById("hni").value = hni;
 
     // calculate required chemistry
     console.log(tweight+hlevel);
@@ -41,11 +51,14 @@ function calculate(){
     document.getElementById("rni").value = ((((tweight+hlevel)*pnickel)-(hni*hlevel))/tweight).toFixed(2);
 
     // calculate weight of additions
-    document.getElementById("wc").value  = ((document.getElementById("rc").value-fc)*tweight*1000/60).toFixed(2);
+    document.getElementById("wc").value  = ((document.getElementById("rc").value-fc)*tweight*1000/60).toFixed(2) + " Hi-Carbon";
     document.getElementById("wsi").value = ((document.getElementById("rsi").value-fsi)*tweight*1000/70).toFixed(2);
     document.getElementById("wcu").value = ((document.getElementById("rcu").value-fcu)*tweight*1000/95).toFixed(2);
     document.getElementById("wsn").value = ((document.getElementById("rsn").value-fsn)*tweight*1000/95).toFixed(2);
     document.getElementById("wmn").value = ((document.getElementById("rmn").value-fmn)*tweight*1000/68).toFixed(2);
     document.getElementById("wmo").value = ((document.getElementById("rmo").value-fmo)*tweight*1000/60).toFixed(2);
     document.getElementById("wni").value = ((document.getElementById("rni").value-fni)*tweight*1000/95).toFixed(2);
+}
+function changecarb(){
+    document.getElementById("carb").innerHTML = "Neograf";  
 }
