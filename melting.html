@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FTH-Melting</title>
     <link rel="stylesheet" href="css/melting.css">
-    <script src="js/melting.js"></script>
+    <script defer src="js/melting.js"></script>
+    <script defer src="js/spec.js"></script>
 </head>
 <body>
     <div id="mainheader">
@@ -16,10 +17,51 @@
         <a class="dept" href="nodlab.html">Nodularity Lab</a>
         <a class="dept" href="moulding.html">Moulding</a>
     </div>
+    <div id="fbox">
+
+    </div>
+    <div>
+        <label for="pattern">Running Pattern</label>
+            <select name="pattern" id="pattern" onchange="chargemix()">
+                <option value="7654">7654</option>
+                <option value="7470-5">7470 - 5</option>
+                <option value="7278">7278</option>
+            </select><br>
+                <table class="spec">
+                    <td>
+                        <tr>C%</tr>
+                        <tr><input name="pcarbon" id="pcarbon"></tr></br>
+                    </td>
+                    <td>
+                        <tr>Si%</tr>
+                        <tr><input name="psilicon" id="psilicon"></tr></br>
+                    </td>
+                    <td>
+                        <tr>Cu%</tr>
+                        <tr><input name="pcopper" id="pcopper"></tr></br>
+                    </td>
+                    <td>
+                        <tr>Sn%</tr>
+                        <tr><input name="ptin" id="ptin"></tr></br>
+                    </td>
+                    <td>
+                        <tr>Mn%</tr>
+                        <tr><input name="pmanganese" id="pmanganese"></tr></br>
+                    </td>
+                    <td>
+                        <tr>Mo%</tr>
+                        <tr><input name="pmolybdenum" id="pmolybdenum"></tr></br>
+                    </td>
+                    <td>
+                        <tr>Ni%</tr>
+                        <tr><input name="pnickel" id="pnickel"></tr></br>
+                    </td>
+                </table>
+            </div>
     <div class="grids">
         <div class="gradeselector" onchange="chargemix()">
         <label for="grade">Grade: </label>
-        <select id="grade" name="grade">
+        <select id="grade" name="grade" disabled>
             <option value="sg-tin">SG - Tin Route</option>
             <option value="sg-copper">SG - Copper Route</option>
             <option value="sg-azterlan">SG - Azterlan</option>
@@ -56,40 +98,10 @@
                 <td><input id="wpigiron" ></td>
             </tr>
         </table>
-        <h2>Carburizer and Ferros</h2>
+        <h2>Enter the mandatory Additives:</h2>
+
     </div>
-    <div>
-        <table class="spec">
-            <td>
-                <tr>Pattern</tr>
-                <tr><input name="pattern"></tr></br>
-            </td>
-            <td>
-                <tr>Si%</tr>
-                <tr><input name="psilicon"></tr></br>
-            </td>
-            <td>
-                <tr>Cu%</tr>
-                <tr><input name="pcopper"></tr></br>
-            </td>
-            <td>
-                <tr>Sn%</tr>
-                <tr><input name="ptin"></tr></br>
-            </td>
-            <td>
-                <tr>Mn%</tr>
-                <tr><input name="pmanganese"></tr></br>
-            </td>
-            <td>
-                <tr>Mo%</tr>
-                <tr><input name="pmolybdenum"></tr></br>
-            </td>
-            <td>
-                <tr>Ni%</tr>
-                <tr><input name="pnickel"></tr></br>
-            </td>
-        </table>
-    </div>
+   
 </div>
     <div id="footer">
         <h2><b>Designed by Navin Kumar</b></h2>

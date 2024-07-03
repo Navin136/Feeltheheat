@@ -1,26 +1,22 @@
 function getdata(){
-    document.getElementById("pattern").value = pattern;
-    document.getElementById("pcarbon").value = pcarbon;
-    document.getElementById("psilicon").value = psilicon;
-    document.getElementById("pcopper").value = pcopper;
-    document.getElementById("ptin").value = ptin;
-    document.getElementById("pmanganese").value = pmanganese;
-    document.getElementById("pmolybdenum").value = pmolybdenum;
-    document.getElementById("pnickel").value = pnickel;
+    var pattern = document.getElementById("pattern").value;
+    fetch(pattern,'holding');
+
 }
 function calculate(){
+    var pattern = document.getElementById("pattern").value;
+    fetch(pattern,'holding');
     let hlevel = parseInt(document.getElementById("hlevel").value);
     let tweight = parseInt(document.getElementById("tweight").value);
-    document.getElementById("pattern").value = pattern;
     
     // variables for pattern specific chemistry
-    document.getElementById("pcarbon").value = pcarbon;
-    document.getElementById("psilicon").value = psilicon;
-    document.getElementById("pcopper").value = pcopper;
-    document.getElementById("ptin").value = ptin;
-    document.getElementById("pmanganese").value = pmanganese;
-    document.getElementById("pmolybdenum").value = pmolybdenum;
-    document.getElementById("pnickel").value = pnickel;
+    let pcarbon = document.getElementById("pcarbon").value;
+    let psilicon = document.getElementById("psilicon").value;
+    let pcopper = document.getElementById("pcopper").value;
+    let ptin = document.getElementById("ptin").value;
+    let pmanganese = document.getElementById("pmanganese").value;
+    let pmolybdenum = document.getElementById("pmolybdenum").value;
+    let pnickel = document.getElementById("pnickel").value;
     
     // furnace chemistry variables
     let fc = document.getElementById("fc").value;

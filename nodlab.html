@@ -21,7 +21,11 @@
             <table>
                 <tr>
                     <td><label for="pattern">Running Part Number</label></td>
-                    <td><input type="text" name="pattern" id="pattern" readonly></td>
+                    <td><select name="pattern" id="pattern" onchange="getdata()">
+                        <option value="7654">7654</option>
+                        <option value="7470-5">7470 - 5 Cavity</option>
+                        <option value="7278">7278</option>
+                    </select></td>
                 </tr>
                 <tr>
                     <td><label for="inoculant">Inoculant</label></td>

@@ -1,6 +1,8 @@
-let pattern = '7278';
+function fetch(ptn,a){      // Don't touch these lines
+    let pattern = ptn;      // Don't touch these lines
 
-// Master data
+
+// Master data Starts here
 //7654
 if(pattern == '7654'){
     var pcarbon = 3.90;
@@ -53,8 +55,18 @@ if(pattern == '7278'){
     var mtwt = 1500;
 }
 //some useful functions
+
+if(pcopper>=0.20){
+    var grade = 'sg-copper'
+}
+if(ptin>=0.02){
+    var grade = 'sg-tin'
+}
 if(pcarbon>=3.88){
     var grade = 'sg-azterlan';
+}
+if(pnickel>0.5){
+    var grade = 'simoni'
 }
 if(pmagnesium>=0.03){
     var alloyp = 0.92;
@@ -64,4 +76,41 @@ if(pmagnesium>=0.03){
     var alloyp = 0.31;
     var steelp = 1;
     var mischmetal = '300 Grams';
+}
+if(a=='holding'){
+    document.getElementById("pcarbon").value = pcarbon;
+    document.getElementById("psilicon").value = (psilicon - 0.45 * alloyp).toFixed(2);
+    document.getElementById("pcopper").value = pcopper;
+    document.getElementById("ptin").value = ptin;
+    document.getElementById("pmanganese").value = pmanganese;
+    document.getElementById("pmolybdenum").value = pmolybdenum;
+    document.getElementById("pnickel").value = pnickel;
+}
+if(a=='treatment'){
+    document.getElementById("alloyp").value = alloyp;
+	document.getElementById("steelp").value = steelp;
+	document.getElementById("fesir").value = psilicon;
+	document.getElementById("copperr").value = pcopper;
+	document.getElementById("tinr").value = ptin;
+	document.getElementById("manganeser").value = pmanganese;
+    document.getElementById("mischmetal").value = mischmetal;
+	document.getElementById("laddition").value = laddition;
+    document.getElementById("mtwt").value = mtwt;
+}
+if(a=='nodlab'){
+    document.getElementById('inoculant').value = inoculant;
+    document.getElementById('temperature').value = temperature;
+    document.getElementById('flowrate').value = flowrate;
+    document.getElementById('taddition').value = taddition;
+}
+if(a=='melting'){
+    document.getElementById("grade").value = grade;
+    document.getElementById("pcarbon").value = pcarbon;
+    document.getElementById("psilicon").value = (psilicon - 0.45 * alloyp).toFixed(2);
+    document.getElementById("pcopper").value = pcopper;
+    document.getElementById("ptin").value = ptin;
+    document.getElementById("pmanganese").value = pmanganese;
+    document.getElementById("pmolybdenum").value = pmolybdenum;
+    document.getElementById("pnickel").value = pnickel;
+}
 }
