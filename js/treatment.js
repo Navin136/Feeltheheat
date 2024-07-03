@@ -1,21 +1,22 @@
 
 function calculate(){
-	// hsi = document.getElementById("fesia").value;
-	// hcu = document.getElementById("coppera").value;
-	// hsn = document.getElementById("tina").value;
-	// hmn = document.getElementById("manganesea").value;
+    var pattern = document.getElementById("pattern").value;
+    fetch(pattern,'treatment');
+	let mtwt = document.getElementById("mtwt").value;
+	let alloyp = document.getElementById("alloyp").value;
+	let steelp = document.getElementById("steelp").value;
+	let psilicon = document.getElementById("fesir").value;
+	let pcopper = document.getElementById("copperr").value;
+	let ptin = document.getElementById("tinr").value;
+	let pmanganese = document.getElementById("manganeser").value;
+	let mischmetal = document.getElementById("mischmetal").value;
+	let laddition = document.getElementById("laddition").value;
+
 	document.getElementById("fesia").value = hsi;
     document.getElementById("coppera").value = hcu;
     document.getElementById("tina").value = hsn;
     document.getElementById("manganesea").value = hmn;
-	document.getElementById("pattern").value = pattern;
 	document.getElementById("mtwt").value = mtwt;
-	document.getElementById("alloyp").value = alloyp;
-	document.getElementById("steelp").value = steelp;
-	document.getElementById("fesir").value = psilicon;
-	document.getElementById("copperr").value = pcopper;
-	document.getElementById("tinr").value = ptin;
-	document.getElementById("manganeser").value = pmanganese;
 	document.getElementById("alloyw").value = (mtwt*alloyp*0.01).toFixed(2);
 	document.getElementById("steelw").value = (mtwt*steelp*0.01).toFixed(2);
 	let fesiActual = hsi;
