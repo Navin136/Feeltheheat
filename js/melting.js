@@ -1,7 +1,7 @@
 let furnaceweight = 6000;
+window.onload = chargemix;
 function chargemix(){
-    var pattern = document.getElementById("pattern").value;
-    fetch(pattern,'melting');
+    fetch(localStorage.getItem("pattern"),'melting');
     let grade = document.getElementById("grade").value;
 
 

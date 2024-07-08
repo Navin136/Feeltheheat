@@ -1,4 +1,4 @@
+window.onload = getdata;
 function getdata(){
-    var pattern = document.getElementById("pattern").value;
-    fetch(pattern,'nodlab');
+    fetch(localStorage.getItem("pattern"),'nodlab');
 }

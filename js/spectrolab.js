@@ -1,11 +1,12 @@
 function getdata(){
-    var pattern = document.getElementById("pattern").value;
-    fetch(pattern,'holding');
+    alert("This action will change pattern, chemistry, additives, inoculant details in all other areas")
+    var getpattern = document.getElementById("pattern").value;
+    localStorage.setItem("pattern", getpattern);
+    fetch(localStorage.getItem("pattern"),'holding');
 
 }
 function calculate(){
-    var pattern = document.getElementById("pattern").value;
-    fetch(pattern,'holding');
+    fetch(localStorage.getItem("pattern"),'holding');
     let hlevel = parseInt(document.getElementById("hlevel").value);
     let tweight = parseInt(document.getElementById("tweight").value);
     
@@ -59,11 +60,29 @@ function calculate(){
         document.getElementById("wc").value = ((fc*tweight*1000/document.getElementById("rc").value)-tweight*1000).toFixed(1) + " Steel";
     }
     document.getElementById("wsi").value = ((document.getElementById("rsi").value-fsi)*tweight*1000/70).toFixed(2);
+    if(document.getElementById("wsi").value <=  0 ){
+        document.getElementById("wsi").value = "NA";
+    }
     document.getElementById("wcu").value = ((document.getElementById("rcu").value-fcu)*tweight*1000/95).toFixed(2);
+    if(document.getElementById("wcu").value <=  0 ){
+        document.getElementById("wcu").value = "NA";
+    }
     document.getElementById("wsn").value = ((document.getElementById("rsn").value-fsn)*tweight*1000/95).toFixed(2);
+    if(document.getElementById("wsn").value <=  0 ){
+        document.getElementById("wsn").value = "NA";
+    }
     document.getElementById("wmn").value = ((document.getElementById("rmn").value-fmn)*tweight*1000/68).toFixed(2);
+    if(document.getElementById("wmn").value <=  0 ){
+        document.getElementById("wmn").value = "NA";
+    }
     document.getElementById("wmo").value = ((document.getElementById("rmo").value-fmo)*tweight*1000/60).toFixed(2);
+    if(document.getElementById("wmo").value <=  0 ){
+        document.getElementById("wmo").value = "NA";
+    }
     document.getElementById("wni").value = ((document.getElementById("rni").value-fni)*tweight*1000/95).toFixed(2);
+    if(document.getElementById("wni").value <=  0 ){
+        document.getElementById("wni").value = "NA";
+    }
 }
 function changecarb(){
     document.getElementById("carb").innerHTML = "Neograf";  

@@ -1,7 +1,6 @@
-
+window.onload = calculate;
 function calculate(){
-    var pattern = document.getElementById("pattern").value;
-    fetch(pattern,'treatment');
+    fetch(localStorage.getItem("pattern"),'treatment');
 	let mtwt = document.getElementById("mtwt").value;
 	let alloyp = document.getElementById("alloyp").value;
 	let steelp = document.getElementById("steelp").value;
