@@ -78,6 +78,7 @@ if(pmagnesium>=0.03){
     var mischmetal = '300 Grams';
 }
 if(a=='holding'){
+    document.getElementById("pattern").value = pattern;
     document.getElementById("pcarbon").value = pcarbon;
     document.getElementById("psilicon").value = (psilicon - 0.45 * alloyp).toFixed(2);
     document.getElementById("pcopper").value = pcopper;
@@ -87,6 +88,7 @@ if(a=='holding'){
     document.getElementById("pnickel").value = pnickel;
 }
 if(a=='treatment'){
+    document.getElementById("pattern").value = pattern;
     document.getElementById("alloyp").value = alloyp;
 	document.getElementById("steelp").value = steelp;
 	document.getElementById("fesir").value = psilicon;
@@ -98,12 +100,14 @@ if(a=='treatment'){
     document.getElementById("mtwt").value = mtwt;
 }
 if(a=='nodlab'){
+    document.getElementById("pattern").value = pattern;
     document.getElementById('inoculant').value = inoculant;
     document.getElementById('temperature').value = temperature;
     document.getElementById('flowrate').value = flowrate;
     document.getElementById('taddition').value = taddition;
 }
 if(a=='melting'){
+    document.getElementById("pattern").value = pattern;
     document.getElementById("grade").value = grade;
     document.getElementById("pcarbon").value = pcarbon;
     document.getElementById("psilicon").value = (psilicon - 0.45 * alloyp).toFixed(2);

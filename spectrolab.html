@@ -14,7 +14,7 @@
     <div id="mainheader">
         <p id="FTH"><img src="fth.png" alt="" id="fthicon"> Feel the Heat</p>
         <a class="dept" href="melting.html">Melting</a>
-        <a class="dept" href="spectrolab.html">SpectroLab</a>
+        <a class="dept" href="spectrolab.html">Holding</a>
         <a class="dept" href="treatment.html">Treatment</a>
         <a class="dept" href="nodlab.html">Nodularity Lab</a>
         <a class="dept" href="moulding.html">Moulding</a>
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div id="header">
-        <h4>SpectroLab Calculations</h4>
+        <h4>Holding Furnace Calculations</h4>
         <label for="hlevel">Holder Level</label>
         <input id="hlevel" name="hlevel">
         <div>
@@ -43,7 +43,7 @@
     <div id="calccon">
         <div id="patternspec">
             <label for="pattern">Running Pattern</label>
-            <select name="pattern" id="pattern">
+            <select name="pattern" onchange="getdata()" id="pattern" >
                 <option value="7654">7654</option>
                 <option value="7470-5">7470 - 5</option>
                 <option value="7278">7278</option>
