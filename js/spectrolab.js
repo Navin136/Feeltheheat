@@ -1,13 +1,17 @@
 function getdata(){
-    alert("This action will change pattern, chemistry, additives, inoculant details in all other areas")
     var getpattern = document.getElementById("pattern").value;
     localStorage.setItem("pattern", getpattern);
     fetch(localStorage.getItem("pattern"),'holding');
 
 }
-function calculate(){
+function calculate(){;
+    // alert("This action will change pattern, chemistry, additives, inoculant details in all other areas");
     fetch(localStorage.getItem("pattern"),'holding');
     let hlevel = parseInt(document.getElementById("hlevel").value);
+    if(!hlevel){
+        alert("Please Enter Level of Holding Furnace");
+    }
+    else{
     let tweight = parseInt(document.getElementById("tweight").value);
     
     // variables for pattern specific chemistry
@@ -18,6 +22,7 @@ function calculate(){
     let pmanganese = document.getElementById("pmanganese").value;
     let pmolybdenum = document.getElementById("pmolybdenum").value;
     let pnickel = document.getElementById("pnickel").value;
+    let ptitanium = document.getElementById("ptitanium").value;
     
     // furnace chemistry variables
     let fc = document.getElementById("fc").value;
@@ -27,6 +32,7 @@ function calculate(){
     let fmn = document.getElementById("fmn").value;
     let fmo = document.getElementById("fmo").value;
     let fni = document.getElementById("fni").value;
+    let fti = document.getElementById("fti").value;
 
     // holder chemistry variables
     document.getElementById("hc").value = hc;
@@ -36,9 +42,9 @@ function calculate(){
     document.getElementById("hmn").value = hmn;
     document.getElementById("hmo").value = hmo;
     document.getElementById("hni").value = hni;
+    document.getElementById("hti").value = hti;
 
     // calculate required chemistry
-    console.log(tweight+hlevel);
     document.getElementById("rc").value = ((((tweight+hlevel)*pcarbon)-(hc*hlevel))/tweight).toFixed(2);
     document.getElementById("rsi").value = ((((tweight+hlevel)*psilicon)-(hsi*hlevel))/tweight).toFixed(2);
     document.getElementById("rcu").value = ((((tweight+hlevel)*pcopper)-(hcu*hlevel))/tweight).toFixed(2);
@@ -46,6 +52,7 @@ function calculate(){
     document.getElementById("rmn").value = ((((tweight+hlevel)*pmanganese)-(hmn*hlevel))/tweight).toFixed(2);
     document.getElementById("rmo").value = ((((tweight+hlevel)*pmolybdenum)-(hmo*hlevel))/tweight).toFixed(2);
     document.getElementById("rni").value = ((((tweight+hlevel)*pnickel)-(hni*hlevel))/tweight).toFixed(2);
+    document.getElementById("rti").value = ((((tweight+hlevel)*ptitanium)-(hti*hlevel))/tweight).toFixed(2);
 
     // calculate weight of additions
     if(document.getElementById("carbsel").value == 'hic'){
@@ -83,7 +90,12 @@ function calculate(){
     if(document.getElementById("wni").value <=  0 ){
         document.getElementById("wni").value = "NA";
     }
+    document.getElementById("wti").value = ((document.getElementById("rti").value-fti)*tweight*1000/68).toFixed(2);
+    if(document.getElementById("wti").value <=  0 ){
+        document.getElementById("wti").value = "NA";
+    }
 }
 function changecarb(){
     document.getElementById("carb").innerHTML = "Neograf";  
+}
 }

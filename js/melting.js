@@ -86,18 +86,18 @@ function chargemix(){
     let naddition = ((pcarbon-bathcarbon)*furnaceweight/90).toFixed(2);
     let fesiaddition = ((psilicon-bathsilicon)*furnaceweight/70).toFixed(2);
     if(grade == "sg-tin" || grade =="sg-copper" || grade =="sg-azterlan"){
-        document.querySelector(".result").innerHTML = `Bath carbon is ${bathcarbon}%.<br> You need to add ${haddition} Kgs of Hi-Carbon or ${naddition} Kgs of Neograf <br>Bath silicon is ${bathsilicon}%.<br> You need to add ${fesiaddition} Kgs of FerroSilicon to achieve required chemistry`;
+        document.querySelector(".result").innerHTML = `Bath carbon is <b>${bathcarbon}%</b>.<br>Bath silicon is <b>${bathsilicon}%</b>.<br> You need to add <b>${haddition} Kgs</b> of Hi-Carbon or <b>${naddition} Kgs</b> of Neograf <br> You need to add <b>${fesiaddition} Kgs</b> of FerroSilicon to achieve required chemistry`;
     }
     if(grade == "sg-lowmoly" || grade == "sg-highmoly" || grade == "cg-moly"){
         let bathmolybdenum = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rmolybdenum)/furnaceweight).toFixed(2);
         let femoaddition = ((pmolybdenum-bathmolybdenum)*furnaceweight/60).toFixed(2)
-        document.querySelector(".result").innerHTML = `Bath carbon is ${bathcarbon}%.<br> You need to add ${haddition} Kgs of Hi-Carbon or ${naddition} Kgs of Neograf <br>Bath silicon is ${bathsilicon}%.<br> You need to add ${fesiaddition} Kgs of FerroSilicon<br>Bath molybdenum is ${bathmolybdenum}%.<br> You need to add ${femoaddition} Kgs of FerroMolybdenum to achieve required chemistry`;
+        document.querySelector(".result").innerHTML = `Bath carbon is <b>${bathcarbon}%</b>.<br>Bath silicon is <b>${bathsilicon}%</b>.<br>Bath molybdenum is <b>${bathmolybdenum}%</b>.<br> You need to add <b>${haddition} Kgs</b>  of Hi-Carbon<br> You need to add <b>${fesiaddition}</b> Kgs of FerroSilicon<br> You need to add <b>${femoaddition} Kgs</b> of FerroMolybdenum to achieve required chemistry`;
     }
     if(grade == "simoni"){
         let bathmolybdenum = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rmolybdenum)/furnaceweight).toFixed(2);
         let femoaddition = ((pmolybdenum-bathmolybdenum)*furnaceweight/60).toFixed(2)
         let bathnickel = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rnickel)/furnaceweight).toFixed(2); 
         let niaddition = ((pnickel-bathnickel)*furnaceweight/95).toFixed(2)
-        document.querySelector(".result").innerHTML = `Bath carbon is ${bathcarbon}%.<br> You need to add ${haddition} Kgs of Hi-Carbon or ${naddition} Kgs of Neograf <br>Bath silicon is ${bathsilicon}%.<br> You need to add ${fesiaddition} Kgs of FerroSilicon<br>Bath molybdenum is ${bathmolybdenum}%.<br> You need to add ${femoaddition} Kgs of FerroMolybdenum<br>Bath Nickel is ${bathnickel}%.<br> You need to add ${niaddition} Kgs of Pure Nickel to achieve required chemistry`;
+        document.querySelector(".result").innerHTML = `Bath carbon is </b>${bathcarbon}%</b>.<br>Bath silicon is <b>${bathsilicon}%</b>.<br>Bath molybdenum is <b>${bathmolybdenum}%</b>.<br> You need to add <b>${haddition} Kgs</b>  of Hi-Carbon<br> You need to add <b>${fesiaddition}</b> Kgs of FerroSilicon<br> You need to add <b>${femoaddition} Kgs</b> of FerroMolybdenum<br>Bath Nickel is ${bathnickel}%.<br> You need to add <b>${niaddition} Kgs</b> of Pure Nickel to achieve required chemistry`;
     }
 }
