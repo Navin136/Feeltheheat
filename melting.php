@@ -12,43 +12,43 @@
 <body>
     <div id="mainheader">
         <p id="FTH"><img src="fth.png" alt="" id="fthicon"> Melt Ease</p>
-        <a class="dept" href="melting.html">Melting</a>
-        <a class="dept" href="spectrolab.html">Holding</a>
-        <a class="dept" href="treatment.html">Treatment</a>
-        <a class="dept" href="nodlab.html">Nodularity Lab</a>
-        <!-- <a class="dept" href="moulding.html">Moulding</a> -->
+        <a class="dept" href="melting.php">Melting</a>
+        <a class="dept" href="spectrolab.php">Holding</a>
+        <a class="dept" href="treatment.php">Treatment</a>
+        <a class="dept" href="nodlab.php">Nodularity Lab</a>
+        <!-- <a class="dept" href="moulding.php">Moulding</a> -->
     </div>
     <div id="fbox">
         <div>
-            <label for="pattern">Running Pattern</label>
+            <label for="pattern">Pattern</label>
             <input type="text" id="pattern"><br>
                     <table class="spec">
                         <td>
-                            <tr>C%</tr>
+                            <tr class="elecomp">C%</tr>
                             <tr><input name="pcarbon" id="pcarbon"></tr></br>
                         </td>
                         <td>
-                            <tr>Si%</tr>
+                            <tr class="elecomp">Si%</tr>
                             <tr><input name="psilicon" id="psilicon"></tr></br>
                         </td>
                         <td>
-                            <tr>Cu%</tr>
+                            <tr class="elecomp">Cu%</tr>
                             <tr><input name="pcopper" id="pcopper"></tr></br>
                         </td>
                         <td>
-                            <tr>Sn%</tr>
+                            <tr class="elecomp">Sn%</tr>
                             <tr><input name="ptin" id="ptin"></tr></br>
                         </td>
                         <td>
-                            <tr>Mn%</tr>
+                            <tr class="elecomp">Mn%</tr>
                             <tr><input name="pmanganese" id="pmanganese"></tr></br>
                         </td>
                         <td>
-                            <tr>Mo%</tr>
+                            <tr class="elecomp">Mo%</tr>
                             <tr><input name="pmolybdenum" id="pmolybdenum"></tr></br>
                         </td>
                         <td>
-                            <tr>Ni%</tr>
+                            <tr class="elecomp">Ni%</tr>
                             <tr><input name="pnickel" id="pnickel"></tr></br>
                         </td>
                     </table>

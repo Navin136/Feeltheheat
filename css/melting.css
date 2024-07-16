@@ -3,6 +3,7 @@ body{
     padding: 0px;
     background-color: lightcyan;
 }
+
 div#mainheader{
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;

@@ -1,3 +1,6 @@
+<?php
+    include("mysql.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +16,11 @@
 <body>
     <div id="mainheader">
         <p id="FTH"><img src="fth.png" alt="" id="fthicon"> Melt Ease</p>
-        <a class="dept" href="melting.html">Melting</a>
-        <a class="dept" href="spectrolab.html">Holding</a>
-        <a class="dept" href="treatment.html">Treatment</a>
-        <a class="dept" href="nodlab.html">Nodularity Lab</a>
-        <!-- <a class="dept" href="moulding.html">Moulding</a> -->
+        <a class="dept" href="melting.php">Melting</a>
+        <a class="dept" href="spectrolab.php">Holding</a>
+        <a class="dept" href="treatment.php">Treatment</a>
+        <a class="dept" href="nodlab.php">Nodularity Lab</a>
+        <!-- <a class="dept" href="moulding.php">Moulding</a> -->
         <div class="threebar">
             <div class="bars"></div>
             <div class="bars bar2"></div>
@@ -43,12 +46,16 @@
     <div id="calccon">
         <div id="patternspec">
             <label for="pattern">Running Pattern</label>
-            <select name="pattern" onchange="getdata()" id="pattern" >
-                <option value="7654">7654</option>
-                <option value="7470-5">7470 - 5</option>
-                <option value="7278">7278</option>
-                <option value="7297">7297</option>
-            </select><br>
+            <?php
+                $sql = "SELECT * FROM part_details";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0){
+                   while($row = $result->fetch_assoc()) {
+                    $nk = $row["part_number"];
+                        echo "<input value=\"{$nk}\" name=\"pattern\" id=\"pattern\"></br>";
+                    }
+                }
+            ?>
             <label for="pcarbon">C%</label>
             <input name="pcarbon" id="pcarbon" class="comp"><br>
             <label for="psilicon">Si%</label>
@@ -65,7 +72,7 @@
             <input name="pnickel" id="pnickel" class="comp"><br>
             <label for="ptitanium" id="lptitanium">Ti%</label>
             <input name="ptitanium" id="ptitanium" class="comp"><br>
-            <!-- <input type="button" id="getdata" onclick="getdata()" value="Get data"> -->
+            <input type="button" id="getdata" onclick="getdata()" value="Get data">
         </div>
         <div id="holdercalc">
         <table>

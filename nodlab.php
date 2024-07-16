@@ -12,11 +12,11 @@
 <body>
     <div id="mainheader">
         <p id="FTH"><img src="fth.png" alt="" id="fthicon"> Melt Ease</p>
-        <a class="dept" href="melting.html">Melting</a>
-        <a class="dept" href="spectrolab.html">Holding</a>
-        <a class="dept" href="treatment.html">Treatment</a>
-        <a class="dept" href="nodlab.html">Nodularity Lab</a>
-        <!-- <a class="dept" href="moulding.html">Moulding</a> -->
+        <a class="dept" href="melting.php">Melting</a>
+        <a class="dept" href="spectrolab.php">Holding</a>
+        <a class="dept" href="treatment.php">Treatment</a>
+        <a class="dept" href="nodlab.php">Nodularity Lab</a>
+        <!-- <a class="dept" href="moulding.php">Moulding</a> -->
     </div>
         <div class="labcontent">
             <table>
@@ -35,6 +35,10 @@
                 <tr>
                     <td><label for="temperature">Pouring temperature</label></td>
                     <td><input type="text" name="temperature" id="temperature" readonly></td>
+                </tr>
+                <tr>
+                    <td><label for="ptime">Pouring time</label></td>
+                    <td><input type="text" name="ptime" id="ptime" readonly></td>
                 </tr>
                 <tr>
                     <td><label for="taddition">Tundish Addition</label></td>
