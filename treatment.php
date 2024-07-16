@@ -13,11 +13,11 @@
 <body>
     <div id="mainheader">
         <p id="FTH"><img src="fth.png" alt="" id="fthicon"> Melt Ease</p>
-        <a class="dept" href="melting.html">Melting</a>
-        <a class="dept" href="spectrolab.html">Holding</a>
-        <a class="dept" href="treatment.html">Treatment</a>
-        <a class="dept" href="nodlab.html">Nodularity Lab</a>
-        <!-- <a class="dept" href="moulding.html">Moulding</a> -->
+        <a class="dept" href="melting.php">Melting</a>
+        <a class="dept" href="spectrolab.php">Holding</a>
+        <a class="dept" href="treatment.php">Treatment</a>
+        <a class="dept" href="nodlab.php">Nodularity Lab</a>
+        <!-- <a class="dept" href="moulding.php">Moulding</a> -->
     </div>
     <div class="content">
 		<label for="pattern" id="lpattern">Running pattern </label>
@@ -79,6 +79,10 @@
 			<tr>
 				<td>Ladle Addition</td>
 				<td colspan="3"><input name="laddition" id="laddition"></td>
+			</tr>
+			<tr>
+				<td>Pouring Temperature</td>
+				<td colspan="3"><input name="temperature" id="temperature"></td>
 			</tr>
 		</table>
 	<!-- <input type="button" value="Calculate" id="calbtn" onclick="calculate()">  -->

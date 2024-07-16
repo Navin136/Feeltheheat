@@ -19,6 +19,7 @@ if(pattern == '7654'){
     var temperature = '1400-1415';
     var taddition = 'NA';
     var mtwt = 1500;
+    var ptime = '10-14';
 }
 if(pattern == '7297'){
     var pcarbon = 3.25;
@@ -35,6 +36,7 @@ if(pattern == '7297'){
     var temperature = '1390-1405';
     var taddition = '0.05% Superseed';
     var mtwt = 1700;
+    var ptime = '10-14';
 }
 //7470-5
 if(pattern == '7470-5'){
@@ -52,6 +54,7 @@ if(pattern == '7470-5'){
     var temperature = '1395-1410';
     var taddition = '0.05% Ultraseed';
     var mtwt = 1700;
+    var ptime = '12-16';
 }
 //7278
 if(pattern == '7278'){
@@ -70,6 +73,7 @@ if(pattern == '7278'){
     var temperature = '1400-1420';
     var taddition = 'NA';
     var mtwt = 1500;
+    var ptime = '13-17';
 }
 //some useful functions
 
@@ -179,6 +183,7 @@ if(a=='treatment'){
     document.getElementById("mischmetal").value = mischmetal;
 	document.getElementById("laddition").value = laddition;
     document.getElementById("mtwt").value = mtwt;
+    document.getElementById('temperature').value = temperature;
 }
 if(a=='nodlab'){
     document.getElementById("pattern").value = pattern;
@@ -186,6 +191,7 @@ if(a=='nodlab'){
     document.getElementById('temperature').value = temperature;
     document.getElementById('flowrate').value = flowrate;
     document.getElementById('taddition').value = taddition;
+    document.getElementById('ptime').value = ptime;
 }
 if(a=='melting'){
     document.getElementById("pattern").value = pattern;

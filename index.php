@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,22 +10,25 @@
 </head>
 <body>
     <div class="heading"><h1>Melt Ease</h1></div>
-    <div><p class="author">-Melted By Navin Kumar</p></div>
+    <div><p class="author">-Cast By Navin Kumar</p></div>
     <div class="alldep">
         <!-- <div class="dept">
-            <a href="moulding.html">Moulding</a>
+            <a href="moulding.php">Moulding</a>
         </div> -->
         <div class="dept">
-            <a href="melting.html">Melting</a>
+            <a href="melting.php">Melting</a>
         </div>
         <div class="dept">
-            <a href="spectrolab.html">Holding</a>
+            <a href="spectrolab.php">Holding</a>
         </div>
         <div class="dept">
-            <a href="treatment.html">Treatment Area</a>
+            <a href="treatment.php">Treatment Area</a>
         </div>
         <div class="dept">
-            <a href="nodlab.html">Nodularity Lab & Pouring</a>
+            <a href="nodlab.php">Nodularity Lab & Pouring</a>
+        </div>
+        <div class="dept">
+            <a href="master.php">Part Master (Secured)</a>
         </div>
     </div>
 </body>
