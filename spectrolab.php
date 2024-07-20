@@ -47,12 +47,20 @@
         <div id="patternspec">
             <label for="pattern">Running Pattern</label>
             <?php
-                $sql = "SELECT * FROM part_details";
+                $sql = "SELECT * FROM part_details where carbon=3.90";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0){
                    while($row = $result->fetch_assoc()) {
                     $nk = $row["part_number"];
                         echo "<input value=\"{$nk}\" name=\"pattern\" id=\"pattern\"></br>";
+                        $c = $row["carbon"];
+                        $si = $row["silicon"];
+                        $cu = $row["copper"];
+                        $sn = $row["tin"];
+                        $mn = $row["manganese"];
+                        $mo = $row["molybdenum"];
+                        $mg = $row["magnesium"];
+                        $ni = $row["nickel"];
                     }
                 }
             ?>
