@@ -1,3 +1,6 @@
+<?php
+    include("mysql.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +19,49 @@
         <a class="dept" href="nodlab.php">Nodularity Lab</a>
         <!-- <a class="dept" href="moulding.php">Moulding</a> -->
     </div>
-    <div class="mouldingplan">
+    <form action="moulding.php" method="post">
+        <label for="current_part">Please Enter Running part</label>
+        <select name="current_part">
+        <option value=""></option>
+            <?php
+            $sql="select part_number from part_details";
+            $result = $conn->query($sql);
+            if($result->num_rows>0){
+                while($row = $result->fetch_assoc()){
+                    echo"<option value=\"$row[part_number]\">$row[part_number]</option>";
+                }
+            }
+            ?>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+    <?php
+        if($_POST["current_part"]!=""){
+            $current_part=$_POST["current_part"];
+            echo "<b>{$current_part}</b> is now choosen !!";
+            $nk = "select * from live where id=1";
+            $result = $conn->query($nk);
+            if($result->num_rows>0){
+                $sql = "UPDATE live SET current_part=$current_part where id=1";
+                $result = $conn->query($sql);
+                if($result){
+                    echo"Updated database";
+                }
+            }
+            else{
+                $sql = "INSERT INTO live(current_part,id) VALUES ($current_part,1)";
+                $result = $conn->query($sql);
+                if($result){
+                    echo"Pushed to database";
+                }
+            }
+            $conn->close;
+        }
+        else{
+            echo"Please choose part number carefully";
+        }
+    ?>
+    <!-- <div class="mouldingplan">
         <div class="date">
             <label for="date">Date</label>
             <input type="date" name="date" id="date">
@@ -47,7 +92,7 @@
             <input type="text" name="plan5moulds" id="plan5moulds" placeholder="No. Of Moulds">
         </div>
         <button type="submit">Upload</button>
-    </div>
+    </div> -->
     <div id="footer">
         <h2><b>Designed by Navin Kumar</b></h2>
         <p>&#169 Copyright 2024. All rights reserved.</p>

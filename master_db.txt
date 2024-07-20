@@ -1,15 +1,15 @@
 USE MASTER;
 CREATE TABLE part_master(
 	part_number INT PRIMARY KEY,
-	carbon DECIMAL(4,3),
-    silicon DECIMAL(4,3),
-    copper DECIMAL(4,3),
+	carbon DECIMAL(3,2),
+    silicon DECIMAL(3,2),
+    copper DECIMAL(3,2),
     tin DECIMAL(4,3),
-    manganese DECIMAL(4,3),
+    manganese DECIMAL(3,2),
     molybdenum DECIMAL(4,3),
     nickel DECIMAL(4,3),
     magnesium DECIMAL(4,3),
-    mischmetal DECIMAL(4,3),
+    mischmetal varchar(50),
     laddition varchar(50),
     inoculant varchar(30),
     flow_rate decimal(2,1),
@@ -18,4 +18,4 @@ CREATE TABLE part_master(
     taddition varchar(50),
     pouring_time varchar(20)
 );
-insert into part_details VALUES(7278, 3.22, 4.66, 0.10, 0.010, 0.22, 0.62, 0.60, 0.012, '200 Grams', '750 Grams Fesi', 'Superseed', 3.5, 1500, '1405-1425', 'NA', '13-17');
+insert into part_details VALUES(7278, 3.22, 4.66, 0.10, 0.010, 0.22, 0.62, 0.60, 0.012, '200 Grams', '750 Grams Fesi', 'Superseed', 3.5, 1500, '1405-1425', 'NA', '13-17');            
