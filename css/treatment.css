@@ -58,7 +58,7 @@ input,select{
 select{
     margin-right: 30px;
 }
-#lpattern{
+#lpattern, #lalloy{
 	font-size: 30px;
 	font-weight: bolder;    
 }

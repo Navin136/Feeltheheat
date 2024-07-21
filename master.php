@@ -35,10 +35,11 @@
                 <th>Mg%</th>
                 <th>Mischmetal</th>
                 <th>L.A</th>
-                <th>Inoculant</th>
-                <th>Flow Rate</th>
+                <th>Alloy</th>
                 <th>Metal Wt.</th>
                 <th>Temperature</th>
+                <th>Inoculant</th>
+                <th>Flow Rate</th>
                 <th>TA</th>
                 <th>Pouring Time</th>
                 <th>Amend</th>
@@ -66,7 +67,8 @@
                     $fr = $row["flow_rate"];
                     $pt = $row["pouring_time"];
                     $in = $row["inoculant"];
-                    echo "<tr><td>$part</td><td>$c</td><td>$si</td><td>$cu</td><td>$sn</td><td>$mn</td><td>$mo</td><td>$ni</td><td>$mg</td><td>$mm</td><td>$la</td><td>$in</td><td>$fr</td><td>$mtwt</td><td>$temp</td><td>$ta</td><td>$pt</td><td><button id=\"edit\">Edit</button></td></tr>";
+                    $alloy = $row["alloy"];
+                    echo "<tr><td>$part</td><td>$c</td><td>$si</td><td>$cu</td><td>$sn</td><td>$mn</td><td>$mo</td><td>$ni</td><td>$mg</td><td>$mm</td><td>$la</td><td>$alloy</td><td>$mtwt</td><td>$temp</td><td>$in</td><td>$fr</td><td>$ta</td><td>$pt</td><td><button id=\"edit\">Edit</button></td></tr>";
                     }
                 }
             ?>
