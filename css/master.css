@@ -2,6 +2,9 @@ table,td,th{
     border: 1px solid black;
     border-collapse: collapse;
 }
+.master{
+    margin: 10px;
+}
 th{
     background-color: lightgreen;
 }

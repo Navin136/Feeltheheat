@@ -16,6 +16,23 @@ CREATE TABLE part_master(
     metalweight INT,
     temperature varchar(15),
     taddition varchar(50),
-    pouring_time varchar(20)
+    pouring_time varchar(20),
+    alloy varchar(20)
 );
-insert into part_details VALUES(7278, 3.22, 4.66, 0.10, 0.010, 0.22, 0.62, 0.60, 0.012, '200 Grams', '750 Grams Fesi', 'Superseed', 3.5, 1500, '1405-1425', 'NA', '13-17');            
+insert into part_details VALUES(7278, 3.22, 4.66, 0.10, 0.010, 0.22, 0.62, 0.60, 0.012, '200 Grams', '750 Grams Fesi', 'Superseed', 3.5, 1500, '1405-1425', 'NA', '13-17', 1.2% RE);            
+
+
+USE MASTER;
+CREATE TABLE holder(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    heat varchar(10),
+    carbon decimal(3,2),
+    silicon decimal(3,2),
+    copper decimal(3,2),
+    tin decimal(4,3),
+    manganese decimal(3,2),
+    molybdenum decimal(4,3),
+    nickel decimal(4,3),
+    titanium decimal(4,3),
+    magnesium decimal(4,3)
+);
