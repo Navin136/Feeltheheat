@@ -11,14 +11,9 @@
     <link rel="icon" href="icon.png">
 </head>
 <body>
-    <div id="mainheader">
-        <p id="FTH"><img src="fth.png" alt="" id="fthicon"> Melt Ease</p>
-        <a class="dept" href="melting.php">Melting</a>
-        <a class="dept" href="spectrolab.php">Holding</a>
-        <a class="dept" href="treatment.php">Treatment</a>
-        <a class="dept" href="nodlab.php">Nodularity Lab</a>
-        <!-- <a class="dept" href="moulding.php">Moulding</a> -->
-    </div>
+    <?php   
+    include("header.php");
+    ?>
     <form action="moulding.php" method="post">
         <label for="current_part">Please Enter Running part</label>
         <select name="current_part">
@@ -93,9 +88,8 @@
         </div>
         <button type="submit">Upload</button>
     </div> -->
-    <div id="footer">
-        <h2><b>Designed by Navin Kumar</b></h2>
-        <p>&#169 Copyright 2024. All rights reserved.</p>
-    </div>
+    <?php   
+    include("footer.php");
+    ?>
 </body>
 </html>
