@@ -14,73 +14,55 @@
     <link rel="icon" href="icon.png">
 </head>
 <body>
-    <div id="mainheader">
-        <p id="FTH"><img src="fth.png" alt="" id="fthicon"> Melt Ease</p>
-        <a class="dept" href="melting.php">Melting</a>
-        <a class="dept" href="spectrolab.php">Holding</a>
-        <a class="dept" href="treatment.php">Treatment</a>
-        <a class="dept" href="nodlab.php">Nodularity Lab</a>
-        <!-- <a class="dept" href="moulding.php">Moulding</a> -->
-        <div class="threebar">
-            <div class="bars"></div>
-            <div class="bars bar2"></div>
-            <div class="bars"></div>
-        </div>
-    </div>
+    <?php   
+    include("header.php");
+    ?>
     <div id="header">
         <h4>Holding Furnace Calculations</h4>
         <label for="hlevel">Holder Level</label>
         <input name="hlevel" id="hlevel" value="">
-        <div>
-            <label for="tweight">Tapping Weight</label>
-            <input name="tweight" value="6" id="tweight">
-        </div>
-        <div>
-            <label for="carburizer">Choose carburizer: </label>
-            <select name="carburizer" id="carbsel">
-                <option value="hic">Hi-Carbon</option>
-                <option value="neo">Neograf / Graphite</option>
-            </select>
-        </div>
+        <label for="tweight">Tapping Weight</label>
+        <input name="tweight" value="6" id="tweight">
+        <label for="carburizer">Choose carburizer: </label>
+        <select name="carburizer" id="carbsel">
+            <option value="hic">Hi-Carbon</option>
+            <option value="neo">Neograf / Graphite</option>
+        </select>
     </div>
     <div id="calccon">
         <div id="patternspec">
-            <label for="pattern">Running Pattern</label>
-            <?php
-                $sql = "SELECT * FROM part_details where carbon=3.90";
+        <?php
+                $part = 'SELECT current_part,id from live where id=1';
+                $respart = $conn->query($part);
+                $partrow = $respart->fetch_assoc();
+                $nk = "$partrow[current_part]";
+                $sql = "SELECT * FROM part_details where part_number=".$nk;
                 $result = $conn->query($sql);
-                if ($result->num_rows > 0){
-                   while($row = $result->fetch_assoc()) {
-                    $nk = $row["part_number"];
-                        echo "<input value=\"{$nk}\" name=\"pattern\" id=\"pattern\"></br>";
-                        $c = $row["carbon"];
-                        $si = $row["silicon"];
-                        $cu = $row["copper"];
-                        $sn = $row["tin"];
-                        $mn = $row["manganese"];
-                        $mo = $row["molybdenum"];
-                        $mg = $row["magnesium"];
-                        $ni = $row["nickel"];
-                    }
-                }
+                $row = $result->fetch_assoc();
             ?>
+            <label for="pattern">Running Pattern</label>
+            <input name="pattern" id="pattern" class="comp" value=<?php echo "$row[part_number]";?>><br>
             <label for="pcarbon">C%</label>
-            <input name="pcarbon" id="pcarbon" class="comp"><br>
+            <input name="pcarbon" id="pcarbon" class="comp" value=<?php echo "$row[carbon]";?>><br>
             <label for="psilicon">Si%</label>
-            <input name="psilicon" id="psilicon" class="comp"><br>
+            <input name="psilicon" id="psilicon" class="comp" value=<?php
+            if("$row[magnesium]">0.03){
+                $hsilicon = "$row[silicon]"-(0.95*0.45);
+                echo $hsilicon;
+            }?>><br>
             <label for="pcopper" id="lpcopper">Cu%</label>
-            <input name="pcopper" id="pcopper" class="comp"><br>
+            <input name="pcopper" id="pcopper" class="comp" value=<?php echo "$row[copper]";?>><br>
             <label for="ptin" id="lptin">Sn%</label>
-            <input name="ptin" id="ptin" class="comp"><br>
+            <input name="ptin" id="ptin" class="comp" value=<?php echo "$row[tin]";?>><br>
             <label for="pmanganese" id="lpmanganese">Mn%</label>
-            <input name="pmanganese" id="pmanganese" class="comp"><br>
+            <input name="pmanganese" id="pmanganese" class="comp" value=<?php echo "$row[manganese]";?>><br>
             <label for="pmolybdenum" id="lpmolybdenum">Mo%</label>
-            <input name="pmolybdenum" id="pmolybdenum" class="comp"><br>
+            <input name="pmolybdenum" id="pmolybdenum" class="comp" value=<?php echo "$row[molybdenum]";?>><br>
             <label for="pnickel" id="lpnickel">Ni%</label>
-            <input name="pnickel" id="pnickel" class="comp"><br>
+            <input name="pnickel" id="pnickel" class="comp" value=<?php echo "$row[nickel]";?>><br>
             <label for="ptitanium" id="lptitanium">Ti%</label>
-            <input name="ptitanium" id="ptitanium" class="comp"><br>
-            <input type="button" id="getdata" onclick="getdata()" value="Get data">
+            <input name="ptitanium" id="ptitanium" class="comp" value=0.07><br>
+            <!-- <input type="button" id="getdata" onclick="getdata()" value="Get data"> -->
         </div>
         <div id="holdercalc">
         <table>
@@ -150,10 +132,10 @@
             </table>
         </div>
     </div>
+    <button></button>
     <button onclick="calculate()">Calculate</button>
-    <div id="footer">
-        <h2><b>Designed by Navin Kumar</b></h2>
-        <p>&#169 Copyright 2024. All rights reserved.</p>
-    </div>
+    <?php   
+    include("footer.php");
+    ?>
 </body>
 </html>

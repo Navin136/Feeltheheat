@@ -1,8 +1,6 @@
 let furnaceweight = 6000;
 window.onload = chargemix;
 function chargemix(){
-    fetch(localStorage.getItem("pattern"),'melting');
-    let grade = document.getElementById("grade").value;
 
     // variables for pattern specific chemistry
     let pcarbon = document.getElementById("pcarbon").value;
@@ -13,6 +11,24 @@ function chargemix(){
     let pmolybdenum = document.getElementById("pmolybdenum").value;
     let pnickel = document.getElementById("pnickel").value;
 
+    if(pcopper>=0.20){
+        var grade = 'sg-copper';
+    }
+    if(ptin>=0.02){
+        var grade = 'sg-tin';
+    }
+    if(pcarbon>=3.88){
+        var grade = 'sg-azterlan';
+    }
+    if(pnickel>0.5){
+        var grade = 'simoni';
+    }
+    if(pmolybdenum>0.3 && pmolybdenum<0.6 && pnickel<0.5){
+        var grade = 'sg-lowmoly';
+    }
+    if(pmolybdenum>0.6 && pnickel<0.5){
+        var grade = 'sg-highmoly';
+    }
     if(grade == "sg-tin"){
         document.getElementById("psteel").value = 35;
         document.getElementById("preturns").value = 65;
@@ -74,6 +90,7 @@ function chargemix(){
         var rmolybdenum = 0.60;
         var rnickel = 0.58;
     }
+    document.getElementById("grade").value = grade;
     document.getElementById("wsteel").value=document.getElementById("psteel").value*furnaceweight/100;
     document.getElementById("wreturns").value=document.getElementById("preturns").value*furnaceweight/100;
     document.getElementById("wborings").value=document.getElementById("pborings").value*furnaceweight/100;

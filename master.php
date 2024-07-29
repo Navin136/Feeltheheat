@@ -7,21 +7,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Master</title>
-    <link rel="stylesheet" href="css/melting.css">
     <link rel="stylesheet" href="css/master.css">
     <script defer src="js/melting.js"></script>
-    <script defer src="js/spec.js"></script>
     <link rel="icon" href="icon.png">
 </head>
 <body>
-    <div id="mainheader">
-        <p id="FTH"><img src="fth.png" alt="" id="fthicon"> Melt Ease</p>
-        <a class="dept" href="melting.php">Melting</a>
-        <a class="dept" href="spectrolab.php">Holding</a>
-        <a class="dept" href="treatment.php">Treatment</a>
-        <a class="dept" href="nodlab.php">Nodularity Lab</a>
-    </div>
+    <?php   
+    include("header.php");
+    ?>
     <div class="master">
+        <div class="new_master"><a href="./create.php" id="np">Create Part data</a></div>
         <table>
             <tr>
                 <th>Part</th>
@@ -33,15 +28,16 @@
                 <th>Mo%</th>
                 <th>Ni%</th>
                 <th>Mg%</th>
-                <th>Mischmetal</th>
+                <th>Misch metal</th>
                 <th>L.A</th>
                 <th>Alloy</th>
                 <th>Metal Wt.</th>
-                <th>Temperature</th>
+                <th>Temp</th>
                 <th>Inoculant</th>
                 <th>Flow Rate</th>
                 <th>TA</th>
                 <th>Pouring Time</th>
+                <th>Last updated on</th>
                 <th>Amend</th>
             </tr>
             <tr>
@@ -68,16 +64,16 @@
                     $pt = $row["pouring_time"];
                     $in = $row["inoculant"];
                     $alloy = $row["alloy"];
-                    echo "<tr><td>$part</td><td>$c</td><td>$si</td><td>$cu</td><td>$sn</td><td>$mn</td><td>$mo</td><td>$ni</td><td>$mg</td><td>$mm</td><td>$la</td><td>$alloy</td><td>$mtwt</td><td>$temp</td><td>$in</td><td>$fr</td><td>$ta</td><td>$pt</td><td><button id=\"edit\">Edit</button></td></tr>";
+                    $updated = $row["created_at"];
+                    echo "<tr><td>$part</td><td>$c</td><td>$si</td><td>$cu</td><td>$sn</td><td>$mn</td><td>$mo</td><td>$ni</td><td>$mg</td><td>$mm</td><td>$la</td><td>$alloy</td><td>$mtwt</td><td>$temp</td><td>$in</td><td>$fr</td><td>$ta</td><td>$pt</td><td>$updated</td><td><a id=\"edit\" href='./edit.php?part=$part'>Edit</a></td></tr>";
                     }
                 }
             ?>
             </tr>
         </table>
     </div>
-    <div id="footer">
-        <h2><b>Designed by Navin Kumar</b></h2>
-        <p>&#169 Copyright 2024. All rights reserved.</p>
-    </div>
+    <?php   
+    include("footer.php");
+    ?>
 </body>
 </html>

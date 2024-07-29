@@ -6,25 +6,25 @@ body{
     background-color: rgb(189, 241, 248);
 }
 .heading{
-    font-size: 30px;
+    display: inline;
+    font-size: 25px;
     text-align: center;
     color: rgb(250, 116, 6);
     text-shadow: 5px 5px 10px yellow;
-    padding: 30px;
 }
 .author{
-    text-align: center;
-    font-size: 25px;
+    display: inline;
+    font-size: 15px;
     color: black;
     font-weight: bold;
     text-shadow: 2px 5px 5px grey;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 .dept{
     border: 1px solid red;
     width: auto;
     margin: auto;
-    margin-top: 15px;
+    margin-top: 10px;
     text-align: center;
     padding: 10px;
     font-size: 30px;
@@ -39,4 +39,12 @@ a{
 .alldep{
     display: flex;
     flex-direction: column;
+}
+#credits{
+    border-radius: 10px;
+    width: 60%;
+    background-color: lightgreen;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
 }

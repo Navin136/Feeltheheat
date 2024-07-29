@@ -1,12 +1,5 @@
-function getdata(){
-    var getpattern = document.getElementById("pattern").value;
-    localStorage.setItem("pattern", getpattern);
-    fetch(localStorage.getItem("pattern"),'holding');
 
-}
-function calculate(){;
-    // alert("This action will change pattern, chemistry, additives, inoculant details in all other areas");
-    fetch(localStorage.getItem("pattern"),'holding');
+function calculate(){
     let hlevel = parseInt(document.getElementById("hlevel").value);
     if(!hlevel){
         alert("Please Enter Level of Holding Furnace");

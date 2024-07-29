@@ -3,47 +3,7 @@ body{
     padding: 0px;
     background-color: lightcyan;
 }
-div#mainheader{
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    column-gap: 10px;
-    padding-right: 10px;
-    background-color: aquamarine;
-    max-height: 70px;
-}
-p#FTH{
-    font-size: 2rem;
-    font-weight: bolder;
-    margin-left: 20px;
-    margin-top: 10px;
-}
-#mainheader img{
-    width: 30px;
-    height: 35px;
-}
-a.dept{
-    height: min-content;
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-top: 15px;
-    color: white;
-    background-color: green;
-    text-align: center;
-    padding:5px 5px 5px;
-    border-radius: 50px;
-}
-a:link{
-    text-decoration: none;
-}
-a.dept:hover{
-    background-color: orangered;
-}
-div#footer{
-    background-color: aquamarine;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 /* table */
 .content{
 	margin-top: 30px;

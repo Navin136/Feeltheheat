@@ -12,24 +12,19 @@
 	<link rel='icon' href='icon.png'>
 </head>
 <body>
-    <div id='mainheader'>
-        <p id='FTH'><img src='fth.png' alt='' id='fthicon'> Melt Ease</p>
-        <a class='dept' href='melting.php'>Melting</a>
-        <a class='dept' href='spectrolab.php'>Holding</a>
-        <a class='dept' href='treatment.php'>Treatment</a>
-        <a class='dept' href='nodlab.php'>Nodularity Lab</a>
-        <!-- <a class='dept' href='moulding.php'>Moulding</a> -->
-    </div>
+	<?php   
+    include("header.php");
+    ?>
 	<?php
 		$part = 'SELECT current_part,id from live where id=1';
 		$respart = $conn->query($part);
-		$row = $respart->fetch_assoc();
-		$nk = "$row[current_part]";
+		$partrow = $respart->fetch_assoc();
+		$nk = "$partrow[current_part]";
 		$sql = "SELECT * FROM part_details where part_number=".$nk;
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
     echo "<div class='content'>
-		<input type='hidden' id='mg' value=0.35>
+		<input type='hidden' id='mg' value=$row[magnesium]>
 		<label for='pattern' id='lpattern'>Running pattern </label>
 		<input type='text' id='pattern' value=$row[part_number]>
 		<label for='alloy' id='lalloy'>FeSiMg Alloy type: </label>
@@ -63,46 +58,45 @@
 			<tr>
 				<td>FeSi</td>
 				<td><input name='fesia' id='fesia'></td>
-				<td><input name='fesir' id='fesir'></td>
+				<td><input name='fesir' id='fesir' value='$row[silicon]' ></td>
 				<td><input name='fesiw' id='fesiw' readonly></td>
 			</tr>
 			<tr>
 				<td>Copper</td>
 				<td><input name='coppera' id='coppera'></td>
-				<td><input name='copperr' id='copperr'></td>
+				<td><input name='copperr' id='copperr' value='$row[copper]' ></td>
 				<td><input name='copperw' id='copperw' readonly></td>
 			</tr>
 			<tr>
 				<td>Tin</td>
 				<td><input name='tina' id='tina'></td>
-				<td><input name='tinr' id='tinr'></td>
+				<td><input name='tinr' id='tinr' value='$row[tin]' ></td>
 				<td><input name='tinw' id='tinw' readonly></td>
 			</tr>
 			<tr>
 				<td>Manganese</td>
 				<td><input name='manganesea' id='manganesea'></td>
-				<td><input name='manganeser' id='manganeser'></td>
+				<td><input name='manganeser' id='manganeser' value='$row[manganese]' ></td>
 				<td><input name='manganesew' id='manganesew' readonly></td>
 			</tr>
 			<tr>
 				<td>Mischmetal</td>
-				<td colspan='3'><input name='mischmetal' id='mischmetal'></td>
+				<td colspan='3'><input name='mischmetal' id='mischmetal' value='$row[mischmetal]' ></td>
 			</tr>
 			<tr>
 				<td>Ladle Addition</td>
-				<td colspan='3'><input name='laddition' id='laddition'></td>
+				<td colspan='3'><input name='laddition' id='laddition' value='$row[laddition]' ></td>
 			</tr>
 			<tr>
 				<td>Pouring Temperature</td>
-				<td colspan='3'><input name='temperature' id='temperature'></td>
+				<td colspan='3'><input name='temperature' id='temperature' value='$row[temperature]' ></td>
 			</tr>
 		</table>
-	<!-- <input type='button' value='Calculate' id='calbtn' onclick='calculate()'>  -->
+	<input type='button' value='Calculate' id='calbtn' onclick='calculate()'>
 	</div>";
 	?>
-    <div id='footer'>
-        <h2><b>Designed by Navin Kumar</b></h2>
-        <p>&#169 Copyright 2024. All rights reserved.</p>
-    </div>
+    <?php   
+    include("footer.php");
+    ?>
 </body>
 </html>
