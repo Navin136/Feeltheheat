@@ -11,6 +11,7 @@ body{
     text-align: center;
     color: rgb(250, 116, 6);
     text-shadow: 5px 5px 10px yellow;
+    padding-bottom: 50px;
 }
 .author{
     display: inline;
@@ -22,29 +23,39 @@ body{
 }
 .dept{
     border: 1px solid red;
-    width: auto;
+    width: 40%;
     margin: auto;
     margin-top: 10px;
     text-align: center;
-    padding: 10px;
-    font-size: 30px;
+    padding: 5px;
+    font-size: 25px;
     border-radius: 10px;
     background-color: lightcoral;
     flex:1;
+}
+#box{
+    display: flex;
+    flex-direction: column;
 }
 a{
     text-decoration: none;
     color: black;
 }
 .alldep{
-    display: flex;
-    flex-direction: column;
+    flex: 1;
+}
+#box2{
+    flex: 2;
 }
 #credits{
     border-radius: 10px;
-    width: 60%;
+    width: 70%;
     background-color: lightgreen;
     margin: auto;
     margin-top: 20px;
     padding: 20px;
+}
+#heading:link{
+    color: orangered;
+    text-decoration: none;
 }

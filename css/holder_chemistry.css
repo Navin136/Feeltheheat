@@ -1,0 +1,38 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: lightcyan;
+    padding: 10px;
+}
+form{
+    display: flex;
+    margin: 25px;
+}
+label{
+    font-size: larger;
+}
+th{
+    font-size: 1.5rem;
+}
+input{
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+}
+.sec1{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+table{
+    padding: 30px;
+}
+button{
+    height: 50px;
+    width: 80px;
+    font-size: 20px;
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+    position: relative;
+    right: 150px;
+}

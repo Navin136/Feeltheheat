@@ -6,6 +6,7 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<meta http-equiv="refresh" content="15">
     <title>Treatment Area</title>
     <link rel='stylesheet' href='css/treatment.css'>
     <script src='js/treatment.js'></script>
@@ -23,6 +24,9 @@
 		$sql = "SELECT * FROM part_details where part_number=".$nk;
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
+		$holder = 'SELECT * from holder where id=1';
+        $reshold = $conn->query($holder);
+        $rowholder =$reshold->fetch_assoc();
     echo "<div class='content'>
 		<input type='hidden' id='mg' value=$row[magnesium]>
 		<label for='pattern' id='lpattern'>Running pattern </label>
@@ -33,62 +37,62 @@
 		<input name='mtwt' id='mtwt' value=$row[metalweight]>
 		<table id='alloy_steel'>
 			<tr>
-				<th>Alloying Element</th>
-				<th>Percentage</th>
-				<th>Weight in Kgs. </th>
+				<th><label>Alloying Element</label></th>
+				<th><label>Percentage</label></th>
+				<th><label>Weight in Kgs. </label></th>
 			</tr>
 			<tr>
-				<td>FeSiMg Alloy</td>
+				<td><label>FeSiMg Alloy</label></td>
 				<td><input name='alloyp' id='alloyp'></td>
 				<td><input name='alloyw' id='alloyw'></td>
 			</tr>
 			<tr>
-				<td>Covering Steel</td>
+				<td><label>Covering Steel</label></td>
 				<td><input name='steelp' id='steelp'></td>
 				<td><input name='steelw' id='steelw'></td>
 			</tr>
 		</table>
 		<table id='other_alloys'>
 			<tr>
-				<th>Alloying Element</th>
-				<th>Holder composition</th>
-				<th>Final composition</th>
-				<th>Weight in Kgs. </th>
+				<th><label>Alloying Element</label></th>
+				<th><label>Holder composition</label></th>
+				<th><label>Final composition</label></th>
+				<th><label>Weight in Kgs. </label></th>
 			</tr>
 			<tr>
-				<td>FeSi</td>
-				<td><input name='fesia' id='fesia'></td>
+				<td><label>FeSi</label></td>
+				<td><input name='fesia' id='fesia' value='$rowholder[silicon]'></td>
 				<td><input name='fesir' id='fesir' value='$row[silicon]' ></td>
 				<td><input name='fesiw' id='fesiw' readonly></td>
 			</tr>
 			<tr>
-				<td>Copper</td>
-				<td><input name='coppera' id='coppera'></td>
+				<td><label>Copper</label></td>
+				<td><input name='coppera' id='coppera'value='$rowholder[copper]'></td>
 				<td><input name='copperr' id='copperr' value='$row[copper]' ></td>
 				<td><input name='copperw' id='copperw' readonly></td>
 			</tr>
 			<tr>
-				<td>Tin</td>
-				<td><input name='tina' id='tina'></td>
+				<td><label>Tin</label></td>
+				<td><input name='tina' id='tina'value='$rowholder[tin]'></td>
 				<td><input name='tinr' id='tinr' value='$row[tin]' ></td>
 				<td><input name='tinw' id='tinw' readonly></td>
 			</tr>
 			<tr>
-				<td>Manganese</td>
-				<td><input name='manganesea' id='manganesea'></td>
+				<td><label>Manganese</label></td>
+				<td><input name='manganesea' id='manganesea'value='$rowholder[manganese]'></td>
 				<td><input name='manganeser' id='manganeser' value='$row[manganese]' ></td>
 				<td><input name='manganesew' id='manganesew' readonly></td>
 			</tr>
 			<tr>
-				<td>Mischmetal</td>
+				<td><label>Mischmetal</label></td>
 				<td colspan='3'><input name='mischmetal' id='mischmetal' value='$row[mischmetal]' ></td>
 			</tr>
 			<tr>
-				<td>Ladle Addition</td>
+				<td><label>Ladle Addition</label></td>
 				<td colspan='3'><input name='laddition' id='laddition' value='$row[laddition]' ></td>
 			</tr>
 			<tr>
-				<td>Pouring Temperature</td>
+				<td><label>Pouring Temperature</label></td>
 				<td colspan='3'><input name='temperature' id='temperature' value='$row[temperature]' ></td>
 			</tr>
 		</table>

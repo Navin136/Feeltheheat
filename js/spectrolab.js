@@ -28,14 +28,14 @@ function calculate(){
     let fti = document.getElementById("fti").value;
 
     // holder chemistry variables
-    document.getElementById("hc").value = hc;
-    document.getElementById("hsi").value = hsi;
-    document.getElementById("hcu").value = hcu;
-    document.getElementById("hsn").value = hsn;
-    document.getElementById("hmn").value = hmn;
-    document.getElementById("hmo").value = hmo;
-    document.getElementById("hni").value = hni;
-    document.getElementById("hti").value = hti;
+    hc = document.getElementById("hc").value;
+    hsi = document.getElementById("hsi").value;
+    hcu = document.getElementById("hcu").value;
+    hsn = document.getElementById("hsn").value;
+    hmn = document.getElementById("hmn").value;
+    hmo = document.getElementById("hmo").value;
+    hni = document.getElementById("hni").value;
+    hti = document.getElementById("hti").value;
 
     // calculate required chemistry
     document.getElementById("rc").value = ((((tweight+hlevel)*pcarbon)-(hc*hlevel))/tweight).toFixed(2);
