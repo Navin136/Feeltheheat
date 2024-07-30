@@ -5,8 +5,12 @@ body{
 }
 #header{
     text-align: center;
-    padding-bottom: 1rem;
-    font-size: 1rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+#header>label{
+   font-size: 1.1rem; 
+   margin-right: 10px;
 }
 label{
     font-size: 0.95rem;
@@ -22,9 +26,6 @@ input,select{
 select{
     height: 40px;
 }
-input:focus{
-    background-color: lightgray;
-}
 #carbsel{
     width: 250px;
 }
@@ -33,12 +34,15 @@ input:focus{
 }
 #patternspec{
     flex: 1;
-    margin-left: 2rem;
+    margin-left: 3rem;
+    margin-top: 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 #holdercalc{
-    flex:2;
+    flex:3;
+    margin-right: 3rem;
+    margin-top: 2rem;
 }
 th{
     width: 200px;

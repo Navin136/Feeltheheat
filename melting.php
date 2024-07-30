@@ -23,38 +23,46 @@
 		$sql = "SELECT * FROM part_details where part_number=".$nk;
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
-    echo "<div id='fbox'>
+        ?>
+<div id='fbox'>
         <div>
             <label for='pattern'>Pattern</label>
-            <input type='text' id='pattern' value=$row[part_number]><br>
+            <input type='text' id='pattern' value=<?php echo "$row[part_number]";?>><br>
                     <table class='spec'>
                         <td>
                             <tr class='elecomp'>C%</tr>
-                            <tr><input name='pcarbon' id='pcarbon' value=$row[carbon]></tr></br>
+                            <tr><input name='pcarbon' id='pcarbon' value=<?php echo "$row[carbon]";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Si%</tr>
-                            <tr><input name='psilicon' id='psilicon' value=$row[silicon]></tr></br>
+                            <tr><input name='psilicon' id='psilicon' value=<?php
+                                if("$row[magnesium]">0.03){
+                                    $hsilicon = "$row[silicon]"-(0.45);
+                                    echo round($hsilicon,1);
+                                }else{
+                                    $hsilicon = "$row[silicon]"-(0.30*0.45);
+                                    echo round($hsilicon,1);
+                                }?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Cu%</tr>
-                            <tr><input name='pcopper' id='pcopper' value=$row[copper]></tr></br>
+                            <tr><input name='pcopper' id='pcopper' value=<?php echo "$row[copper]";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Sn%</tr>
-                            <tr><input name='ptin' id='ptin' value=$row[tin]></tr></br>
+                            <tr><input name='ptin' id='ptin' value=<?php echo "$row[tin]";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Mn%</tr>
-                            <tr><input name='pmanganese' id='pmanganese' value=$row[manganese]></tr></br>
+                            <tr><input name='pmanganese' id='pmanganese' value=<?php echo "$row[manganese]";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Mo%</tr>
-                            <tr><input name='pmolybdenum' id='pmolybdenum' value=$row[molybdenum]></tr></br>
+                            <tr><input name='pmolybdenum' id='pmolybdenum' value=<?php echo "$row[molybdenum]";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Ni%</tr>
-                            <tr><input name='pnickel' id='pnickel' value=$row[nickel]></tr></br>
+                            <tr><input name='pnickel' id='pnickel' value=<?php echo "$row[nickel]";?>></tr></br>
                         </td>
                     </table>
         </div>
@@ -105,10 +113,10 @@
         <label for='maddh'>Hi-carbon</label>
         <input type='text' class='maddh'>
         <div class='result'></div>
-        <button onclick='chargemix()' id='btn'>Give me additives</button>
+        <!-- <button onclick='chargemix()' id='btn'>Give me additives</button> -->
     </div>
-</div>";
-?>
+</div>
+
     <?php   
     include("footer.php");
     ?>

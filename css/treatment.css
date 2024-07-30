@@ -38,6 +38,9 @@ table, th, td{
 	border: 1mm solid black;
 	border-collapse: collapse;
 }
+label{
+    font-size: 25px;
+}
 table{
     margin-bottom: 30px;
 }

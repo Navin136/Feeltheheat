@@ -9,8 +9,9 @@
 </head>
 <body>
     <div id='footer'>
-        <h2><b>Designed by Navin Kumar</b></h2>
+        <h2><b>Developed & Designed by Navin Kumar</b></h2>
         <p>&#169 Copyright 2024. All rights reserved.</p>
+        <p><b>Credits:</b> R. Poovaragavan</p>
     </div>
 </body>
 </html>

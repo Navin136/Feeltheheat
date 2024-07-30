@@ -17,7 +17,7 @@ input{
     width: 300px;
     height: 60px;
     border-radius: 30px;
-    font-size: large;
+    font-size: x-large;
     font-weight: bolder;
     padding-left: 30px;
 }
@@ -76,7 +76,7 @@ select{
         width: 90px;
         height: 40px;
         border-radius: 30px;
-        font-size: large;
+        font-size: larger;
         font-weight: bolder;
         padding-left: 5px;
     }

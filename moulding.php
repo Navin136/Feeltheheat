@@ -14,8 +14,9 @@
     <?php   
     include("header.php");
     ?>
+    <div id="form">
     <form action="moulding.php" method="post">
-        <label for="current_part">Please Enter Running part</label>
+        <label for="current_part">Please Enter Running part      </label>
         <select name="current_part">
         <option value=""></option>
             <?php
@@ -30,30 +31,32 @@
         </select>
         <button type="submit">Submit</button>
     </form>
+
+    </div>
     <?php
         if($_POST["current_part"]!=""){
             $current_part=$_POST["current_part"];
-            echo "<b>{$current_part}</b> is now choosen !!";
+             echo"<p class='success'>{$current_part} is now choosen !!</p>";
             $nk = "select * from live where id=1";
             $result = $conn->query($nk);
             if($result->num_rows>0){
                 $sql = "UPDATE live SET current_part=$current_part where id=1";
                 $result = $conn->query($sql);
                 if($result){
-                    echo"Updated database";
+                    echo"<p class='success'>Updated database</p>";
                 }
             }
             else{
                 $sql = "INSERT INTO live(current_part,id) VALUES ($current_part,1)";
                 $result = $conn->query($sql);
                 if($result){
-                    echo"Pushed to database";
+                    echo"<p class='success'>Pushed to database</p>";
                 }
             }
             $conn->close;
         }
         else{
-            echo"Please choose part number carefully";
+            echo "<p id='warning'>Please choose part number carefully, This change will reflect everywhere</p>";
         }
     ?>
     <!-- <div class="mouldingplan">

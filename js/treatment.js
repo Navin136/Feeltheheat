@@ -22,11 +22,11 @@ function calculate(){
     let tinActual = document.getElementById("tina").value;
     let manganeseActual = document.getElementById("manganesea").value;
 	
-	document.getElementById("fesiw").value = (((psilicon-fesiActual-(0.45*alloyp))*mtwt)/70).toFixed(2);
+	document.getElementById("fesiw").value = (((psilicon-fesiActual-(0.45*alloyp))*mtwt)/70).toFixed(1);
 	if(document.getElementById("fesiw").value <= 0){
 		document.getElementById("fesiw").value = 'NA';
 	}
-	document.getElementById("copperw").value = ((pcopper-copperActual)*mtwt/95).toFixed(2);
+	document.getElementById("copperw").value = ((pcopper-copperActual)*mtwt/95).toFixed(1);
 	if(document.getElementById("copperw").value <= 0){
 		document.getElementById("copperw").value = 'NA';
 	}

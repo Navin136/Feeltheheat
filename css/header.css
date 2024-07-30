@@ -11,7 +11,7 @@ div#mainheader{
     background-color: aquamarine;
     max-height: 70px;
 }
-p#FTH{
+#FTH{
     font-size: 2rem;
     font-weight: bolder;
     margin-left: 20px;
@@ -33,7 +33,14 @@ a.dept{
     border-radius: 50px;
 }
 a:link{
+    color: black;
     text-decoration: none;
+}
+a{
+    color: black;
+}
+a:visited{
+    color: black;
 }
 a.dept:hover{
     background-color: orangered;
