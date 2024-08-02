@@ -18,22 +18,22 @@ CREATE TABLE part_master(
     taddition varchar(50),
     pouring_time varchar(20),
     alloy varchar(20),
-    created_at DATETIME NOT NULL CURRENT_TIMESTAMP
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-insert into part_details VALUES(7278, 3.22, 4.66, 0.10, 0.010, 0.22, 0.62, 0.60, 0.012, '200 Grams', '750 Grams Fesi', 'Superseed', 3.5, 1500, '1405-1425', 'NA', '13-17', 1.2% RE);            
-
-
-USE MASTER;
 CREATE TABLE holder(
-	id int PRIMARY KEY AUTO_INCREMENT,
-    heat varchar(10),
-    carbon decimal(3,2),
-    silicon decimal(3,2),
-    copper decimal(3,2),
-    tin decimal(4,3),
-    manganese decimal(3,2),
-    molybdenum decimal(4,3),
-    nickel decimal(4,3),
-    titanium decimal(4,3),
-    magnesium decimal(4,3)
+    current_part INT,
+    id INT
+);
+CREATE TABLE holder(
+    id INT PRIMARY KEY,
+    heat VARCHAR(10),
+    carbon DECIMAL(3,2),
+    silicon DECIMAL(3,2),
+    copper DECIMAL(3,2),
+    tin DECIMAL(4,3),
+    manganese DECIMAL(3,2),
+    molybdenum DECIMAL(4,3),
+    nickel DECIMAL(4,3),
+    titanium DECIMAL(4,3),
+    last_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
