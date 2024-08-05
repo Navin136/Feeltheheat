@@ -13,6 +13,24 @@
 <body>
     <?php   
     include('header.php');
+            $part_number = '';
+            $c = '';
+            $si = '';
+            $cu = '';
+            $sn = '';
+            $mn = '';
+            $mo = '';
+            $mg = '';
+            $ni = '';
+            $mm = '';
+            $la = '';
+            $ta = '';
+            $temp = '';
+            $mtwt = '';
+            $fr = '';
+            $pt = '';
+            $ino = '';
+            $alloy = '';
     ?>
     <?php
         if(isset($_POST['submit'])){

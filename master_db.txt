@@ -1,7 +1,7 @@
 USE MASTER;
 CREATE TABLE part_master(
-	part_number INT PRIMARY KEY,
-	carbon DECIMAL(3,2),
+    part_number INT PRIMARY KEY AUTO INCREMENT,
+    carbon DECIMAL(3,2),
     silicon DECIMAL(3,2),
     copper DECIMAL(3,2),
     tin DECIMAL(4,3),
