@@ -13,6 +13,15 @@
 <body>
     <?php   
     include('header.php');
+		$heat = '';
+            $c = '';
+            $si = '';
+            $cu = '';
+            $sn = '';
+            $mn = '';
+            $mo = '';
+            $ni = '';
+            $ti = '';
     ?>
     <?php
         if(isset($_POST['submit'])){

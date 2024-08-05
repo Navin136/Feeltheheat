@@ -19,5 +19,5 @@ if ($conn->connect_error) {
 //         echo "{$row["part_number"]}";
 //     }
 // }
-$conn->close;
+//$conn->close;
 ?> 
