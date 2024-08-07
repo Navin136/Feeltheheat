@@ -34,9 +34,9 @@
 
     </div>
     <?php
-        if($_POST["current_part"]!=""){
-            $current_part=$_POST["current_part"];
-             echo"<p class='success'>{$current_part} is now choosen !!</p>";
+        $current_part=$_POST["current_part"];
+        if($current_part!=""){
+            echo"<p class='success'>{$current_part} is now choosen !!</p>";
             $nk = "select * from live where id=1";
             $result = $conn->query($nk);
             if($result->num_rows>0){
@@ -53,7 +53,6 @@
                     echo"<p class='success'>Pushed to database</p>";
                 }
             }
-            $conn->close;
         }
         else{
             echo "<p id='warning'>Please choose part number carefully, This change will reflect everywhere</p>";
