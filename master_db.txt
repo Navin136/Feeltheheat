@@ -1,6 +1,6 @@
 USE MASTER;
-CREATE TABLE part_master(
-    part_number INT PRIMARY KEY AUTO INCREMENT,
+CREATE TABLE part_details(
+    part_number INT PRIMARY KEY AUTO_INCREMENT,
     carbon DECIMAL(3,2),
     silicon DECIMAL(3,2),
     copper DECIMAL(3,2),
@@ -20,7 +20,7 @@ CREATE TABLE part_master(
     alloy varchar(20),
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-CREATE TABLE holder(
+CREATE TABLE live(
     current_part INT,
     id INT
 );
