@@ -47,7 +47,7 @@
                 }
             }
             else{
-                $sql = "INSERT INTO live(current_part,id) VALUES ($current_part,1)";
+                $sql = "INSERT INTO live(current_part) VALUES ($current_part)";
                 $result = $conn->query($sql);
                 if($result){
                     echo"<p class='success'>Pushed to database</p>";
