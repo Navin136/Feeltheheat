@@ -9,10 +9,17 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <?php
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if(isset($_POST["username"]) && isset($_POST["password"])){
+                $un=$_POST["username"];
+                $pw=$_POST["password"];
+                if($un=="melting" && $pw == "9865"){
+    ?>
     <div class="heading"><h1><a href="./index.php">Melt Ease</a>    <span class="author">-Cast By Navin Kumar</span></h1></div>
     
     <div id="box">
-<div class="alldep">
+    <div class="alldep">
         <div class="dept">
             <a href="melting.php">Melting</a>
         </div>
@@ -28,10 +35,10 @@
     </div>
     <div id="box2">
     <div class="dept">
-            <a href="master.php">Part Master (Secured)</a>
+            <a href="master.php">Part Master</a>
         </div>
         <div class="dept">
-            <a href="holder_chemistry.php">Update Holder chemistry(Secured)</a>
+            <a href="holder_chemistry.php">Update Holder chemistry</a>
         </div>
         <div class="dept">
             <a href="moulding.php">Moulding</a>
@@ -41,8 +48,25 @@
     
     <div id="credits">
         <b>Credits: </b></br>
-        <ul><li>R. Poovaraghavan Sir, My wellwisher and Guru who carries the most credits. If you guys get benefits by means of this website, then show your gratitude to him.</li>
+        <ul><li>R. Poovaraghavan Sir, My wellwisher and Guru who carries the most credits. If you guys POST benefits by means of this website, then show your gratitude to him.</li>
         <li>R. Srinivasan Sir, My mentor for giving spark at right time</li></ul>
     </div>
+    <?php
+                }
+                else{
+                    header("location: ./authenticate.php?info='incorrect'");
+                }
+            }
+            else{
+                header("location: ./authenticate.php?info='enter'");
+                exit;
+            }
+        }
+        else{
+            header("location: ./authenticate.php");
+            exit;
+        }
+    ?>
+    
 </body>
 </html>
