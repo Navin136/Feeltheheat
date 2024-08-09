@@ -34,7 +34,7 @@ function chargemix(){
         document.getElementById("preturns").value = 65;
         document.getElementById("pborings").value = 0;
         document.getElementById("ppigiron").value = 0;
-        var rcarbon = 3.55;
+        var rcarbon = 3.6;
         var rsilicon = 2.3;
     }
     if(grade == "sg-copper"){
@@ -42,7 +42,7 @@ function chargemix(){
         document.getElementById("preturns").value = 60;
         document.getElementById("pborings").value = 0;
         document.getElementById("ppigiron").value = 3;
-        var rcarbon = 3.55;
+        var rcarbon = 3.6;
         var rsilicon = 2.35;
     }
     if(grade == "sg-azterlan"){
@@ -86,9 +86,9 @@ function chargemix(){
         document.getElementById("pborings").value = 0;
         document.getElementById("ppigiron").value = 0;
         var rcarbon = 3.15;
-        var rsilicon = 4.45;
+        var rsilicon = 4.6;
         var rmolybdenum = 0.60;
-        var rnickel = 0.58;
+        var rnickel = 0.60;
     }
     document.getElementById("grade").value = grade;
     document.getElementById("wsteel").value=document.getElementById("psteel").value*furnaceweight/100;
