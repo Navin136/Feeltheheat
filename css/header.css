@@ -33,15 +33,18 @@ a.dept{
     border-radius: 50px;
 }
 a:link{
-    color: black;
+    color: white;
     text-decoration: none;
 }
 a{
-    color: black;
+    color: white;
 }
 a:visited{
-    color: black;
+    color: white;
 }
 a.dept:hover{
     background-color: orangered;
+}
+a#heading{
+    color: black;
 }
