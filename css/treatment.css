@@ -18,7 +18,7 @@ input,select{
 select{
     margin-right: 30px;
 }
-#lpattern, #lalloy{
+#lpattern, #ltt, #lalloy{
 	font-size: 30px;
 	font-weight: bolder;    
 }
@@ -28,7 +28,7 @@ select{
 }
 table{
 	margin: auto;
-	margin-top: 20px;
+	margin-top:40px;
 }
 th{
 	font-size: 20px;
@@ -44,6 +44,10 @@ label{
 table{
     margin-bottom: 30px;
 }
+input{
+    background-color: lightcyan;
+    border: none;
+}
 input#calbtn{
 	color: blue;
 	margin-top: 10px;
@@ -51,8 +55,22 @@ input#calbtn{
 	font-size: 20px;
 	font-weight: bold;
 }
-#mischmetal, #laddition{
+#pattern,#alloy,#mtwt,#tt{
+    color: red;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-left: 0px;
+}
+#temperature, #mischmetal, #laddition{
     width: 500px;
+}
+.weight{
+    color: red;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+.base, .req{
+    width: 100px;
 }
 @media (max-width:1100px) {
     a.dept{
