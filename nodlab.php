@@ -8,6 +8,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Nodularity Lab</title>
     <link rel='stylesheet' href='css/nodlab.css'>
+    <meta http-equiv="refresh" content="20">
     <link rel='icon' href='icon.png'>
 </head>
 <body>
