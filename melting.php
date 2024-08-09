@@ -25,7 +25,7 @@
 		$row = $result->fetch_assoc();
         ?>
 <div id='fbox'>
-        <div>
+        <div id='patternbox'>
             <label for='pattern'>Pattern</label>
             <input type='text' id='pattern' value=<?php echo "$row[part_number]";?>><br>
                     <table class='spec'>

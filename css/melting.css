@@ -46,7 +46,7 @@ body{
 }
 div#fbox{
     display: grid; 
-    grid-template-columns: 25% 1fr 1fr;
+    grid-template-columns: 18% 32% 45%;
     margin: 40px;
  }
 input{
@@ -67,4 +67,10 @@ input{
 }
 div.result{
     margin: 20px;
+}
+#patternbox{
+    font-size: large;
+}
+.gradeselector table{
+    margin-top: 20px;
 }
