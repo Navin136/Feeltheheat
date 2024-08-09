@@ -109,7 +109,7 @@
                 </tbody>
             </table>
             <button name='submit' type='submit'>Create</button>
-            <button name='current'>Get Current Chemistry</button>
+            <button name='current' id="current">Current Chemistry</button>
             </div>
             
         </form>
