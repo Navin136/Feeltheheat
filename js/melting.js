@@ -98,7 +98,7 @@ function chargemix(){
     let ncgain = document.querySelector(".maddn").value*90/furnaceweight;
     let hcgain = document.querySelector(".maddh").value*60/furnaceweight;
     let bathcarbon = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rcarbon+document.getElementById("wborings").value*rcarbon+document.getElementById("wpigiron").value*4)/furnaceweight+ncgain+hcgain).toFixed(2);
-    let bathsilicon = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rsilicon+document.getElementById("wborings").value*rsilicon+document.getElementById("wpigiron").value*2)/furnaceweight).toFixed(2);
+    let bathsilicon = ((document.getElementById("wsteel").value*0.1+document.getElementById("wreturns").value*rsilicon+document.getElementById("wborings").value*rsilicon+document.getElementById("wpigiron").value*2)/furnaceweight).toFixed(2);
     let haddition = ((pcarbon-bathcarbon)*furnaceweight/60).toFixed(2);
     let naddition = ((pcarbon-bathcarbon)*furnaceweight/90).toFixed(2);
     let fesiaddition = ((psilicon-bathsilicon)*furnaceweight/70).toFixed(2);
