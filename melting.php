@@ -37,10 +37,10 @@
                             <tr class='elecomp'>Si%</tr>
                             <tr><input name='psilicon' id='psilicon' value=<?php
                                 if("$row[magnesium]">0.03){
-                                    $hsilicon = "$row[silicon]"-(0.45);
+                                    $hsilicon = "$row[silicon]"-(0.5);
                                     echo round($hsilicon,1);
                                 }else{
-                                    $hsilicon = "$row[silicon]"-(0.30*0.45);
+                                    $hsilicon = "$row[silicon]"-(0.35*0.45);
                                     echo round($hsilicon,1);
                                 }?>></tr></br>
                         </td>
