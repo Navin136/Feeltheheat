@@ -52,10 +52,10 @@
             <label for="psilicon">Si%</label>
             <input name="psilicon" id="psilicon" class="comp" value=<?php
             if("$row[magnesium]">0.03){
-                $hsilicon = "$row[silicon]"-(0.45);
+                $hsilicon = "$row[silicon]"-(0.5);
                 echo round($hsilicon,1);
             }else{
-                $hsilicon = "$row[silicon]"-(0.30*0.45);
+                $hsilicon = "$row[silicon]"-(0.35*0.45);
                 echo round($hsilicon,1);
             }?>><br>
             <label for="pcopper" id="lpcopper">Cu%</label>
