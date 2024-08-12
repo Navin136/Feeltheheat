@@ -176,7 +176,7 @@
                         <td><label for='inoculant'>Inoculant</label></td>
                         <td><select id='inoculant' name='inoculant'>
                                 <option value='<?php echo $ino;?>'><?php echo $ino;?></option>
-                                <option value='Zirseed'>Zircseed</option>
+                                <option value='Zircseed'>Zircseed</option>
                                 <option value='Reseed'>Reseed</option>
                                 <option value='Barinoc'>Barinoc</option>
                                 <option value='Fesi'>Fesi</option>
