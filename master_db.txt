@@ -1,5 +1,6 @@
+CREATE DATABASE IF NOT EXISTS MASTER;
 USE MASTER;
-CREATE TABLE part_details(
+CREATE TABLE IF NOT EXISTS part_details(
     part_number INT PRIMARY KEY AUTO_INCREMENT,
     carbon DECIMAL(3,2),
     silicon DECIMAL(3,2),
@@ -20,12 +21,12 @@ CREATE TABLE part_details(
     alloy varchar(20),
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-CREATE TABLE live(
+CREATE TABLE IF NOT EXISTS live(
     current_part INT,
     id INT AUTO_INCREMENT PRIMARY KEY,
     pattern_changed_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-CREATE TABLE holder(
+CREATE TABLE IF NOT EXISTS holder(
     id INT AUTO_INCREMENT PRIMARY KEY,
     heat VARCHAR(10),
     carbon DECIMAL(3,2),
@@ -37,4 +38,9 @@ CREATE TABLE holder(
     nickel DECIMAL(4,3),
     titanium DECIMAL(4,3),
     last_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS PLAN(
+	id INT(10),
+    pattern INT(10),
+    plan INT(10)
 );
