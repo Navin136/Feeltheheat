@@ -48,8 +48,8 @@
     
     <div id="credits">
         <b>Credits: </b></br>
-        <ul><li>R. Poovaraghavan Sir, My wellwisher and Guru who carries the most credits. If you guys POST benefits by means of this website, then show your gratitude to him.</li>
-        <li>R. Srinivasan Sir, My mentor for giving spark at right time</li></ul>
+        <ul><li>R. Poovaraghavan Sir, My wellwisher</li>
+        <li>R. Srinivasan Sir, My mentor</li></ul>
     </div>
     <?php
                 }
