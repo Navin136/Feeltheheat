@@ -57,7 +57,7 @@
             <option value="neo">Neograf / Graphite</option>
         </select>
         <label for="heat">Last Heat Transferred</label>
-        <input name="heat" value=<?php echo "$rowholder[heat]";?>></br>
+        <input name="heat" readonly value=<?php echo "$rowholder[heat]";?>></br>
     </div>
     <?php 
         if(isset($_POST["pattern"])){
@@ -98,11 +98,11 @@
     <div id="calccon">
         <div id="patternspec">
             <label for="ptn">Pattern</label>
-            <input name="ptn" id="ptn" class="comp" value=<?php echo "$ptn";?>><br>
+            <input name="ptn" id="ptn" class="comp" readonly value=<?php echo "$ptn";?>><br>
             <label for="pcarbon">C%</label>
-            <input name="pcarbon" id="pcarbon" class="comp" value=<?php echo "$pc";?>><br>
+            <input name="pcarbon" id="pcarbon" class="comp" readonly value=<?php echo "$pc";?>><br>
             <label for="psilicon">Si%</label>
-            <input name="psilicon" id="psilicon" class="comp" value=<?php
+            <input name="psilicon" id="psilicon" readonly class="comp" value=<?php
             // reduce silicon in fesimg alloy
             if("$pmg">0.03){
                 $hsilicon = "$psi"-(0.5);
@@ -112,17 +112,17 @@
                 echo round($hsilicon,1);
             }?>><br>
             <label for="pcopper" id="lpcopper">Cu%</label>
-            <input name="pcopper" id="pcopper" class="comp" value=<?php echo "$pcu";?>><br>
+            <input name="pcopper" id="pcopper" class="comp" readonly value=<?php echo "$pcu";?>><br>
             <label for="ptin" id="lptin">Sn%</label>
-            <input name="ptin" id="ptin" class="comp" value=<?php echo "$psn";?>><br>
+            <input name="ptin" id="ptin" class="comp" readonly value=<?php echo "$psn";?>><br>
             <label for="pmanganese" id="lpmanganese">Mn%</label>
-            <input name="pmanganese" id="pmanganese" class="comp" value=<?php echo "$pmn";?>><br>
+            <input name="pmanganese" id="pmanganese" class="comp" readonly value=<?php echo "$pmn";?>><br>
             <label for="pmolybdenum" id="lpmolybdenum">Mo%</label>
-            <input name="pmolybdenum" id="pmolybdenum" class="comp" value=<?php echo "$pmo";?>><br>
+            <input name="pmolybdenum" id="pmolybdenum" class="comp" readonly value=<?php echo "$pmo";?>><br>
             <label for="pnickel" id="lpnickel">Ni%</label>
-            <input name="pnickel" id="pnickel" class="comp" value=<?php echo "$pni";?>><br>
+            <input name="pnickel" id="pnickel" class="comp" readonly value=<?php echo "$pni";?>><br>
             <label for="ptitanium" id="lptitanium">Ti%</label>
-            <input name="ptitanium" id="ptitanium" class="comp" value=<?php
+            <input name="ptitanium" id="ptitanium" class="comp" readonly value=<?php
             if("$pmg">0.03){
                 echo 0.001;
             }else{
@@ -140,56 +140,56 @@
                 </tr>
                 <tr>
                     <td>C%</td>
-                    <td><input name="hc" id="hc" value=<?php echo "$rowholder[carbon]";?>></td>
+                    <td><input name="hc" id="hc" readonly value=<?php echo "$rowholder[carbon]";?>></td>
                     <td><input name="rc" id="rc" readonly></td>
                     <td><input name="fc" id="fc"></td>
                     <td><input name="wc" id="wc" readonly></td>
                 </tr>
                 <tr>
                     <td>Si%</td>
-                    <td><input name="hsi" id="hsi" value=<?php echo "$rowholder[silicon]";?>></td>
+                    <td><input name="hsi" id="hsi" readonly value=<?php echo "$rowholder[silicon]";?>></td>
                     <td><input name="rsi" id="rsi" readonly></td>
                     <td><input name="fsi" id="fsi"></td>
                     <td><input name="wsi" id="wsi" readonly></td>
                 </tr>
                 <tr class="cuclass">
                     <td>Cu%</td>
-                    <td><input name="hcu" id="hcu" value=<?php echo "$rowholder[copper]";?>></td>
+                    <td><input name="hcu" id="hcu" readonly value=<?php echo "$rowholder[copper]";?>></td>
                     <td><input name="rcu" id="rcu" readonly></td>
                     <td><input name="fcu" id="fcu"></td>
                     <td><input name="wcu" id="wcu" readonly></td>
                 </tr>
                 <tr class="snclass">
                     <td>Sn%</td>
-                    <td><input name="hsn" id="hsn" value=<?php echo "$rowholder[tin]";?>></td>
+                    <td><input name="hsn" id="hsn" readonly value=<?php echo "$rowholder[tin]";?>></td>
                     <td><input name="rsn" id="rsn" readonly></td>
                     <td><input name="fsn" id="fsn"></td>
                     <td><input name="wsn" id="wsn" readonly></td>
                 </tr>
                 <tr class="mnclass">
                     <td>Mn%</td>
-                    <td><input name="hmn" id="hmn" value=<?php echo "$rowholder[manganese]";?>></td>
+                    <td><input name="hmn" id="hmn" readonly value=<?php echo "$rowholder[manganese]";?>></td>
                     <td><input name="rmn" id="rmn" readonly></td>
                     <td><input name="fmn" id="fmn"></td>
                     <td><input name="wmn" id="wmn" readonly></td>
                 </tr>
                 <tr class="moclass">
                     <td>Mo%</td>
-                    <td><input name="hmo" id="hmo" value=<?php echo "$rowholder[molybdenum]";?>></td>
+                    <td><input name="hmo" id="hmo" readonly value=<?php echo "$rowholder[molybdenum]";?>></td>
                     <td><input name="rmo" id="rmo" readonly></td>
                     <td><input name="fmo" id="fmo"></td>
                     <td><input name="wmo" id="wmo" readonly></td>
                 </tr>
                 <tr class="niclass">
                     <td>Ni%</td>
-                    <td><input name="hni" id="hni" value=<?php echo "$rowholder[nickel]";?>></td>
+                    <td><input name="hni" id="hni" readonly value=<?php echo "$rowholder[nickel]";?>></td>
                     <td><input name="rni" id="rni" readonly></td>
                     <td><input name="fni" id="fni"></td>
                     <td><input name="wni" id="wni" readonly></td>
                 </tr>
                 <tr class="ticlass">
                     <td>Ti%</td>
-                    <td><input name="hti" id="hti" value=<?php echo "$rowholder[titanium]";?>></td>
+                    <td><input name="hti" id="hti" readonly value=<?php echo "$rowholder[titanium]";?>></td>
                     <td><input name="rti" id="rti" readonly></td>
                     <td><input name="fti" id="fti"></td>
                     <td><input name="wti" id="wti" readonly></td>

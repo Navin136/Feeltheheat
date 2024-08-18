@@ -27,15 +27,15 @@
 <div id='fbox'>
         <div id='patternbox'>
             <label for='pattern'>Pattern</label>
-            <input type='text' id='pattern' value=<?php echo "$row[part_number]";?>><br>
+            <input type='text' id='pattern' readonly value=<?php echo "$row[part_number]";?>><br>
                     <table class='spec'>
                         <td>
                             <tr class='elecomp'>C%</tr>
-                            <tr><input name='pcarbon' id='pcarbon' value=<?php echo "$row[carbon]";?>></tr></br>
+                            <tr><input name='pcarbon' id='pcarbon' readonly value=<?php echo "$row[carbon]";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Si%</tr>
-                            <tr><input name='psilicon' id='psilicon' value=<?php
+                            <tr><input name='psilicon' readonly id='psilicon' value=<?php
                                 if("$row[magnesium]">0.03){
                                     $hsilicon = "$row[silicon]"-(0.5);
                                     echo round($hsilicon,1);
@@ -46,29 +46,29 @@
                         </td>
                         <td>
                             <tr class='elecomp'>Cu%</tr>
-                            <tr><input name='pcopper' id='pcopper' value=<?php echo "$row[copper]";?>></tr></br>
+                            <tr><input name='pcopper' readonly id='pcopper' value=<?php echo "$row[copper]";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Sn%</tr>
-                            <tr><input name='ptin' id='ptin' value=<?php echo "$row[tin]";?>></tr></br>
+                            <tr><input name='ptin' id='ptin' readonly value=<?php echo "$row[tin]";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Mn%</tr>
-                            <tr><input name='pmanganese' id='pmanganese' value=<?php echo "$row[manganese]";?>></tr></br>
+                            <tr><input name='pmanganese' id='pmanganese' readonly value=<?php echo "$row[manganese]";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Mo%</tr>
-                            <tr><input name='pmolybdenum' id='pmolybdenum' value=<?php echo "$row[molybdenum]";?>></tr></br>
+                            <tr><input name='pmolybdenum' id='pmolybdenum' readonly value=<?php echo "$row[molybdenum]";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Ni%</tr>
-                            <tr><input name='pnickel' id='pnickel' value=<?php echo "$row[nickel]";?>></tr></br>
+                            <tr><input name='pnickel' id='pnickel' readonly value=<?php echo "$row[nickel]";?>></tr></br>
                         </td>
                     </table>
         </div>
         <div class='gradeselector' onchange='chargemix()'>
             <label for='grade'>Grade: </label>
-            <select id='grade' name='grade' disabled>
+            <select id='grade' name='grade'  readonly>
                 <option value='sg-tin'>SG - Tin Route</option>
                 <option value='sg-copper'>SG - Copper Route</option>
                 <option value='sg-azterlan'>SG - Azterlan</option>
@@ -85,23 +85,23 @@
                 </tr>
                 <tr>
                     <td>Steel</td>
-                    <td><input id='psteel' ></td>
-                    <td><input id='wsteel' ></td>
+                    <td><input id='psteel'  readonly></td>
+                    <td><input id='wsteel'  readonly></td>
                 </tr>
                 <tr>
                     <td>Foundry Returns</td>
-                    <td><input id='preturns' ></td>
-                    <td><input id='wreturns' ></td>
+                    <td><input id='preturns'  readonly></td>
+                    <td><input id='wreturns'  readonly></td>
                 </tr>
                 <tr>
                     <td>Borings</td>
-                    <td><input id='pborings' ></td>
-                    <td><input id='wborings' ></td>
+                    <td><input id='pborings'  readonly></td>
+                    <td><input id='wborings'  readonly></td>
                 </tr>
                 <tr>
                     <td>Pig Iron</td>
-                    <td><input id='ppigiron' ></td>
-                    <td><input id='wpigiron' ></td>
+                    <td><input id='ppigiron'  readonly></td>
+                    <td><input id='wpigiron'  readonly></td>
                 </tr>
         </table>
     </div>  
