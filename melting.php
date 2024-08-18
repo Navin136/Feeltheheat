@@ -12,8 +12,26 @@
     <link rel='icon' href='icon.png'>
 </head>
 <body>
-<?php   
+    <?php   
     include("header.php");
+    ?>
+    <?php
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            if(isset($_POST['rc'])){
+                $rc=$_POST['rc'];
+                $rsi=$_POST['rsi'];
+                $rcu=$_POST['rcu'];
+                $rsn=$_POST['rsn'];
+                $rmn=$_POST['rmn'];
+                $rmo=$_POST['rmo'];
+                $rni=$_POST['rni'];
+                $rti=$_POST['rti'];
+            }
+        }
+        else{
+            header('location:./spectrolab.php');
+            exit;
+        }
     ?>
     <?php
 		$part = 'SELECT current_part,id from live where id=1';
@@ -24,8 +42,9 @@
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
         ?>
-<div id='fbox'>
+    <div id='fbox'>
         <div id='patternbox'>
+            <h3>Pattern Chemistry</h3>
             <label for='pattern'>Pattern</label>
             <input type='text' id='pattern' readonly value=<?php echo "$row[part_number]";?>><br>
                     <table class='spec'>
@@ -66,6 +85,25 @@
                         </td>
                     </table>
         </div>
+        <div id="reqchem">
+            <h3>Required Chemistry</h3>
+            <label for="rc">C%</label>
+            <input type="text" id="reqcarbon" value='<?php echo "$rc";?>'></br>
+            <label for="rsi">Si%</label>
+            <input type="text" id="reqsilicon" value='<?php echo "$rsi";?>'></br>
+            <label for="rcu">Cu%</label>
+            <input type="text" id="reqcopper" value='<?php echo "$rcu";?>'></br>
+            <label for="rsn">Sn%</label>
+            <input type="text" id="reqtin" value='<?php echo "$rsn";?>'></br>
+            <label for="rsn">Mn%</label>
+            <input type="text" id="reqmanganese" value='<?php echo "$rmn";?>'></br>
+            <label for="rmo">Mo%</label>
+            <input type="text" id="reqmolybdenum" value='<?php echo "$rmo";?>'></br>
+            <label for="rni">Ni%</label>
+            <input type="text" id="reqnickel" value='<?php echo "$rni";?>'></br>
+            <label for="rti">Ti%</label>
+            <input type="text" id="reqtitanium" value='<?php echo "$rti";?>'></br>
+        </div>
         <div class='gradeselector' onchange='chargemix()'>
             <label for='grade'>Grade: </label>
             <select id='grade' name='grade'  readonly>
@@ -85,23 +123,23 @@
                 </tr>
                 <tr>
                     <td>Steel</td>
-                    <td><input id='psteel'  readonly></td>
-                    <td><input id='wsteel'  readonly></td>
+                    <td><input id='psteel' readonly></td>
+                    <td><input id='wsteel' readonly></td>
                 </tr>
                 <tr>
                     <td>Foundry Returns</td>
-                    <td><input id='preturns'  readonly></td>
-                    <td><input id='wreturns'  readonly></td>
+                    <td><input id='preturns' readonly></td>
+                    <td><input id='wreturns' readonly></td>
                 </tr>
                 <tr>
                     <td>Borings</td>
-                    <td><input id='pborings'  readonly></td>
-                    <td><input id='wborings'  readonly></td>
+                    <td><input id='pborings' readonly></td>
+                    <td><input id='wborings' readonly></td>
                 </tr>
                 <tr>
                     <td>Pig Iron</td>
-                    <td><input id='ppigiron'  readonly></td>
-                    <td><input id='wpigiron'  readonly></td>
+                    <td><input id='ppigiron' readonly></td>
+                    <td><input id='wpigiron' readonly></td>
                 </tr>
         </table>
     </div>  

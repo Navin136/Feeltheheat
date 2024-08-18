@@ -130,6 +130,7 @@
             }?>><br>
         </div>
         <div id="holdercalc">
+        <form action="melting.php" method="post">
         <table>
                 <tr>
                     <th class="boxtitle">Elements</th>
@@ -195,10 +196,13 @@
                     <td><input name="wti" id="wti" readonly></td>
                 </tr>
             </table>
-        
         </div>
     </div>
-    <button onclick="calculate()">Calculate</button>
+    <div id="btns">
+        <button id="cms" type="submit">Get Chargemix</button>
+        </form>
+        <button onclick="calculate()">Calculate</button>
+    </div>
     <?php   
     include("footer.php");
     ?>

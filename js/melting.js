@@ -3,30 +3,30 @@ window.onload = chargemix;
 function chargemix(){
 
     // variables for pattern specific chemistry
-    let pcarbon = document.getElementById("pcarbon").value;
-    let psilicon = document.getElementById("psilicon").value;
-    let pcopper = document.getElementById("pcopper").value;
-    let ptin = document.getElementById("ptin").value;
-    let pmanganese = document.getElementById("pmanganese").value;
-    let pmolybdenum = document.getElementById("pmolybdenum").value;
-    let pnickel = document.getElementById("pnickel").value;
+    let reqcarbon = document.getElementById("reqcarbon").value;
+    let reqsilicon = document.getElementById("reqsilicon").value;
+    let reqcopper = document.getElementById("reqcopper").value;
+    let reqtin = document.getElementById("reqtin").value;
+    let reqmanganese = document.getElementById("reqmanganese").value;
+    let reqmolybdenum = document.getElementById("reqmolybdenum").value;
+    let reqnickel = document.getElementById("reqnickel").value;
 
-    if(pcopper>=0.20){
+    if(reqcopper>=0.20){
         var grade = 'sg-copper';
     }
-    if(ptin>=0.02){
+    if(reqtin>=0.02){
         var grade = 'sg-tin';
     }
-    if(pcarbon>=3.88){
+    if(reqcarbon>=3.88){
         var grade = 'sg-azterlan';
     }
-    if(pnickel>0.5){
+    if(reqnickel>0.5){
         var grade = 'simoni';
     }
-    if(pmolybdenum>0.3 && pmolybdenum<0.6 && pnickel<0.5){
+    if(reqmolybdenum>0.3 && reqmolybdenum<0.6 && reqnickel<0.5){
         var grade = 'sg-lowmoly';
     }
-    if(pmolybdenum>0.6 && pnickel<0.5){
+    if(reqmolybdenum>0.6 && reqnickel<0.5){
         var grade = 'sg-highmoly';
     }
     if(grade == "sg-tin"){
@@ -99,22 +99,22 @@ function chargemix(){
     let hcgain = document.querySelector(".maddh").value*60/furnaceweight;
     let bathcarbon = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rcarbon+document.getElementById("wborings").value*rcarbon+document.getElementById("wpigiron").value*4)/furnaceweight+ncgain+hcgain).toFixed(2);
     let bathsilicon = ((document.getElementById("wsteel").value*0.1+document.getElementById("wreturns").value*rsilicon+document.getElementById("wborings").value*rsilicon+document.getElementById("wpigiron").value*2)/furnaceweight).toFixed(2);
-    let haddition = ((pcarbon-bathcarbon)*furnaceweight/60).toFixed(2);
-    let naddition = ((pcarbon-bathcarbon)*furnaceweight/90).toFixed(2);
-    let fesiaddition = ((psilicon-bathsilicon)*furnaceweight/70).toFixed(2);
+    let haddition = ((reqcarbon-bathcarbon)*furnaceweight/60).toFixed(2);
+    let naddition = ((reqcarbon-bathcarbon)*furnaceweight/90).toFixed(2);
+    let fesiaddition = ((reqsilicon-bathsilicon)*furnaceweight/70).toFixed(2);
     if(grade == "sg-tin" || grade =="sg-copper" || grade =="sg-azterlan"){
         document.querySelector(".result").innerHTML = `Bath carbon is <input value=${bathcarbon}%></input>.<br>Bath silicon is <input value=${bathsilicon}%></input>.<br> You need to add <b>${haddition} Kgs</b> of Hi-Carbon or <b>${naddition} Kgs</b> of Neograf <br> You need to add <b>${fesiaddition} Kgs</b> of FerroSilicon to achieve required chemistry`;
     }
     if(grade == "sg-lowmoly" || grade == "sg-highmoly" || grade == "cg-moly"){
         let bathmolybdenum = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rmolybdenum)/furnaceweight).toFixed(2);
-        let femoaddition = ((pmolybdenum-bathmolybdenum)*furnaceweight/60).toFixed(2)
+        let femoaddition = ((reqmolybdenum-bathmolybdenum)*furnaceweight/60).toFixed(2)
         document.querySelector(".result").innerHTML = `Bath carbon is <input value=${bathcarbon}%></input>.<br>Bath silicon is <input value=${bathsilicon}%></input>.<br>Bath molybdenum is <input value=${bathmolybdenum}%></input>.<br> You need to add <b>${haddition} Kgs</b>  of Hi-Carbon<br> You need to add <b>${fesiaddition}</b> Kgs of FerroSilicon<br> You need to add <b>${femoaddition} Kgs</b> of FerroMolybdenum to achieve required chemistry`;
     }
     if(grade == "simoni"){
         let bathmolybdenum = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rmolybdenum)/furnaceweight).toFixed(2);
-        let femoaddition = ((pmolybdenum-bathmolybdenum)*furnaceweight/60).toFixed(2)
+        let femoaddition = ((reqmolybdenum-bathmolybdenum)*furnaceweight/60).toFixed(2)
         let bathnickel = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rnickel)/furnaceweight).toFixed(2); 
-        let niaddition = ((pnickel-bathnickel)*furnaceweight/95).toFixed(2)
+        let niaddition = ((reqnickel-bathnickel)*furnaceweight/95).toFixed(2)
         document.querySelector(".result").innerHTML = `<br>Bath carbon is <input value=${bathcarbon}%></input>.<br>Bath silicon is <input value=${bathsilicon}%></input>.<br>Bath molybdenum is <input value=${bathmolybdenum}%></input>.<br>Bath Nickel is <input value=${bathnickel}%></input>.<br><br>You need to add <b>${haddition} Kgs</b>  of Hi-Carbon<br> You need to add <b>${fesiaddition}</b> Kgs of FerroSilicon<br> You need to add <b>${femoaddition} Kgs</b> of FerroMolybdenum<br> You need to add <b>${niaddition} Kgs</b> of Pure Nickel to achieve required chemistry`;
     }
 }
