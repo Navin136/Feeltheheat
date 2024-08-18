@@ -3,14 +3,9 @@ body{
     padding: 0px;
     background-color: lightcyan;
 }
-div.mouldingplan{
-    margin: auto;
-    width: 40vw;
-    display: flex;
-    flex-direction: column;
-    padding: 30px 0px 25px;
-}
 .mouldingplan div{
+    width: 90%;
+    margin: auto;
     margin-bottom: 5px;
 }
 select{
@@ -26,37 +21,55 @@ label{
     font-size: 2rem;
     font-weight: bolder;
 }
-button{
-    display: block;
-    width: 150px;
-    margin: 50px auto;
-    font-weight: bolder;
-    padding: 5px;
-    font-size: 15px;
-    background-color: green;
-}
+
 #form{
-    width: 50%;
+    width: 90%;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 #warning{
-    width: 50%;
+    width: 90%;
     margin: auto;
     padding-bottom: 20px;
     font-weight: bolder;
 }
 #success{
     font-weight: bold;
-    width: 50%;
+    width: 90%;
     margin: auto;
     padding-bottom: 20px;
 }
 .success{
     font-weight: bold;
-    width: 50%;
+    width: 90%;
     margin: auto;
     padding-bottom: 20px;
+}
+#boxes{
+    display: flex;
+}
+.box1{
+    flex: 3;
+}
+.box2{
+    flex: 1;
+    font-size: xx-large;
+    margin-top: 50px;
+}
+.box2 b{
+    font-size: 1.5em;
+    color: red;
+    text-decoration: solid;
+    margin: 30px;
+}
+button{
+    display: inline-block;
+    width: 150px;
+    margin: 50px 50px;
+    font-weight: bolder;
+    padding: 5px;
+    font-size: 15px;
+    background-color: green;
 }
 /*
 @media (max-width:1100px) {
