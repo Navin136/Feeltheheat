@@ -35,7 +35,7 @@
                 $holder = 'SELECT * from holder where id=1';
                 $reshold = $conn->query($holder);
                 $rowholder =$reshold->fetch_assoc();
-                $ptn="$nprow[part_number]";
+                $ptn="$row[part_number]";
                 $pc="$row[carbon]";
                 $psi="$row[silicon]";
                 $pmg="$row[magnesium]";
