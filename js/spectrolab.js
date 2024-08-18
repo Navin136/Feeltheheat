@@ -48,45 +48,50 @@ function calculate(){
     document.getElementById("rti").value = ((((tweight+hlevel)*ptitanium)-(hti*hlevel))/tweight).toFixed(2);
 
     // calculate weight of additions
-    if(document.getElementById("carbsel").value == 'hic'){
-        document.getElementById("wc").value  = ((document.getElementById("rc").value-fc)*tweight*1000/60).toFixed(2) + " Hi-Carbon";
+    if(fc>0 && fsi>0 && fsn>0 && fcu>0 && fni>0 && fti>0 && fmo>0){
+        if(document.getElementById("carbsel").value == 'hic'){
+            document.getElementById("wc").value  = ((document.getElementById("rc").value-fc)*tweight*1000/60).toFixed(2) + " Hi-Carbon";
+    
+        }
+        if(document.getElementById("carbsel").value == 'neo'){
+            document.getElementById("wc").value  = ((document.getElementById("rc").value-fc)*tweight*1000/90).toFixed(2) + " Neograf";
+    
+        }
+        if(document.getElementById("rc").value<fc){
+            document.getElementById("wc").value = ((fc*tweight*1000/document.getElementById("rc").value)-tweight*1000).toFixed(1) + " Steel";
+        }
+        document.getElementById("wsi").value = ((document.getElementById("rsi").value-fsi)*tweight*1000/70).toFixed(2);
+        if(document.getElementById("wsi").value <=  0 ){
+            document.getElementById("wsi").value = "NA";
+        }
+        document.getElementById("wcu").value = ((document.getElementById("rcu").value-fcu)*tweight*1000/95).toFixed(2);
+        if(document.getElementById("wcu").value <=  0 ){
+            document.getElementById("wcu").value = "NA";
+        }
+        document.getElementById("wsn").value = ((document.getElementById("rsn").value-fsn)*tweight*1000/95).toFixed(2);
+        if(document.getElementById("wsn").value <=  0 ){
+            document.getElementById("wsn").value = "NA";
+        }
+        document.getElementById("wmn").value = ((document.getElementById("rmn").value-fmn)*tweight*1000/68).toFixed(2);
+        if(document.getElementById("wmn").value <=  0 ){
+            document.getElementById("wmn").value = "NA";
+        }
+        document.getElementById("wmo").value = ((document.getElementById("rmo").value-fmo)*tweight*1000/60).toFixed(2);
+        if(document.getElementById("wmo").value <=  0 ){
+            document.getElementById("wmo").value = "NA";
+        }
+        document.getElementById("wni").value = ((document.getElementById("rni").value-fni)*tweight*1000/95).toFixed(2);
+        if(document.getElementById("wni").value <=  0 ){
+            document.getElementById("wni").value = "NA";
+        }
+        document.getElementById("wti").value = ((document.getElementById("rti").value-fti)*tweight*1000/68).toFixed(2);
+        if(document.getElementById("wti").value <=  0 ){
+            document.getElementById("wti").value = "NA";
+        }
+    }else{
+        alert ("Please enter furnace composition to get additives weight");
+    }
 
-    }
-    if(document.getElementById("carbsel").value == 'neo'){
-        document.getElementById("wc").value  = ((document.getElementById("rc").value-fc)*tweight*1000/90).toFixed(2) + " Neograf";
-
-    }
-    if(document.getElementById("rc").value<fc){
-        document.getElementById("wc").value = ((fc*tweight*1000/document.getElementById("rc").value)-tweight*1000).toFixed(1) + " Steel";
-    }
-    document.getElementById("wsi").value = ((document.getElementById("rsi").value-fsi)*tweight*1000/70).toFixed(2);
-    if(document.getElementById("wsi").value <=  0 ){
-        document.getElementById("wsi").value = "NA";
-    }
-    document.getElementById("wcu").value = ((document.getElementById("rcu").value-fcu)*tweight*1000/95).toFixed(2);
-    if(document.getElementById("wcu").value <=  0 ){
-        document.getElementById("wcu").value = "NA";
-    }
-    document.getElementById("wsn").value = ((document.getElementById("rsn").value-fsn)*tweight*1000/95).toFixed(2);
-    if(document.getElementById("wsn").value <=  0 ){
-        document.getElementById("wsn").value = "NA";
-    }
-    document.getElementById("wmn").value = ((document.getElementById("rmn").value-fmn)*tweight*1000/68).toFixed(2);
-    if(document.getElementById("wmn").value <=  0 ){
-        document.getElementById("wmn").value = "NA";
-    }
-    document.getElementById("wmo").value = ((document.getElementById("rmo").value-fmo)*tweight*1000/60).toFixed(2);
-    if(document.getElementById("wmo").value <=  0 ){
-        document.getElementById("wmo").value = "NA";
-    }
-    document.getElementById("wni").value = ((document.getElementById("rni").value-fni)*tweight*1000/95).toFixed(2);
-    if(document.getElementById("wni").value <=  0 ){
-        document.getElementById("wni").value = "NA";
-    }
-    document.getElementById("wti").value = ((document.getElementById("rti").value-fti)*tweight*1000/68).toFixed(2);
-    if(document.getElementById("wti").value <=  0 ){
-        document.getElementById("wti").value = "NA";
-    }
 }
 function changecarb(){
     document.getElementById("carb").innerHTML = "Neograf";  
