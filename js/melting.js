@@ -116,18 +116,18 @@ function chargemix(){
     let copperaddition = ((reqcopper-bathcopper)*furnaceweight/95).toFixed(2);
     let tinaddition = ((reqtin-bathtin)*furnaceweight/95).toFixed(2);
     if(grade == "sg-tin" || grade =="sg-copper" || grade =="sg-azterlan"){
-        document.querySelector(".result").innerHTML = `Bath Carbon: <input value=${bathcarbon}%></input><br>Bath Silicon: <input value=${bathsilicon}%></input><br>Bath Copper: <input value=${bathcopper}%></input><br>Bath Tin: <input value=${bathtin}%></input><br><b>${haddition} Kgs</b> of Hi-Carbon or <b>${naddition} Kgs</b> of Neograf <br><b>${fesiaddition} Kgs</b> of FerroSilicon </br> <b>${copperaddition} Kgs</b> of Copper </br> <b>${tinaddition} Kgs</b> of Tin<br><br>The above additives should be added to get required chemical composition`;
+        document.querySelector(".result").innerHTML = `Bath Carbon: <input value=${bathcarbon}% readonly></input><br>Bath Silicon: <input value=${bathsilicon}% readonly></input><br>Bath Copper: <input value=${bathcopper}%  readonly></input><br>Bath Tin: <input value=${bathtin}% readonly></input><br><b>${haddition} Kgs</b> of Hi-Carbon or <b>${naddition} Kgs</b> of Neograf <br><b>${fesiaddition} Kgs</b> of FerroSilicon </br> <b>${copperaddition} Kgs</b> of Copper </br> <b>${tinaddition} Kgs</b> of Tin<br><br>The above additives should be added to get required chemical composition`;
     }
     if(grade == "sg-lowmoly" || grade == "sg-highmoly" || grade == "cg-moly"){
         let bathmolybdenum = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rmolybdenum)/furnaceweight).toFixed(2);
         let femoaddition = ((reqmolybdenum-bathmolybdenum)*furnaceweight/60).toFixed(2)
-        document.querySelector(".result").innerHTML = `Bath Carbon: <input value=${bathcarbon}%></input><br>Bath Silicon: <input value=${bathsilicon}%></input><br>Bath Molybdenum is <input value=${bathmolybdenum}%></input><br><b>${haddition} Kgs</b>  of Hi-Carbon<br><b>${fesiaddition}</b> Kgs of FerroSilicon<br><b>${femoaddition} Kgs</b> of FerroMolybdenum<br><br>The above additives should be added to get required chemical composition`;
+        document.querySelector(".result").innerHTML = `Bath Carbon: <input value=${bathcarbon}% readonly></input><br>Bath Silicon: <input value=${bathsilicon}% readonly></input><br>Bath Molybdenum is <input value=${bathmolybdenum}% readonly></input><br><b>${haddition} Kgs</b>  of Hi-Carbon<br><b>${fesiaddition}</b> Kgs of FerroSilicon<br><b>${femoaddition} Kgs</b> of FerroMolybdenum<br><br>The above additives should be added to get required chemical composition`;
     }
     if(grade == "simoni"){
         let bathmolybdenum = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rmolybdenum)/furnaceweight).toFixed(2);
         let femoaddition = ((reqmolybdenum-bathmolybdenum)*furnaceweight/60).toFixed(2)
         let bathnickel = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rnickel)/furnaceweight).toFixed(2); 
         let niaddition = ((reqnickel-bathnickel)*furnaceweight/95).toFixed(2)
-        document.querySelector(".result").innerHTML = `<br>Bath Carbon: <input value=${bathcarbon}%></input><br>Bath Silicon: <input value=${bathsilicon}%></input><br>Bath Molybdenum is <input value=${bathmolybdenum}%></input><br>Bath Nickel is <input value=${bathnickel}%></input><br><br><b>${haddition} Kgs</b>  of Hi-Carbon<br><b>${fesiaddition} Kgs</b> of FerroSilicon<br><b>${femoaddition} Kgs</b> of FerroMolybdenum<br><b>${niaddition} Kgs</b> of Pure Nickel<br><br>The above additives should be added to get required chemical composition`;
+        document.querySelector(".result").innerHTML = `<br>Bath Carbon: <input value=${bathcarbon}% readonly></input><br>Bath Silicon: <input value=${bathsilicon}% readonly></input><br>Bath Molybdenum is <input value=${bathmolybdenum}% readonly></input><br>Bath Nickel is <input value=${bathnickel}% readonly></input><br><br><b>${haddition} Kgs</b>  of Hi-Carbon<br><b>${fesiaddition} Kgs</b> of FerroSilicon<br><b>${femoaddition} Kgs</b> of FerroMolybdenum<br><b>${niaddition} Kgs</b> of Pure Nickel<br><br>The above additives should be added to get required chemical composition`;
     }
 }
