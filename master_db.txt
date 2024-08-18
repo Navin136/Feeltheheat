@@ -39,8 +39,3 @@ CREATE TABLE IF NOT EXISTS holder(
     titanium DECIMAL(4,3),
     last_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-CREATE TABLE IF NOT EXISTS PLAN(
-	id INT(10),
-    pattern INT(10),
-    plan INT(10)
-);
