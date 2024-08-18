@@ -36,6 +36,9 @@ function chargemix(){
         document.getElementById("ppigiron").value = 0;
         var rcarbon = 3.6;
         var rsilicon = 2.3;
+        var rtin = 0.02;
+        var rcopper = 0.12;
+        var rmanganese = 0.28;
     }
     if(grade == "sg-copper"){
         document.getElementById("psteel").value = 37;
@@ -44,6 +47,9 @@ function chargemix(){
         document.getElementById("ppigiron").value = 3;
         var rcarbon = 3.6;
         var rsilicon = 2.35;
+        var rtin = 0.010;
+        var rcopper = 0.2;
+        var rmanganese = 0.28;
     }
     if(grade == "sg-azterlan"){
         document.getElementById("psteel").value = 38;
@@ -52,6 +58,9 @@ function chargemix(){
         document.getElementById("ppigiron").value = 0;
         var rcarbon = 3.6;
         var rsilicon = 2.2;
+        var rtin = 0.02;
+        var rcopper = 0.1;
+        var rmanganese = 0.25;
     }
     if(grade == "sg-lowmoly"){
         document.getElementById("psteel").value = 30;
@@ -99,22 +108,26 @@ function chargemix(){
     let hcgain = document.querySelector(".maddh").value*60/furnaceweight;
     let bathcarbon = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rcarbon+document.getElementById("wborings").value*rcarbon+document.getElementById("wpigiron").value*4)/furnaceweight+ncgain+hcgain).toFixed(2);
     let bathsilicon = ((document.getElementById("wsteel").value*0.1+document.getElementById("wreturns").value*rsilicon+document.getElementById("wborings").value*rsilicon+document.getElementById("wpigiron").value*2)/furnaceweight).toFixed(2);
+    let bathcopper = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rcopper+document.getElementById("wborings").value*rcopper+document.getElementById("wpigiron").value*0.01)/furnaceweight).toFixed(2);
+    let bathtin = ((document.getElementById("wsteel").value*0.001+document.getElementById("wreturns").value*rtin+document.getElementById("wborings").value*rtin+document.getElementById("wpigiron").value*0.001)/furnaceweight).toFixed(2);
     let haddition = ((reqcarbon-bathcarbon)*furnaceweight/60).toFixed(2);
     let naddition = ((reqcarbon-bathcarbon)*furnaceweight/90).toFixed(2);
     let fesiaddition = ((reqsilicon-bathsilicon)*furnaceweight/70).toFixed(2);
+    let copperaddition = ((reqcopper-bathcopper)*furnaceweight/95).toFixed(2);
+    let tinaddition = ((reqtin-bathtin)*furnaceweight/95).toFixed(2);
     if(grade == "sg-tin" || grade =="sg-copper" || grade =="sg-azterlan"){
-        document.querySelector(".result").innerHTML = `Bath carbon is <input value=${bathcarbon}%></input>.<br>Bath silicon is <input value=${bathsilicon}%></input>.<br> You need to add <b>${haddition} Kgs</b> of Hi-Carbon or <b>${naddition} Kgs</b> of Neograf <br> You need to add <b>${fesiaddition} Kgs</b> of FerroSilicon to achieve required chemistry`;
+        document.querySelector(".result").innerHTML = `Bath Carbon: <input value=${bathcarbon}%></input><br>Bath Silicon: <input value=${bathsilicon}%></input><br>Bath Copper: <input value=${bathcopper}%></input><br>Bath Tin: <input value=${bathtin}%></input><br><b>${haddition} Kgs</b> of Hi-Carbon or <b>${naddition} Kgs</b> of Neograf <br><b>${fesiaddition} Kgs</b> of FerroSilicon </br> <b>${copperaddition} Kgs</b> of Copper </br> <b>${tinaddition} Kgs</b> of Tin<br><br>The above additives should be added to get required chemical composition`;
     }
     if(grade == "sg-lowmoly" || grade == "sg-highmoly" || grade == "cg-moly"){
         let bathmolybdenum = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rmolybdenum)/furnaceweight).toFixed(2);
         let femoaddition = ((reqmolybdenum-bathmolybdenum)*furnaceweight/60).toFixed(2)
-        document.querySelector(".result").innerHTML = `Bath carbon is <input value=${bathcarbon}%></input>.<br>Bath silicon is <input value=${bathsilicon}%></input>.<br>Bath molybdenum is <input value=${bathmolybdenum}%></input>.<br> You need to add <b>${haddition} Kgs</b>  of Hi-Carbon<br> You need to add <b>${fesiaddition}</b> Kgs of FerroSilicon<br> You need to add <b>${femoaddition} Kgs</b> of FerroMolybdenum to achieve required chemistry`;
+        document.querySelector(".result").innerHTML = `Bath Carbon: <input value=${bathcarbon}%></input><br>Bath Silicon: <input value=${bathsilicon}%></input><br>Bath Molybdenum is <input value=${bathmolybdenum}%></input><br><b>${haddition} Kgs</b>  of Hi-Carbon<br><b>${fesiaddition}</b> Kgs of FerroSilicon<br><b>${femoaddition} Kgs</b> of FerroMolybdenum<br><br>The above additives should be added to get required chemical composition`;
     }
     if(grade == "simoni"){
         let bathmolybdenum = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rmolybdenum)/furnaceweight).toFixed(2);
         let femoaddition = ((reqmolybdenum-bathmolybdenum)*furnaceweight/60).toFixed(2)
         let bathnickel = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rnickel)/furnaceweight).toFixed(2); 
         let niaddition = ((reqnickel-bathnickel)*furnaceweight/95).toFixed(2)
-        document.querySelector(".result").innerHTML = `<br>Bath carbon is <input value=${bathcarbon}%></input>.<br>Bath silicon is <input value=${bathsilicon}%></input>.<br>Bath molybdenum is <input value=${bathmolybdenum}%></input>.<br>Bath Nickel is <input value=${bathnickel}%></input>.<br><br>You need to add <b>${haddition} Kgs</b>  of Hi-Carbon<br> You need to add <b>${fesiaddition}</b> Kgs of FerroSilicon<br> You need to add <b>${femoaddition} Kgs</b> of FerroMolybdenum<br> You need to add <b>${niaddition} Kgs</b> of Pure Nickel to achieve required chemistry`;
+        document.querySelector(".result").innerHTML = `<br>Bath Carbon: <input value=${bathcarbon}%></input><br>Bath Silicon: <input value=${bathsilicon}%></input><br>Bath Molybdenum is <input value=${bathmolybdenum}%></input><br>Bath Nickel is <input value=${bathnickel}%></input><br><br><b>${haddition} Kgs</b>  of Hi-Carbon<br><b>${fesiaddition} Kgs</b> of FerroSilicon<br><b>${femoaddition} Kgs</b> of FerroMolybdenum<br><b>${niaddition} Kgs</b> of Pure Nickel<br><br>The above additives should be added to get required chemical composition`;
     }
 }
