@@ -12,12 +12,11 @@
     <link rel='icon' href='icon.png'>
 </head>
 <body>
-    <?php   
+    <?php
     include("header.php");
     ?>
         <div class='labcontent'>
             <table>
-                
                 <?php
                     $sql= 'SELECT current_part,id from live where id=1';
                     $result = $conn->query($sql);
@@ -58,7 +57,7 @@
                             </tr>
                             <tr>
                                 <td><label for='taddition'>Tundish Addition</label></td>
-                                <td><input type='text' name='taddition' id='taddition' readonly value=$row[taddition] readonly></td>
+                                <td><input type='text' name='taddition' id='taddition' readonly value=$row[taddition]></td>
                             </tr>
                             ";
                 ?>
