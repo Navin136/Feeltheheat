@@ -22,17 +22,33 @@
                 $respart = $conn->query($part);
                 $partrow = $respart->fetch_assoc();
                 $nk = "$partrow[current_part]";
+                $nextpart = 'SELECT current_part,id from live where id=2';
+                $resnextpart = $conn->query($nextpart);
+                $nextpartrow = $resnextpart->fetch_assoc();
+                $nknextpart = "$nextpartrow[current_part]";
                 $sql = "SELECT * FROM part_details where part_number=".$nk;
                 $result = $conn->query($sql);
                 $row = $result->fetch_assoc();
+                $nsql = "SELECT * FROM part_details where part_number=".$nknextpart;
+                $nresult = $conn->query($nsql);
+                $nprow = $nresult->fetch_assoc();
                 $holder = 'SELECT * from holder where id=1';
                 $reshold = $conn->query($holder);
                 $rowholder =$reshold->fetch_assoc();
+                $ptn="$nprow[part_number]";
+                $pc="$row[carbon]";
+                $psi="$row[silicon]";
+                $pmg="$row[magnesium]";
+                $pcu="$row[copper]";
+                $psn="$row[tin]";
+                $pmo="$row[molybdenum]";
+                $pmn="$row[manganese]";
+                $pni="$row[nickel]";
             ?>
     <div id="header">
         <h3>Holding Furnace Calculations</h3>
         <label for="hlevel">Holder Level  </label>
-        <input name="hlevel" id="hlevel" value="" onchange="calculate()">
+        <input name="hlevel" id="hlevel" value="">
         <label for="tweight">Tapping Weight  </label>
         <input name="tweight" value="6" id="tweight">
         <label for="carburizer">Choose carburizer: </label>
@@ -43,39 +59,75 @@
         <label for="heat">Last Heat Transferred</label>
         <input name="heat" value=<?php echo "$rowholder[heat]";?>></br>
     </div>
+    <?php 
+        if(isset($_POST["pattern"])){
+            if($_POST["pattern"]==$nknextpart){
+                $ptn="$nprow[part_number]";
+                $pc="$nprow[carbon]";
+                $psi="$nprow[silicon]";
+                $pmg="$nprow[magnesium]";
+                $pcu="$nprow[copper]";
+                $psn="$nprow[tin]";
+                $pmo="$nprow[molybdenum]";
+                $pmn="$nprow[manganese]";
+                $pni="$nprow[nickel]";
+            }
+            else{
+                $ptn="$row[part_number]";
+                $pc="$row[carbon]";
+                $psi="$row[silicon]";
+                $pmg="$row[magnesium]";
+                $pcu="$row[copper]";
+                $psn="$row[tin]";
+                $pmo="$row[molybdenum]";
+                $pmn="$row[manganese]";
+                $pni="$row[nickel]";
+            }
+        }
+    ?> 
+    <div>
+        <form action="spectrolab.php" id="planfm" method="post">
+                <label id="lplan" for="plan">Select Plan</label>
+                <select name="pattern" id="iplan">
+                    <option value='<?php echo "$nk";?>'><?php echo "$nk";?></option>
+                    <option value='<?php echo "$nknextpart";?>'><?php echo "$nknextpart";?></option>
+                </select>
+                <button type="submit" id="fetchbtn">Fetch</button>
+        </form>
+    </div>       
     <div id="calccon">
         <div id="patternspec">
-            <label for="pattern">Running Pattern</label>
-            <input name="pattern" id="pattern" class="comp" value=<?php echo "$row[part_number]";?>><br>
+            <label for="ptn">Pattern</label>
+            <input name="ptn" id="ptn" class="comp" value=<?php echo "$ptn";?>><br>
             <label for="pcarbon">C%</label>
-            <input name="pcarbon" id="pcarbon" class="comp" value=<?php echo "$row[carbon]";?>><br>
+            <input name="pcarbon" id="pcarbon" class="comp" value=<?php echo "$pc";?>><br>
             <label for="psilicon">Si%</label>
             <input name="psilicon" id="psilicon" class="comp" value=<?php
-            if("$row[magnesium]">0.03){
-                $hsilicon = "$row[silicon]"-(0.5);
+            // reduce silicon in fesimg alloy
+            if("$pmg">0.03){
+                $hsilicon = "$psi"-(0.5);
                 echo round($hsilicon,1);
             }else{
-                $hsilicon = "$row[silicon]"-(0.35*0.45);
+                $hsilicon = "$psi"-(0.35*0.45);
                 echo round($hsilicon,1);
             }?>><br>
             <label for="pcopper" id="lpcopper">Cu%</label>
-            <input name="pcopper" id="pcopper" class="comp" value=<?php echo "$row[copper]";?>><br>
+            <input name="pcopper" id="pcopper" class="comp" value=<?php echo "$pcu";?>><br>
             <label for="ptin" id="lptin">Sn%</label>
-            <input name="ptin" id="ptin" class="comp" value=<?php echo "$row[tin]";?>><br>
+            <input name="ptin" id="ptin" class="comp" value=<?php echo "$psn";?>><br>
             <label for="pmanganese" id="lpmanganese">Mn%</label>
-            <input name="pmanganese" id="pmanganese" class="comp" value=<?php echo "$row[manganese]";?>><br>
+            <input name="pmanganese" id="pmanganese" class="comp" value=<?php echo "$pmn";?>><br>
             <label for="pmolybdenum" id="lpmolybdenum">Mo%</label>
-            <input name="pmolybdenum" id="pmolybdenum" class="comp" value=<?php echo "$row[molybdenum]";?>><br>
+            <input name="pmolybdenum" id="pmolybdenum" class="comp" value=<?php echo "$pmo";?>><br>
             <label for="pnickel" id="lpnickel">Ni%</label>
-            <input name="pnickel" id="pnickel" class="comp" value=<?php echo "$row[nickel]";?>><br>
+            <input name="pnickel" id="pnickel" class="comp" value=<?php echo "$pni";?>><br>
             <label for="ptitanium" id="lptitanium">Ti%</label>
             <input name="ptitanium" id="ptitanium" class="comp" value=<?php
-            if("$row[magnesium]">0.03){
+            if("$pmg">0.03){
                 echo 0.001;
             }else{
                 echo 0.07;
             }?>><br>
-            <!-- <input type="button" id="getdata" onclick="getdata()" value="Get data"> -->
         </div>
         <div id="holdercalc">
         <table>

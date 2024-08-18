@@ -61,6 +61,26 @@ button{
     width: 200px;
     height: 50px;
 }
+#planfm{
+    width: 30%;
+    margin: auto; 
+    display: flex;
+}
+#fetchbtn{
+    width: 100px;
+    height: 40px;
+    display: inline;
+    margin: 5px;
+    padding: 0px;
+}
+#iplan{
+    display: inline;
+    margin: 5px;
+}
+#lplan{
+    font-size: larger;
+    margin: 5px;
+}
 @media (max-width: 100px){
     div#mainheader {
         display: flex;
