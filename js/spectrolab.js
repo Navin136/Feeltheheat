@@ -88,8 +88,6 @@ function calculate(){
         if(document.getElementById("wti").value <=  0 ){
             document.getElementById("wti").value = "NA";
         }
-    }else{
-        alert ("Please enter furnace composition to get additives weight");
     }
 
 }
