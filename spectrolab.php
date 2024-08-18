@@ -105,7 +105,7 @@
             <input name="psilicon" id="psilicon" readonly class="comp" value=<?php
             // reduce silicon in fesimg alloy
             if("$pmg">0.03){
-                $hsilicon = "$psi"-(0.5);
+                $hsilicon = "$psi"-(0.55);
                 echo round($hsilicon,1);
             }else{
                 $hsilicon = "$psi"-(0.35*0.45);
