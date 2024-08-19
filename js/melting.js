@@ -3,6 +3,15 @@ window.onload = chargemix;
 function chargemix(){
 
     // variables for pattern specific chemistry
+    let pcarbon = document.getElementById("pcarbon").value;
+    let psilicon = document.getElementById("psilicon").value;
+    let pcopper = document.getElementById("pcopper").value;
+    let ptin = document.getElementById("ptin").value;
+    let pmanganese = document.getElementById("pmanganese").value;
+    let pmolybdenum = document.getElementById("pmolybdenum").value;
+    let pnickel = document.getElementById("pnickel").value;
+    
+    
     let reqcarbon = document.getElementById("reqcarbon").value;
     let reqsilicon = document.getElementById("reqsilicon").value;
     let reqcopper = document.getElementById("reqcopper").value;
@@ -11,22 +20,22 @@ function chargemix(){
     let reqmolybdenum = document.getElementById("reqmolybdenum").value;
     let reqnickel = document.getElementById("reqnickel").value;
 
-    if(reqcopper>=0.20){
+    if(pcopper>=0.20){
         var grade = 'sg-copper';
     }
-    if(reqtin>=0.02){
+    if(ptin>=0.02){
         var grade = 'sg-tin';
     }
-    if(reqcarbon>=3.88){
+    if(pcarbon>=3.88){
         var grade = 'sg-azterlan';
     }
-    if(reqnickel>0.5){
+    if(pnickel>0.5){
         var grade = 'simoni';
     }
-    if(reqmolybdenum>0.3 && reqmolybdenum<0.6 && reqnickel<0.5){
+    if(pmolybdenum>0.3 && pmolybdenum<0.6 && pnickel<0.5){
         var grade = 'sg-lowmoly';
     }
-    if(reqmolybdenum>0.6 && reqnickel<0.5){
+    if(pmolybdenum>0.6 && pnickel<0.5){
         var grade = 'sg-highmoly';
     }
     if(grade == "sg-tin"){
