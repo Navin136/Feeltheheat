@@ -204,7 +204,7 @@
         </form>
         
     </div>
-    <button onclick="calculate()">Calculate</button>
+    <button id="calcbtn" onclick="calculate()">Calculate</button>
     <?php   
     include("footer.php");
     ?>
