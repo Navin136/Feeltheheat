@@ -31,6 +31,9 @@ div.result{
 .gradeselector table{
     margin-top: 20px;
 }
-#reqchem{
-    
+#inresult{
+    font-size: larger;
+}
+#inresult b{
+    font-size: x-large;
 }
