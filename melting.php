@@ -26,6 +26,15 @@
                 $rmo=$_POST['rmo'];
                 $rni=$_POST['rni'];
                 $rti=$_POST['rti'];
+                $ptn=$_POST['ptn'];
+                $pcarbon = $_POST['pcarbon'];
+                $psilicon = $_POST['psilicon'];
+                $pcopper = $_POST['pcopper'];
+                $ptin = $_POST['ptin'];
+                $pmanganese = $_POST['pmanganese'];
+                $pnickel = $_POST['pnickel'];
+                $pmolybdenum = $_POST['pmolybdenum'];
+                $ptitanium = $_POST['ptitanium'];
             }
         }
         else{
@@ -46,42 +55,35 @@
         <div id='patternbox'>
             <h3>Pattern Chemistry</h3>
             <label for='pattern'>Pattern</label>
-            <input type='text' id='pattern' readonly value=<?php echo "$row[part_number]";?>><br>
+            <input type='text' id='pattern' readonly value=<?php echo "$ptn";?>><br>
                     <table class='spec'>
                         <td>
                             <tr class='elecomp'>C%</tr>
-                            <tr><input name='pcarbon' id='pcarbon' readonly value=<?php echo "$row[carbon]";?>></tr></br>
+                            <tr><input name='pcarbon' id='pcarbon' readonly value=<?php echo "$pcarbon";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Si%</tr>
-                            <tr><input name='psilicon' readonly id='psilicon' value=<?php
-                                if("$row[magnesium]">0.03){
-                                    $hsilicon = "$row[silicon]"-(0.55);
-                                    echo round($hsilicon,1);
-                                }else{
-                                    $hsilicon = "$row[silicon]"-(0.35*0.45);
-                                    echo round($hsilicon,1);
-                                }?>></tr></br>
+                            <tr><input name='psilicon' readonly id='psilicon' value=<?php echo "$psilicon";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Cu%</tr>
-                            <tr><input name='pcopper' readonly id='pcopper' value=<?php echo "$row[copper]";?>></tr></br>
+                            <tr><input name='pcopper' readonly id='pcopper' value=<?php echo "$pcopper";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Sn%</tr>
-                            <tr><input name='ptin' id='ptin' readonly value=<?php echo "$row[tin]";?>></tr></br>
+                            <tr><input name='ptin' id='ptin' readonly value=<?php echo "$ptin";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Mn%</tr>
-                            <tr><input name='pmanganese' id='pmanganese' readonly value=<?php echo "$row[manganese]";?>></tr></br>
+                            <tr><input name='pmanganese' id='pmanganese' readonly value=<?php echo "$pmanganese";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Mo%</tr>
-                            <tr><input name='pmolybdenum' id='pmolybdenum' readonly value=<?php echo "$row[molybdenum]";?>></tr></br>
+                            <tr><input name='pmolybdenum' id='pmolybdenum' readonly value=<?php echo "$pmolybdenum";?>></tr></br>
                         </td>
                         <td>
                             <tr class='elecomp'>Ni%</tr>
-                            <tr><input name='pnickel' id='pnickel' readonly value=<?php echo "$row[nickel]";?>></tr></br>
+                            <tr><input name='pnickel' id='pnickel' readonly value=<?php echo "$pnickel";?>></tr></br>
                         </td>
                     </table>
         </div>

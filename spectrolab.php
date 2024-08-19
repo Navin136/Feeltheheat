@@ -94,9 +94,11 @@
                 </select>
                 <button type="submit" id="fetchbtn">Fetch</button>
         </form>
-    </div>       
+    </div>
+    <form action="melting.php" method="post">       
     <div id="calccon">
         <div id="patternspec">
+        
             <label for="ptn">Pattern</label>
             <input name="ptn" id="ptn" class="comp" readonly value=<?php echo "$ptn";?>><br>
             <label for="pcarbon">C%</label>
@@ -130,7 +132,6 @@
             }?>><br>
         </div>
         <div id="holdercalc">
-        <form action="melting.php" method="post">
         <table>
                 <tr>
                     <th class="boxtitle">Elements</th>
@@ -201,8 +202,9 @@
     <div id="btns">
         <button id="cms" type="submit">Get Chargemix</button>
         </form>
-        <button onclick="calculate()">Calculate</button>
+        
     </div>
+    <button onclick="calculate()">Calculate</button>
     <?php   
     include("footer.php");
     ?>
