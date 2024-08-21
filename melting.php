@@ -111,6 +111,7 @@
             <select id='grade' name='grade'  readonly>
                 <option value='sg-tin'>SG - Tin Route</option>
                 <option value='sg-copper'>SG - Copper Route</option>
+                <option value='sg-knu'>SG - KNU</option>
                 <option value='sg-azterlan'>SG - Azterlan</option>
                 <option value='sg-lowmoly'>SG - Low Molybdenum</option>
                 <option value='sg-highmoly'>SG - High Molybdenum</option>

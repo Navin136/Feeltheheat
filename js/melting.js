@@ -3,6 +3,7 @@ window.onload = chargemix;
 function chargemix(){
 
     // variables for pattern specific chemistry
+    let pattern = document.getElementById("pattern").value;
     let pcarbon = document.getElementById("pcarbon").value;
     let psilicon = document.getElementById("psilicon").value;
     let pcopper = document.getElementById("pcopper").value;
@@ -38,6 +39,11 @@ function chargemix(){
     if(pmolybdenum>0.6 && pnickel<0.5){
         var grade = 'sg-highmoly';
     }
+    if(grade == "sg-tin" || grade == "sg-copper"){
+        if(psilicon >= 2){
+            var grade = 'sg-knu';
+        }
+    }
     if(grade == "sg-tin"){
         document.getElementById("psteel").value = 35;
         document.getElementById("preturns").value = 65;
@@ -52,6 +58,17 @@ function chargemix(){
     if(grade == "sg-copper"){
         document.getElementById("psteel").value = 37;
         document.getElementById("preturns").value = 60;
+        document.getElementById("pborings").value = 0;
+        document.getElementById("ppigiron").value = 3;
+        var rcarbon = 3.6;
+        var rsilicon = 2.35;
+        var rtin = 0.010;
+        var rcopper = 0.2;
+        var rmanganese = 0.28;
+    }
+    if(grade == "sg-knu"){
+        document.getElementById("psteel").value = 40;
+        document.getElementById("preturns").value = 57;
         document.getElementById("pborings").value = 0;
         document.getElementById("ppigiron").value = 3;
         var rcarbon = 3.6;
