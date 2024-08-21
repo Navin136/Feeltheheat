@@ -133,10 +133,10 @@ function chargemix(){
     let ncgain = document.querySelector(".maddn").value*90/furnaceweight;
     let hcgain = document.querySelector(".maddh").value*60/furnaceweight;
     let bathcarbon = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rcarbon+document.getElementById("wborings").value*rcarbon+document.getElementById("wpigiron").value*4)/furnaceweight+ncgain+hcgain).toFixed(2);
-    let bathsilicon = ((document.getElementById("wsteel").value*0.1+document.getElementById("wreturns").value*rsilicon+document.getElementById("wborings").value*rsilicon+document.getElementById("wpigiron").value*2)/furnaceweight).toFixed(2);
+    let bathsilicon = ((document.getElementById("wsteel").value*0.1+document.getElementById("wreturns").value*rsilicon+document.getElementById("wborings").value*rsilicon+document.getElementById("wpigiron").value*2.5)/furnaceweight).toFixed(2);
     let bathcopper = ((document.getElementById("wsteel").value*0.01+document.getElementById("wreturns").value*rcopper+document.getElementById("wborings").value*rcopper+document.getElementById("wpigiron").value*0.01)/furnaceweight).toFixed(2);
     let bathtin = ((document.getElementById("wsteel").value*0.001+document.getElementById("wreturns").value*rtin+document.getElementById("wborings").value*rtin+document.getElementById("wpigiron").value*0.001)/furnaceweight).toFixed(2);
-    let bathmanganese = ((document.getElementById("wsteel").value*0.001+document.getElementById("wreturns").value*rmanganese+document.getElementById("wborings").value*rmanganese+document.getElementById("wpigiron").value*0.01)/furnaceweight).toFixed(2);
+    let bathmanganese = ((document.getElementById("wsteel").value*0.001+document.getElementById("wreturns").value*rmanganese+document.getElementById("wborings").value*rmanganese+document.getElementById("wpigiron").value*0.5)/furnaceweight).toFixed(2);
     let haddition = ((reqcarbon-bathcarbon)*furnaceweight/60).toFixed(2);
     let naddition = ((reqcarbon-bathcarbon)*furnaceweight/90).toFixed(2);
     let fesiaddition = ((reqsilicon-bathsilicon)*furnaceweight/70).toFixed(2);
