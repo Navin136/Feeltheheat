@@ -72,8 +72,8 @@ function chargemix(){
         var rmanganese = 0.25;
     }
     if(grade == "sg-lowmoly"){
-        document.getElementById("psteel").value = 30;
-        document.getElementById("preturns").value = 70;
+        document.getElementById("psteel").value = 35;
+        document.getElementById("preturns").value = 65;
         document.getElementById("pborings").value = 0;
         document.getElementById("ppigiron").value = 0;
         var rcarbon = 3.25;
@@ -81,8 +81,8 @@ function chargemix(){
         var rmolybdenum = 0.55;
     }
     if(grade == "sg-highmoly"){
-        document.getElementById("psteel").value = 30;
-        document.getElementById("preturns").value = 70;
+        document.getElementById("psteel").value = 35;
+        document.getElementById("preturns").value = 65;
         document.getElementById("pborings").value = 0;
         document.getElementById("ppigiron").value = 0;
         var rcarbon = 3.25;
@@ -90,8 +90,8 @@ function chargemix(){
         var rmolybdenum = 0.85;
     }
     if(grade == "cg-moly"){
-        document.getElementById("psteel").value = 15;
-        document.getElementById("preturns").value = 85;
+        document.getElementById("psteel").value = 30;
+        document.getElementById("preturns").value = 70;
         document.getElementById("pborings").value = 0;
         document.getElementById("ppigiron").value = 0;
         var rcarbon = 3.10;
@@ -99,8 +99,8 @@ function chargemix(){
         var rmolybdenum = 0.60;
     }
     if(grade == "simoni"){
-        document.getElementById("psteel").value = 10;
-        document.getElementById("preturns").value = 90;
+        document.getElementById("psteel").value = 20;
+        document.getElementById("preturns").value = 80;
         document.getElementById("pborings").value = 0;
         document.getElementById("ppigiron").value = 0;
         var rcarbon = 3.15;
