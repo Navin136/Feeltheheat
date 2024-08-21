@@ -1,11 +1,11 @@
 
 function calculate(){
-    let hlevel = parseInt(document.getElementById("hlevel").value);
+    let hlevel = Number(document.getElementById("hlevel").value);
     if(!hlevel){
         alert("Please Enter Level of Holding Furnace");
     }
     else{
-    let tweight = parseInt(document.getElementById("tweight").value);
+    let tweight = Number(document.getElementById("tweight").value);
     
     // variables for pattern specific chemistry
     let pcarbon = document.getElementById("pcarbon").value;
