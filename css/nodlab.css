@@ -20,6 +20,7 @@ input{
     font-size: x-large;
     font-weight: bolder;
     padding-left: 30px;
+    color: red;
 }
 label{
     font-size: 2rem;
