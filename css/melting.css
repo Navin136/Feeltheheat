@@ -38,3 +38,18 @@ div.result{
     font-size: x-large;
     color: red;
 }
+#reqchem{
+    margin-top: 25px;
+}
+.steelsuggestion{
+    font-size: 1.5rem;
+    position: relative;
+    bottom: 300px;
+    left: 20px;
+}
+.steelsuggestion1{
+    font-size: 1.5rem;
+    position: relative;
+    bottom: 300px;
+    left: 20px;
+}

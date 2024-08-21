@@ -157,7 +157,8 @@
         <!-- <button onclick='chargemix()' id='btn'>Give me additives</button> -->
     </div>
 </div>
-
+    <div class="steelsuggestion"></div>
+    <div class="steelsuggestion1"></div>
     <?php   
     include("footer.php");
     ?>
