@@ -141,7 +141,7 @@ function chargemix(){
     let fesiaddition = ((reqsilicon-bathsilicon)*furnaceweight/70).toFixed(2);
     let copperaddition = ((reqcopper-bathcopper)*furnaceweight/95).toFixed(2);
     let tinaddition = ((reqtin-bathtin)*furnaceweight/95).toFixed(2);
-    if(grade == "sg-tin" || grade =="sg-copper" || grade =="sg-azterlan"){
+    if(grade == "sg-tin" || grade =="sg-copper" || grade =="sg-azterlan" || grade =="sg-knu"){
         document.querySelector(".result").innerHTML = `<div id=inresult><br>Bath Carbon: <input value=${bathcarbon}% readonly></input><br>Bath Silicon: <input value=${bathsilicon}% readonly></input><br>Bath Copper: <input value=${bathcopper}%  readonly></input><br>Bath Tin: <input value=${bathtin}% readonly></input><br></br></br><b>${haddition} Kgs</b> of Hi-Carbon or <b>${naddition} Kgs</b> of Neograf <br><b>${fesiaddition} Kgs</b> of FerroSilicon </br> <b>${copperaddition} Kgs</b> of Copper </br> <b>${tinaddition} Kgs</b> of Tin<br><br>The above additives should be added to get required chemical composition</div>`;
     }
     if(grade == "sg-lowmoly" || grade == "sg-highmoly" || grade == "cg-moly"){
