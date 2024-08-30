@@ -9,6 +9,7 @@ function chargemix(){
     let pcopper = document.getElementById("pcopper").value;
     let ptin = document.getElementById("ptin").value;
     let pmanganese = document.getElementById("pmanganese").value;
+    let pmagnesium = document.getElementById("pmagnesium").value;
     let pmolybdenum = document.getElementById("pmolybdenum").value;
     let pnickel = document.getElementById("pnickel").value;
     
@@ -38,6 +39,9 @@ function chargemix(){
     }
     if(pmolybdenum>0.6 && pnickel<0.5){
         var grade = 'sg-highmoly';
+    }
+    if(pmolybdenum>0.3 && pmagnesium<0.02){
+        var grade = 'cg-moly';
     }
     if(grade == "sg-tin" || grade == "sg-copper"){
         if(psilicon >= 2){

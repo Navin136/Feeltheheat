@@ -35,6 +35,7 @@
                 $pnickel = $_POST['pnickel'];
                 $pmolybdenum = $_POST['pmolybdenum'];
                 $ptitanium = $_POST['ptitanium'];
+                $pmagnesium = $_POST['pmagnesium'];
             }
         }
         else{
@@ -84,6 +85,10 @@
                         <td>
                             <tr class='elecomp'>Ni%</tr>
                             <tr><input name='pnickel' id='pnickel' readonly value=<?php echo "$pnickel";?>></tr></br>
+                        </td>
+                        <td>
+                            <tr class='elecomp'>Mg%</tr>
+                            <tr><input name='pmagnesium' id='pmagnesium' readonly value=<?php echo "$pmagnesium";?>></tr></br>
                         </td>
                     </table>
         </div>

@@ -71,6 +71,7 @@
                 $pmo="$nprow[molybdenum]";
                 $pmn="$nprow[manganese]";
                 $pni="$nprow[nickel]";
+                $pmg="$nprow[magnesium]";
             }
             else{
                 $ptn="$row[part_number]";
@@ -82,6 +83,7 @@
                 $pmo="$row[molybdenum]";
                 $pmn="$row[manganese]";
                 $pni="$row[nickel]";
+                $pmg="$row[magnesium]";
             }
         }
     ?> 
@@ -123,6 +125,8 @@
             <input name="pmolybdenum" id="pmolybdenum" class="comp" readonly value=<?php echo "$pmo";?>><br>
             <label for="pnickel" id="lpnickel">Ni%</label>
             <input name="pnickel" id="pnickel" class="comp" readonly value=<?php echo "$pni";?>><br>
+            <label for="pmagnesium" id="lpmagnesium">Mg%</label>
+            <input name="pmagnesium" id="pmagnesium" class="comp" readonly value=<?php echo "$pmg";?>><br>
             <label for="ptitanium" id="lptitanium">Ti%</label>
             <input name="ptitanium" id="ptitanium" class="comp" readonly value=<?php
             if("$pmg">0.03){
