@@ -1,0 +1,9 @@
+input#addplan{
+    width: 100px;
+}
+td>input{
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    font-size: large;
+}

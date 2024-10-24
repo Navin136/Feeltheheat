@@ -39,3 +39,11 @@ CREATE TABLE IF NOT EXISTS holder(
     titanium DECIMAL(4,3),
     last_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE IF NOT EXISTS todayplan(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+	todaydate DATE,
+    plan_no INT(5) ,
+    part INT(10),
+    moulds INT(10),
+    last_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
