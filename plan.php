@@ -25,7 +25,7 @@
                         $plan = $_POST["plan$i"];
                         $part = $_POST["part$i"];
                         $moulds = $_POST["moulds$i"];
-                        echo "Plan Number ".$plan. " is".$part." for ". $moulds."moulds\n";
+                        echo "Plan Number ".$plan. " is".$part." for ". $moulds."moulds\n"."</br>";
                         $value++;
                         $sql = "INSERT INTO todayplan(todaydate,plan_no,part,moulds) VALUES('$condate','$plan','$part','$moulds')";
                         $pushed = $conn->query($sql);

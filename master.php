@@ -37,6 +37,7 @@
                 <th>Flow Rate</th>
                 <th>TA</th>
                 <th>Pouring Time</th>
+                <th>Tree Weight</th>
                 <th>Last updated on</th>
                 <th>Amend</th>
             </tr>
@@ -64,8 +65,9 @@
                     $pt = $row["pouring_time"];
                     $in = $row["inoculant"];
                     $alloy = $row["alloy"];
+                    $treewt = $row["treewt"];
                     $updated = $row["created_at"];
-                    echo "<tr><td>$part</td><td>$c</td><td>$si</td><td>$cu</td><td>$sn</td><td>$mn</td><td>$mo</td><td>$ni</td><td>$mg</td><td>$mm</td><td>$la</td><td>$alloy</td><td>$mtwt</td><td>$temp</td><td>$in</td><td>$fr</td><td>$ta</td><td>$pt</td><td>$updated</td><td><a id=\"edit\" href='./edit.php?part=$part'>Edit</a></td></tr>";
+                    echo "<tr><td>$part</td><td>$c</td><td>$si</td><td>$cu</td><td>$sn</td><td>$mn</td><td>$mo</td><td>$ni</td><td>$mg</td><td>$mm</td><td>$la</td><td>$alloy</td><td>$mtwt</td><td>$temp</td><td>$in</td><td>$fr</td><td>$ta</td><td>$pt</td><td>$treewt</td><td>$updated</td><td><a id=\"edit\" href='./edit.php?part=$part'>Edit</a></td></tr>";
                     }
                 }
             ?>

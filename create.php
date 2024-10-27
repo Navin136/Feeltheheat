@@ -31,6 +31,7 @@
             $pt = '';
             $ino = '';
             $alloy = '';
+            $treewt = '';
     ?>
     <?php
         if(isset($_POST['submit'])){
@@ -52,7 +53,8 @@
             $pt = $_POST["pouring_time"];
             $ino = $_POST["inoculant"];
             $alloy = $_POST["alloy"];
-            $push = "INSERT INTO part_details(part_number,carbon,silicon,copper,tin,manganese,molybdenum,nickel,magnesium,mischmetal,laddition,inoculant,flow_rate,metalweight,temperature,taddition,pouring_time,alloy) VALUES ('$part_number','$c','$si','$cu','$sn','$mn','$mo','$ni','$mg','$mm','$la','$ino','$fr','$mtwt','$temp','$ta','$pt','$alloy')";
+            $treewt = $_POST["treewt"];
+            $push = "INSERT INTO part_details(part_number,carbon,silicon,copper,tin,manganese,molybdenum,nickel,magnesium,mischmetal,laddition,inoculant,flow_rate,metalweight,temperature,taddition,pouring_time,alloy,treewt) VALUES ('$part_number','$c','$si','$cu','$sn','$mn','$mo','$ni','$mg','$mm','$la','$ino','$fr','$mtwt','$temp','$ta','$pt','$alloy','$treewt')";
             $pushed=$conn->query($push);
             if(!$pushed){
                 echo "Error". $conn->error();
@@ -197,15 +199,21 @@
                                 <option value='0.05% Fesi'>0.05% Fesi</option>
                                 <option value='0.05% Bacal'>0.05% Bacal</option>
                                 <option value='0.05% Ultraseed'>0.05% Ultraseed</option>
+                                <option value='0.05% Zircseed'>0.05% Zircseed</option>
                                 <option value='0.07% Fesi'>0.07% Fesi</option>
                                 <option value='0.07% Bacal'>0.07% Bacal</option>
                                 <option value='0.07% Ultraseed'>0.07% Ultraseed</option>
+                                <option value='0.07% Zircseed'>0.07% Zircseed</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <td><label for='pouring_time'>Pouring Time</label></td>
                         <td><input name='pouring_time' value='<?php echo $pt;?>'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='treewt'>Tree weight</label></td>
+                        <td><input name='treewt' value='<?php echo $treewt;?>'></td>
                     </tr>
                 </tbody>
             </table>
