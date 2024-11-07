@@ -16,28 +16,56 @@
     ?>
     <div id="boxes">
     <div class="box1">
-    <div id="form">
+    
     <form action="moulding.php" method="post">
-        <label for="current_part">Please Enter Running part      </label>
-        <select name="current_part">
-        <option value=""></option>
-            <?php
-            $sql="select part_number from part_details";
+        <label for="todaydate">Choose date </label>
+        <input type="date" name="todaydate"></br>
+        <button name="planfetcher">Fetch plans</button></br>
+    </form>
+    <form action="moulding.php" method="post">
+    <?php
+    if(isset($_POST['planfetcher'])){
+        $todaydate = $_POST['todaydate'];
+        //$todaydate = date('Y-m-d', strtotime($_POST['todaydate']));
+        echo '<label for="current_part">Please choose running part      </label>';
+        echo '<select name="current_part">';
+        echo '<option value=""></option>';
+            $sql="select id,part from todayplan where todaydate='$todaydate'";
             $result = $conn->query($sql);
             if($result->num_rows>0){
                 while($row = $result->fetch_assoc()){
-                    echo"<option value=\"$row[part_number]\">$row[part_number]</option>";
+                    echo"<option value=\"$row[id]\">$row[part]</option>";
                 }
             }
-            ?>
-        </select>
-        <button type="submit">Submit</button>
-    </form>
-
-    </div>
+        echo '</select>';
+        echo "<button type=\"submit\">Submit</button>";
+        }?>
+        
+        </form>
     <?php
         if(isset($_POST["current_part"])){
-        $current_part=$_POST["current_part"];
+        $id=$_POST["current_part"];
+        $partgot = "select part from todayplan where id='$id'";
+        $res=$conn->query($partgot);
+        if($res->num_rows>0){
+            while($row=$res->fetch_assoc()){
+                $current_part=$row['part'];
+            }
+        }
+        else{
+            echo "Query failed";
+        }
+        $nid=(int)$id+1;
+        $nextpart= "select part from todayplan where id='$nid'";
+        $nres=$conn->query($nextpart);
+        if($nres->num_rows>0){
+            while($row=$nres->fetch_assoc()){
+                $next_part=$row['part'];
+            }
+        }
+        else{
+            echo "Query failed";
+        }
         if($current_part!=""){
             echo"<p class='success'>{$current_part} is now choosen !!</p>";
             $nk = "select * from live where id=1";
@@ -46,14 +74,32 @@
                 $sql = "UPDATE live SET current_part=$current_part where id=1";
                 $result = $conn->query($sql);
                 if($result){
-                    echo"<p class='success'>Updated database</p>";
+                    echo"<p class='success'>Updated Current Pattern to database</p>";
                 }
             }
             else{
                 $sql = "INSERT INTO live(current_part,id) VALUES ($current_part,1)";
                 $result = $conn->query($sql);
                 if($result){
-                    echo"<p class='success'>Pushed to database</p>";
+                    echo"<p class='success'>Pushed Current Pattern to database</p>";
+                }
+            }
+        }
+        if($next_part!=""){
+            $nk = "select * from live where id=2";
+            $result = $conn->query($nk);
+            if($result->num_rows>0){
+                $sql = "UPDATE live SET current_part=$next_part where id=2";
+                $result = $conn->query($sql);
+                if($result){
+                    echo"<p class='success'>Updated Next Pattern to database</p>";
+                }
+            }
+            else{
+                $sql = "INSERT INTO live(current_part,id) VALUES ($next_part,2)";
+                $result = $conn->query($sql);
+                if($result){
+                    echo"<p class='success'>Pushed Next Pattern to database</p>";
                 }
             }
         }
@@ -62,61 +108,6 @@
             echo "<p id='warning'>Please choose part number carefully, This change will reflect everywhere</p>";
         }
     ?>
-    <?php
-        if(isset($_POST["plan1"])){
-            if($_POST["plan1"] != ''){
-                $plan1 = $_POST["plan1"];
-                $nk = "select * from live where id=2";
-                $result = $conn->query($nk);
-                if($result->num_rows>0){
-                    $nextplan = "UPDATE live set current_part=$plan1 where id=2";
-                    $nextplanpushed = $conn->query($nextplan);
-                    if($nextplanpushed){
-                        echo"<p class='success'>Next plan Updated to database</p>";
-                    }
-                    else{
-                         echo "<p id='warning'>Failed to update database</p>";
-                    }
-            }else{
-                $nextplan = "INSERT INTO live(current_part,id) VALUES ('$plan1','2')";
-                $nextplanpushed = $conn->query($nextplan);
-                if($nextplanpushed){
-                    echo"<p class='success'>Next plan Pushed to database</p>";
-                }
-                else{
-                     echo "<p id='warning'>Failed to update database</p>";
-                }
-            }
-            }
-            else{
-                echo "<p id='warning'>Please Give next pattern to process</p>";
-            }
-        }
-        else{
-            echo "<p id='warning'>Please Give next pattern to process</p>";
-        }
-            
-    ?>
-    <div class="mouldingplan">
-        <form action="moulding.php" method="post">
-        <div class="plan1">
-            <label for="plan1">Next Pattern</label>
-            <select name="plan1">
-            <option value=""></option>
-                <?php
-                $sql="select part_number from part_details";
-                $result = $conn->query($sql);
-                if($result->num_rows>0){
-                    while($row = $result->fetch_assoc()){
-                        echo"<option value=\"$row[part_number]\">$row[part_number]</option>";
-                    }
-                }
-                ?>
-        </select>
-        <button type="submit" id="npbtn">Submit</button>    
-        </div>
-        </form>
-    </div>
     </div>
     <div class="box2">
             <?php

@@ -21,12 +21,6 @@ label{
     font-size: 2rem;
     font-weight: bolder;
 }
-
-#form{
-    width: 90%;
-    margin: auto;
-    margin-top: 40px;
-}
 #warning{
     width: 90%;
     margin: auto;
@@ -50,11 +44,14 @@ label{
 }
 .box1{
     flex: 3;
+
+    padding-left: 50px;
+    padding-top: 50px;
 }
 .box2{
     flex: 1;
     font-size: xx-large;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 .box2 b{
     font-size: 1.5em;

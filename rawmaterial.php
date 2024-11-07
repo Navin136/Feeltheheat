@@ -7,7 +7,7 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Raw Material Requirements</title>
-    <link rel='stylesheet' href='css/melting.css'>
+    <link rel='stylesheet' href='css/rawmaterial.css'>
     <script defer src='js/melting.js'></script>
     <link rel='icon' href='icon.png'>
 </head>
@@ -39,28 +39,35 @@
                 $trim_time = (int)substr($pouring_time,0,-3);
                 $flow_rate = (int)$row['flow_rate'];
                 $metal_needed = ($treewt_db * $moulds)/1000;
-                echo "The needed metal for the plan of '$part_no' for '$moulds' moulds is '$metal_needed' tons"."</br>";
+                echo "<div id='result'><p>The needed metal for the plan of <b>'$part_no'</b> for <b>'$moulds'</b> moulds is <b>'$metal_needed'</b> tons"."</p>";
                 $inoculant_required = ($flow_rate*$moulds*$trim_time)/1000;
-                echo "Inoculant needed is $inoculant_required Kgs of ".$inoculant."</br>";
+                echo "<p>Inoculant needed is <b>$inoculant_required</b> Kgs of <b>".$inoculant."</b></p>";
                 $moulds_per_ladle = $mtwt/$treewt_db;
-                echo "Moulds per ladle is ".(int)$moulds_per_ladle . "   [ ".$mtwt." Kgs ]"."</br>";
+                echo "<p>Moulds per ladle is <b>".(int)$moulds_per_ladle . "</b>   [ ".$mtwt." Kgs ]"."</p>";
                 $number_of_ladles=(int)($moulds/$moulds_per_ladle);
-                echo "Number of Ladles Required is ".$number_of_ladles."</br>";
+                echo "<p>Number of Ladles Required is <b>".$number_of_ladles."</b></p>";
+                $tin_needed=round($number_of_ladles*$mtwt*($tin-0.01)/95,2);
+                echo "<p>Required Tin is <b>$tin_needed</b> Kgs</p>";
+                $copper_needed=round($number_of_ladles*$mtwt*($copper-0.1)/95,1);
+                echo "<p>Required Copper is <b>$copper_needed</b> Kgs</p>";
                 if($magnesium > 0.02){
-                    $alloy_needed = $number_of_ladles * 0.92 * $mtwt / 100;
-                    echo "Alloy needed is $alloy_needed Kgs of $alloy </br>";
+                    $alloy_needed = $number_of_ladles * 0.95 * $mtwt / 100;
+                    echo "<p>Alloy needed is <b>$alloy_needed</b> Kgs of <b>$alloy</b> </p></div>";
                 }else{
                     $alloy_needed = $number_of_ladles * 0.3 * $mtwt / 100;
-                    echo "Alloy needed is $alloy_needed Kgs of $alloy </br>";
+                    echo "<p>Alloy needed is <b>$alloy_needed</b> Kgs of <b>$alloy </b></p></div>";
                 }
+                
                 
             }else{
                 echo "Query failed";
             }
         }
     ?>
+    <div id='plannerpage'>
     <form action="rawmaterial.php" method="post">
-        <label for="part_no">Part Number: </label>
+        <div id='partsel'>
+        <label for="part_no">Part Number</label>
         <select name="part_no">
             <option value=""></option>
                 <?php
@@ -72,11 +79,11 @@
                     }
                 }
                 ?>
-        </select>
+        </select></br></div>
         <label for="moulds">No. of Moulds</label>
-        <input name="moulds">
+        <input name="moulds"><br>
         <button type="submit" name="get_material">Get Required material</button>
-    </form>
+    </form></div>
     <?php   
     include("footer.php");
     ?>

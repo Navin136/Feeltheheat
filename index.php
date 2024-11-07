@@ -43,6 +43,12 @@
         <div class="dept">
             <a href="moulding.php">Moulding</a>
         </div>
+        <div class="dept">
+            <a href="plan.php">Plan updater</a>
+        </div>
+        <div class="dept">
+            <a href="rawmaterial.php">Raw material planner</a>
+        </div>
     </div>
     </div>
     
