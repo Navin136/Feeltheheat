@@ -44,9 +44,12 @@ function chargemix(){
         var grade = 'cg-moly';
     }
     if(grade == "sg-tin" || grade == "sg-copper"){
-        if(psilicon >= 2){
+        if(psilicon >= 1.97){
             var grade = 'sg-knu';
         }
+    }
+    if(pattern="7328"){
+        var grade='sg-tin';
     }
     if(grade == "sg-tin"){
         document.getElementById("psteel").value = 35;

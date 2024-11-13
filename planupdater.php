@@ -2,14 +2,11 @@
     include("mysql.php");
 ?>
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Today plan</title>
-    <link rel='stylesheet' href='css/plan.css'>
-    <script defer src='js/plan.js'></script>
-    <link rel='icon' href='icon.png'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
     <?php   
@@ -17,7 +14,7 @@
     ?>
     <?php
         if(isset($_POST['uploadplan'])){
-            $condate = date('Y-m-d', strtotime($_POST['todaydate']));
+            $condate = date('Y-m-d', strtotime($_POST['tdate']));
             if(isset($_POST['plan1']) && $_POST['part1'] !='' && $_POST['moulds1'] !=''){
                 $value=1;
                 for($i=1;$i<=$value;$i++){
@@ -45,24 +42,39 @@
             }else{
                 echo "Please Fill all the fields";
             }
+        }?>
+    <form action="planupdater.php" method="post">
+        <label for="tdate">Date</label>
+        <input type="date" name="tdate"><br>
+        <?php
+        $conn=new mysqli('localhost','root','','MASTER');
+        if($conn->connect_error){
+            echo "Something rekt while connecting db";
         }
-    ?>
-    <form action="./plan.php" method="post">
-        <label for="todaydate">Date</label>
-        <input type="date" name="todaydate" id="datechooser">
-    <div>
-        <table id="plantable">
-            <tr>
-                <th>Plan No.</th>
-                <th>Part Number</th>
-                <th>No. of Moulds</th>
-            </tr>
-        </table>
-        <input type="button" id="addplan" value="Add new plan">
-    </div>
-    <button type="submit" name="uploadplan">Upload Plan</button>
+        echo "<table>";
+        echo "<tr><th>Plan No</th>";
+        echo "<th>Part</th>";
+        echo "<th>No. Of Moulds</th></tr><tr>";
+        for($i=1;$i<=20;$i++){
+            echo "<td><input name='plan$i' value=$i readonly></td>";
+            echo "<td><select name='part$i'>";
+            echo "<option value=></option>";
+            $parts="select part_number from part_details";
+            $resparts=$conn->query($parts);
+            if($resparts->num_rows>0){
+                while($row = $resparts->fetch_assoc()){
+                    echo"<option value=\"$row[part_number]\">$row[part_number]</option>";
+                }
+            }else{
+                echo "Query failed";
+            }
+            echo "</select></td>";
+            echo "<td><input name='moulds$i'></td></tr>";
+        }
+        echo "</table>";
+        ?>
+        <button type="submit" name="uploadplan">Submit</button>
     </form>
-    
     <?php   
     include("footer.php");
     ?>

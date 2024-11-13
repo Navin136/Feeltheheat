@@ -110,10 +110,10 @@
             // reduce silicon in fesimg alloy
             if("$pmg">0.03){
                 $hsilicon = "$psi"-(0.55);
-                echo round($hsilicon,1);
+                echo round($hsilicon,2);
             }else{
                 $hsilicon = "$psi"-(0.35*0.45);
-                echo round($hsilicon,1);
+                echo round($hsilicon,2);
             }?>><br>
             <label for="pcopper" id="lpcopper">Cu%</label>
             <input name="pcopper" id="pcopper" class="comp" readonly value=<?php echo "$pcu";?>><br>
