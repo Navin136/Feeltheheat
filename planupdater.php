@@ -6,7 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Plan Updater</title>
+    <link rel="stylesheet" href="css/planupdater.css">
 </head>
 <body>
     <?php   
@@ -44,20 +45,20 @@
             }
         }?>
     <form action="planupdater.php" method="post">
-        <label for="tdate">Date</label>
-        <input type="date" name="tdate"><br>
+        <div id='tdate'><label for="tdate">Date</label>
+        <input type="date" name="tdate"></div>
         <?php
         $conn=new mysqli('localhost','root','','MASTER');
         if($conn->connect_error){
             echo "Something rekt while connecting db";
         }
-        echo "<table>";
+        echo "<table id='plantable'>";
         echo "<tr><th>Plan No</th>";
         echo "<th>Part</th>";
         echo "<th>No. Of Moulds</th></tr><tr>";
         for($i=1;$i<=20;$i++){
-            echo "<td><input name='plan$i' value=$i readonly></td>";
-            echo "<td><select name='part$i'>";
+            echo "<td><input class='slno' name='plan$i' value=$i readonly></td>";
+            echo "<td><select class='partseltag' name='part$i'>";
             echo "<option value=></option>";
             $parts="select part_number from part_details";
             $resparts=$conn->query($parts);

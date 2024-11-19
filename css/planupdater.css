@@ -1,0 +1,27 @@
+body{
+    margin: auto;
+}
+table{
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+}
+.slno{
+    width: 20px;
+}
+.partseltag{
+    width: 100px;
+    height: inherit;
+}
+#tdate{
+    margin-top: 50px;
+    margin-left: 400px;
+}
+button{
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: green;
+    color: whitesmoke;
+    margin-bottom: 50px;
+    margin-left: 600px;
+}
