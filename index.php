@@ -49,6 +49,9 @@
         <div class="dept">
             <a href="rawmaterial.php">Raw material planner</a>
         </div>
+        <div class="dept">
+            <a href="chargemix.php">Chargemix</a>
+        </div>
     </div>
     </div>
     

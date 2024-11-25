@@ -1,0 +1,46 @@
+body{
+    font-size: 1.2rem;
+}
+table{
+    border: 5px solid black;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+}
+td,th{
+    border: 1px solid black;
+    padding: 10px;
+}
+#btndiv{
+    text-align: center;
+    padding-top: 20px;
+}
+button{
+    background-color: green;
+    padding: 5px 10px;
+    border: 1px solid black;
+    color: white;
+    margin-top: 20px;
+    font-weight: bold;
+}
+#delbtn{
+    background-color: red;
+    padding: 5px 10px;
+    border: 1px solid black;
+    color: white;
+    font-weight: bold;
+}
+#creategradebtn{
+    background-color: green;
+    padding: 5px 10px;
+    border: 1px solid black;
+    color: white;
+    font-weight: bold;
+}
+#lastrow{
+    border-bottom: 5px solid black;
+}
+#separate{
+    padding: 5px;
+}

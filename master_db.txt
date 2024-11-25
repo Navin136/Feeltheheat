@@ -48,3 +48,27 @@ CREATE TABLE IF NOT EXISTS todayplan(
     moulds INT(10),
     last_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE IF NOT EXISTS chargemix(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+	grade VARCHAR(10),
+    steelp INT(5),
+    boringsp INT(5),
+    pigironp INT(5),
+    returnsp INT(5),
+    last_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS composition(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    grade varchar(10),
+    material varchar(20),
+    carbon DECIMAL(3,2),
+    silicon DECIMAL(3,2),
+    copper DECIMAL(3,2),
+    tin DECIMAL(4,3),
+    manganese DECIMAL(3,2),
+    molybdenum DECIMAL(3,2),
+    nickel DECIMAL(3,2),
+    titanium DECIMAL(3,2),
+    last_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
