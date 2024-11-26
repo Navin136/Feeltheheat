@@ -1,0 +1,41 @@
+*{
+	color: red;
+	background-color: black;
+	font-weight: bolder;
+}
+table,th,tr,td{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+td{
+	text-align: center;
+}
+h2,h1{
+	text-align: center;
+}
+#maindate{
+	display: flex;
+	width: 95%;
+	margin: auto;
+}
+#first{
+	flex: 3;
+}
+#second{
+	flex: 1;
+}
+table{
+	width: 90%;
+	margin: auto;
+	margin-top: 20px;
+}
+body, table{
+
+	font-size: 3rem;
+}
+input{
+	color: green;
+	height: 50px;
+	//border: none;
+	font-size: 3rem;
+}

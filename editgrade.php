@@ -57,8 +57,30 @@
                 <th class="thead"><u>Value</u></th>
             </tr>
             <tr>
-                <td><Label for="grade">Grade</Label></td>
-                <td><input type="text" name="grade" value="<?php echo $row['grade'];?>"></td>
+                    <td><label for='grade'>Grade</label></td>
+                    <td><select id='grade' name='grade'>
+                            <option value='<?php echo $grade;?>'><?php echo $grade;?></option>
+                            <option value='FCD 500K-SG Tin'>FCD 500K-SG Tin</option>
+                            <option value='FCD 500K-SG Copper'>FCD 500K-SG Copper</option>
+                            <option value='FCD 550K-SG Tin'>FCD 550K-SG Tin</option>
+                            <option value='FCD 550K-SG Copper'>FCD 550K-SG Copper</option>
+                            <option value='FCD 450K-SG Tin'>FCD 450K-SG Tin</option>
+                            <option value='FCD 450K-SG Copper'>FCD 450K-SG Copper</option>
+                            <option value='FCD 400K-SG Tin'>FCD 400K-SG Tin</option>
+                            <option value='FCD 400K-SG Copper'>FCD 400K-SG Copper</option>
+                            <option value='FCD 500K-SG Azterlan Tin'>FCD 500K-SG Azterlan Tin</option>
+                            <option value='FCD 500K-SG Azterlan Copper'>FCD 500K-SG Azterlan Copper</option>
+                            <option value='FCD 550K-SG Azterlan Tin'>FCD 550K-SG Azterlan Tin</option>
+                            <option value='FCD 550K-SG Azterlan Copper'>FCD 550K-SG Azterlan Copper</option>
+                            <option value='FCD 400K-SG Azterlan Tin'>FCD 400K-SG Azterlan Tin</option>
+                            <option value='FCD 400K-SG Azterlan Copper'>FCD 400K-SG Azterlan Copper</option>
+                            <option value='FCD 450K-SG Azterlan Tin'>FCD 450K-SG Azterlan Tin</option>
+                            <option value='FCD 450K-SG Azterlan Copper'>FCD 450K-SG Azterlan Copper</option>
+                            <option value='SG-SiMo'>SG-SiMo</option>
+                            <option value='CG-SiMo'>CG-SiMo</option>
+                            <option value='CG-SiMoNi'>CG-SiMoNi</option>
+                        </select>
+                    </td>
             </tr>
             <tr>
                 <td><Label for="steelp">Steel Scrap %</Label></td>

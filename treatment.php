@@ -6,7 +6,7 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-	<meta http-equiv="refresh" content="15">
+	<meta http-equiv="refresh" content="10">
     <title>Treatment Area</title>
     <link rel='stylesheet' href='css/treatment.css'>
     <script src='js/treatment.js'></script>

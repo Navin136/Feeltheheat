@@ -33,6 +33,7 @@
         $in = '';
         $alloy =''; 
         $treewt ='';
+        $grade = '';
         if($_SERVER['REQUEST_METHOD'] == 'GET'){
             if(!isset($_GET['part'])){
                 header("location: ./master.php");
@@ -63,6 +64,7 @@
                 $ino = $row["inoculant"];
                 $alloy = $row["alloy"];
                 $treewt = $row["treewt"];
+                $grade = $row["grade"];
             }
             else{
                 echo "<b>The selected part number is not available in database. Please create part chemistry <a href='./create.php'>Here</a> <b>";
@@ -89,10 +91,14 @@
             $ino = $_POST["inoculant"];
             $alloy = $_POST["alloy"];
             $treewt = $_POST["treewt"];
-            $push = "UPDATE part_details SET carbon=$c, silicon=$si, copper=$cu, tin=$sn, manganese=$mn, molybdenum=$mo, nickel=$ni, magnesium=$mg, mischmetal='$mm', laddition='$la', inoculant='$ino', flow_rate='$fr', metalweight='$mtwt', temperature='$temp', taddition='$ta', pouring_time='$pt', alloy='$alloy', treewt='$treewt' WHERE part_number=$part_number";
+            $grade = $_POST["grade"];
+            $push = "UPDATE part_details SET carbon=$c, silicon=$si, copper=$cu, tin=$sn, manganese=$mn, molybdenum=$mo, nickel=$ni, magnesium=$mg, mischmetal='$mm', laddition='$la', inoculant='$ino', flow_rate='$fr', metalweight='$mtwt', temperature='$temp', taddition='$ta', pouring_time='$pt', alloy='$alloy', treewt='$treewt', grade='$grade' WHERE part_number=$part_number";
             $pushed=$conn->query($push);
             if(!$pushed){
                 echo "Error". $conn->error();
+            }
+            else{
+                header("location: ./master.php");
             }
         }
     
@@ -250,6 +256,32 @@
                     <tr>
                         <td><label for='treewt'>Tree weight</label></td>
                         <td><input name='treewt' value='<?php echo $treewt;?>'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='grade'>Grade</label></td>
+                        <td><select id='grade' name='grade'>
+                                <option value='<?php echo $grade;?>'><?php echo $grade;?></option>
+                                <option value='FCD 500K-SG Tin'>FCD 500K-SG Tin</option>
+                                <option value='FCD 500K-SG Copper'>FCD 500K-SG Copper</option>
+                                <option value='FCD 550K-SG Tin'>FCD 550K-SG Tin</option>
+                                <option value='FCD 550K-SG Copper'>FCD 550K-SG Copper</option>
+                                <option value='FCD 450K-SG Tin'>FCD 450K-SG Tin</option>
+                                <option value='FCD 450K-SG Copper'>FCD 450K-SG Copper</option>
+                                <option value='FCD 400K-SG Tin'>FCD 400K-SG Tin</option>
+                                <option value='FCD 400K-SG Copper'>FCD 400K-SG Copper</option>
+                                <option value='FCD 500K-SG Azterlan Tin'>FCD 500K-SG Azterlan Tin</option>
+                                <option value='FCD 500K-SG Azterlan Copper'>FCD 500K-SG Azterlan Copper</option>
+                                <option value='FCD 550K-SG Azterlan Tin'>FCD 550K-SG Azterlan Tin</option>
+                                <option value='FCD 550K-SG Azterlan Copper'>FCD 550K-SG Azterlan Copper</option>
+                                <option value='FCD 400K-SG Azterlan Tin'>FCD 400K-SG Azterlan Tin</option>
+                                <option value='FCD 400K-SG Azterlan Copper'>FCD 400K-SG Azterlan Copper</option>
+                                <option value='FCD 450K-SG Azterlan Tin'>FCD 450K-SG Azterlan Tin</option>
+                                <option value='FCD 450K-SG Azterlan Copper'>FCD 450K-SG Azterlan Copper</option>
+                                <option value='SG-SiMo'>SG-SiMo</option>
+                                <option value='CG-SiMo'>CG-SiMo</option>
+                                <option value='CG-SiMoNi'>CG-SiMoNi</option>
+                            </select>
+                        </td>
                     </tr>
                 </tbody>
             </table>

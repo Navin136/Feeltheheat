@@ -32,6 +32,7 @@
             $ino = '';
             $alloy = '';
             $treewt = '';
+            $grade = '';
     ?>
     <?php
         if(isset($_POST['submit'])){
@@ -54,7 +55,8 @@
             $ino = $_POST["inoculant"];
             $alloy = $_POST["alloy"];
             $treewt = $_POST["treewt"];
-            $push = "INSERT INTO part_details(part_number,carbon,silicon,copper,tin,manganese,molybdenum,nickel,magnesium,mischmetal,laddition,inoculant,flow_rate,metalweight,temperature,taddition,pouring_time,alloy,treewt) VALUES ('$part_number','$c','$si','$cu','$sn','$mn','$mo','$ni','$mg','$mm','$la','$ino','$fr','$mtwt','$temp','$ta','$pt','$alloy','$treewt')";
+            $grade = $_POST["grade"];
+            $push = "INSERT INTO part_details(part_number,carbon,silicon,copper,tin,manganese,molybdenum,nickel,magnesium,mischmetal,laddition,inoculant,flow_rate,metalweight,temperature,taddition,pouring_time,alloy,treewt,grade) VALUES ('$part_number','$c','$si','$cu','$sn','$mn','$mo','$ni','$mg','$mm','$la','$ino','$fr','$mtwt','$temp','$ta','$pt','$alloy','$treewt','$grade')";
             $pushed=$conn->query($push);
             if(!$pushed){
                 echo "Error". $conn->error();
@@ -214,6 +216,32 @@
                     <tr>
                         <td><label for='treewt'>Tree weight</label></td>
                         <td><input name='treewt' value='<?php echo $treewt;?>'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='grade'>Grade</label></td>
+                        <td><select id='grade' name='grade'>
+                                <option value='<?php echo $grade;?>'><?php echo $grade;?></option>
+                                <option value='FCD 500K-SG Tin'>FCD 500K-SG Tin</option>
+                                <option value='FCD 500K-SG Copper'>FCD 500K-SG Copper</option>
+                                <option value='FCD 550K-SG Tin'>FCD 550K-SG Tin</option>
+                                <option value='FCD 550K-SG Copper'>FCD 550K-SG Copper</option>
+                                <option value='FCD 450K-SG Tin'>FCD 450K-SG Tin</option>
+                                <option value='FCD 450K-SG Copper'>FCD 450K-SG Copper</option>
+                                <option value='FCD 400K-SG Tin'>FCD 400K-SG Tin</option>
+                                <option value='FCD 400K-SG Copper'>FCD 400K-SG Copper</option>
+                                <option value='FCD 500K-SG Azterlan Tin'>FCD 500K-SG Azterlan Tin</option>
+                                <option value='FCD 500K-SG Azterlan Copper'>FCD 500K-SG Azterlan Copper</option>
+                                <option value='FCD 550K-SG Azterlan Tin'>FCD 550K-SG Azterlan Tin</option>
+                                <option value='FCD 550K-SG Azterlan Copper'>FCD 550K-SG Azterlan Copper</option>
+                                <option value='FCD 400K-SG Azterlan Tin'>FCD 400K-SG Azterlan Tin</option>
+                                <option value='FCD 400K-SG Azterlan Copper'>FCD 400K-SG Azterlan Copper</option>
+                                <option value='FCD 450K-SG Azterlan Tin'>FCD 450K-SG Azterlan Tin</option>
+                                <option value='FCD 450K-SG Azterlan Copper'>FCD 450K-SG Azterlan Copper</option>
+                                <option value='SG-SiMo'>SG-SiMo</option>
+                                <option value='CG-SiMo'>CG-SiMo</option>
+                                <option value='CG-SiMoNi'>CG-SiMoNi</option>
+                            </select>
+                        </td>
                     </tr>
                 </tbody>
             </table>
