@@ -40,19 +40,25 @@
 			echo "part not available in chargemixdisplay table";
 		}
 	?>
-	<h3>E-LINE MELTSHOP</h3>
-    <h2>MELTEASE</h2>
-	<h1>CHARGEMIX DISPLAY</h1>
+	<div id="firstheading">
+		<h3 id="eline">E-LINE MELTSHOP</h3>
+		<h1 id="cmd">CHARGEMIX DISPLAY</h1>
+    	<h3 id="meltease">MELTEASE</h3>
+	</div>
 	<div id="maindate">
-		<div id="first">
-			<label>RUNNING PART NUMBER</label>
-			<input value=<?php echo "$runningpart";?>></input>
-			<label>GRADE</label>
-			<div><?php echo "$grade";?></div>
-		</div>	
-		<div id="second">
-			<label>DATE</label>
-			<input value="<?php echo date("d.m.Y");?>"></input>
+		<div id="secinddetail">
+			<div id="first">
+				<label>PART NUMBER</label>
+				<input value=<?php echo "$runningpart";?>></input>
+			</div>
+			<div id="second">
+				<label>GRADE</label>
+				<input value="<?php echo "$grade";?>"></input>
+			</div>
+			<div id="third">
+				<label>DATE</label>
+				<input value="<?php echo date("d.m.Y");?>"></input>
+			</div>
 		</div>
 	</div>
 	<div id="bodybox">
@@ -68,7 +74,7 @@
 			<th class="tolerance">-5%</th>
 		</tr>
 		<tr>
-		<td>BORINGS</td>
+		<td>STEEL</td>
 			<td><?php echo $cmfetched['steelp'];?></td>
 			<td><?php echo $cmfetched['steelp']*60;?></td>
 			<td class="tolerance"><?php echo $cmfetched['steelp']*60+60*5/100*$cmfetched['steelp'];?></td>

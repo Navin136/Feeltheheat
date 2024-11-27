@@ -1,6 +1,6 @@
 *{
-	color: red;
-	background-color: black;
+	color: black;
+	background-color: yellow;
 	font-weight: bolder;
 }
 table,th,tr,td{
@@ -10,32 +10,54 @@ table,th,tr,td{
 td{
 	text-align: center;
 }
+h3{
+	display: inline-block;
+}
+#firstheading{
+	display: flex;
+}
+#eline{
+	flex: 1;
+	padding-left: 40px;
+}
+#meltease {
+	flex: 1;
+	text-align: right;
+	padding-right: 40px;
+}
+#cmd{
+	flex: 2;
+	text-align: center;
+	text-decoration: underline;
+}
 h2,h1{
 	text-align: center;
-}
-#maindate{
-	display: flex;
-	width: 95%;
-	margin: auto;
-}
-#first{
-	flex: 3;
-}
-#second{
-	flex: 1;
 }
 table{
 	width: 90%;
 	margin: auto;
 	margin-top: 20px;
-}
-body, table{
-
-	font-size: 3rem;
+	font-size: xx-large;
 }
 input{
-	color: green;
-	height: 50px;
-	//border: none;
-	font-size: 3rem;
+	color: red;
+	font-size: 1.5rem;
+	border: none;
+	width: 210px;
+}
+#secinddetail{
+	display: flex;
+	font-size: x-large;
+}
+#first{
+	flex: 1.4;
+}
+#second{
+	flex: 1;
+}
+#third{
+	flex: 1;
+}
+*{
+	font-size: 1.6rem;
 }
