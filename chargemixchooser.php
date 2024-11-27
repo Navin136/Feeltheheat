@@ -44,7 +44,8 @@
         }
     ?>
     <form action="chargemixchooser.php" method="post">
-        <label for="runningpart">Part Number</label>
+	<div id="divform">
+        <label for="runningpart" id="runningpart">Part Number</label>
         <select name="runningpart">
             <option value=""></option>
             <?php
@@ -57,9 +58,10 @@
                 while($row=$res->fetch_assoc()){
                 echo "<option value='$row[part_number]'>$row[part_number]</option>";}}
             ?>
-        </select>
-        <button type="submit">Update</button>
-    </form>
+        </select></br>
+        <button type="submit">Update Chargemix</button>
+    	</div>
+	</form>
     <?php   
     include("footer.php");
     ?>

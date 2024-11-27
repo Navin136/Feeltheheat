@@ -1,0 +1,38 @@
+
+form{
+	background-color: lightgreen;
+	width: 90%;
+	font-size: 7rem;
+	font-weight: bolder;
+	margin: 100px auto;
+}
+
+#divform{
+	width: 70%;
+	padding-top:  100px;
+	padding-bottom:  100px;
+	margin: auto;
+}
+select{
+	height: 8rem;
+	width: 30%;
+	border-radius: 10px;
+}
+option{
+	text-align: center;
+	font-size: 3rem;
+	width: 30%;
+	border-radius: 10px;
+}
+button{
+	color: white;
+	background-color: green;
+	border: 1px solid black;
+	text-align: center;
+	height: 90px;
+	width:50%;
+	font-size: 3rem;
+}
+#runningpart{
+	margin-top: 200px;
+}

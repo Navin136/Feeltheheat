@@ -52,6 +52,12 @@
         <div class="dept">
             <a href="chargemix.php">Chargemix</a>
         </div>
+	<div class="dept">
+            <a href="chargemixdisplay.php">Chargemix Display</a>
+        </div>
+	<div class="dept">
+            <a href="chargemixchooser.php">Chargemix Editor</a>
+        </div>
     </div>
     </div>
     
