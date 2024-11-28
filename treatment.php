@@ -17,10 +17,14 @@
     include("header.php");
     ?>
 	<?php
-		$part = 'SELECT current_part,id from live where id=1';
-		$respart = $conn->query($part);
-		$partrow = $respart->fetch_assoc();
-		$nk = "$partrow[current_part]";
+		$cp="SELECT current_part from live where id=1";
+		$cpr = $conn->query($cp);
+		$cpp = $cpr->fetch_assoc();
+		$cppid=$cpp['current_part'];
+		$curr_patt = "SELECT * from todayplan where id='$cppid'";
+		$cresult = $conn->query($curr_patt);
+		$currresult = $cresult->fetch_assoc();
+		$nk = "$currresult[part]";
 		$sql = "SELECT * FROM part_details where part_number=".$nk;
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();

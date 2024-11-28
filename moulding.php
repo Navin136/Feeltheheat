@@ -71,14 +71,14 @@
             $nk = "select * from live where id=1";
             $result = $conn->query($nk);
             if($result->num_rows>0){
-                $sql = "UPDATE live SET current_part=$current_part where id=1";
+                $sql = "UPDATE live SET current_part=$id where id=1";
                 $result = $conn->query($sql);
                 if($result){
                     echo"<p class='success'>Updated Current Pattern to database</p>";
                 }
             }
             else{
-                $sql = "INSERT INTO live(current_part,id) VALUES ($current_part,1)";
+                $sql = "INSERT INTO live(current_part,id) VALUES ($id,1)";
                 $result = $conn->query($sql);
                 if($result){
                     echo"<p class='success'>Pushed Current Pattern to database</p>";
@@ -89,14 +89,14 @@
             $nk = "select * from live where id=2";
             $result = $conn->query($nk);
             if($result->num_rows>0){
-                $sql = "UPDATE live SET current_part=$next_part where id=2";
+                $sql = "UPDATE live SET current_part=$nid where id=2";
                 $result = $conn->query($sql);
                 if($result){
                     echo"<p class='success'>Updated Next Pattern to database</p>";
                 }
             }
             else{
-                $sql = "INSERT INTO live(current_part,id) VALUES ($next_part,2)";
+                $sql = "INSERT INTO live(current_part,id) VALUES ($nid,2)";
                 $result = $conn->query($sql);
                 if($result){
                     echo"<p class='success'>Pushed Next Pattern to database</p>";
@@ -112,12 +112,17 @@
     <div class="box2">
             <?php
             $cp="SELECT current_part from live where id=1";
-            $np="SELECT current_part from live where id=2";
             $cpr = $conn->query($cp);
             $cpp = $cpr->fetch_assoc();
-            $npr = $conn->query($np);
-            $npp = $npr->fetch_assoc();
-            echo '<p>Current pattern :</br><b>'.$cpp["current_part"].'</b></br> Next Pattern :</br><b>'.$npp["current_part"].'</b></p>';
+            $cppid=$cpp['current_part'];
+            $curr_patt = "SELECT part from todayplan where id='$cppid'";
+            $cresult = $conn->query($curr_patt);
+            $currresult = $cresult->fetch_assoc();
+            $nppid=(int)$cppid+1;
+            $next_patt = "SELECT part from todayplan where id='$nppid'";
+            $nresult = $conn->query($next_patt);
+            $nextresult = $nresult->fetch_assoc();
+            echo '<p>Current pattern :</br><b>'.$currresult['part'].'</b></br> Next Pattern :</br><b>'.$nextresult["part"].'</b></p>';
             ?>
     </div>
     </div>

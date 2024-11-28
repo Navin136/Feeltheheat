@@ -17,30 +17,17 @@
     ?>
         <div class='labcontent'>
             <table>
-                <div>
-                    <label id="datelabel">Date: </label>
-                    <input class="datearea" type="text" readonly value='<?php echo date('d-m-Y');?>'>
-                    <label id="dclabel">Datecode:</label>
-                    <input class="datearea" id="dcinput" type="text" readonly value='<?php echo "1234";?>'>
-                </div>
-                <?php
-                    $sql= 'SELECT current_part,id from live where id=1';
-                    $result = $conn->query($sql);
-                    if($result->num_rows>0){
-                        while ($row=$result->fetch_assoc()){
-                            echo "<tr>
-                                    <td class='labels'><label for='pattern'>Part Number</label></td>
-                                    <td><input type='text' id='pattern' readonly value='$row[current_part]'></td>
-                                </tr>";
-                        }
-                    }
-                ?>
+                
                 <?php
                     $nk='';
-                    $part = 'SELECT current_part,id from live where id=1';
-                    $respart = $conn->query($part);
-                    $row = $respart->fetch_assoc();
-                    $nk = "$row[current_part]";
+                    $cp="SELECT current_part from live where id=1";
+                    $cpr = $conn->query($cp);
+                    $cpp = $cpr->fetch_assoc();
+                    $cppid=$cpp['current_part'];
+                    $curr_patt = "SELECT * from todayplan where id='$cppid'";
+                    $cresult = $conn->query($curr_patt);
+                    $currresult = $cresult->fetch_assoc();
+                    $nk = "$currresult[part]";
                     $sql= 'SELECT * from part_details where part_number='.$nk;
                     $result = $conn->query($sql);
                     if($result->num_rows>0)
@@ -60,15 +47,21 @@
                                 $fadingtime="720";
                             }
                             $mouldsperladle = round($metalweight/($treewt+0.1));//100 grams spillage is choosen approximately
-                            $mp = "SELECT moulds from todayplan where part='$nk'";
-                            $mpres = $conn->query($mp);
-                            $mpresrow = $mpres->fetch_assoc();
-                            $noofmoulds= $mpresrow['plan'];
                 ?>
-                        <!-- <tr>
+                        <div>
+                            <label id="datelabel">Date: </label>
+                            <input class="datearea" type="text" readonly value='<?php echo $currresult['todaydate'];?>'>
+                            <label id="dclabel">Datecode:</label>
+                            <input class="datearea" id="dcinput" type="text" readonly value='<?php echo "1234";?>'>
+                        </div>
+                        <tr>
+                            <td class="labels"><label for='pattern'>Part Number</label></td>
+                            <td><input type='text' name='pattern' readonly id='pattern' value='<?php echo $nk;?>'></td>
+                        </tr>
+                        <tr>
                             <td class="labels"><label for='noofmoulds'>Planned Moulds</label></td>
-                            <td><input type='text' name='noofmoulds' readonly id='pattern' value='<?php echo $noofmoulds;?>'></td>
-                        </tr> -->
+                            <td><input type='text' name='noofmoulds' readonly id='pattern' value='<?php echo $currresult['moulds'];?>'></td>
+                        </tr>
                         <tr>
                             <td class="labels"><label for='grade'>Grade</label></td>
                             <td><input type='text' name='grade' readonly id='pattern' value='<?php echo $grade;?>'></td>
