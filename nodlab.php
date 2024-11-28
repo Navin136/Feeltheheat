@@ -17,13 +17,19 @@
     ?>
         <div class='labcontent'>
             <table>
+                <div>
+                    <label id="datelabel">Date: </label>
+                    <input class="datearea" type="text" readonly value='<?php echo date('d-m-Y');?>'>
+                    <label id="dclabel">Datecode:</label>
+                    <input class="datearea" id="dcinput" type="text" readonly value='<?php echo "1234";?>'>
+                </div>
                 <?php
                     $sql= 'SELECT current_part,id from live where id=1';
                     $result = $conn->query($sql);
                     if($result->num_rows>0){
                         while ($row=$result->fetch_assoc()){
                             echo "<tr>
-                                    <td><label for='pattern'>Running Part Number</label></td>
+                                    <td class='labels'><label for='pattern'>Part Number</label></td>
                                     <td><input type='text' id='pattern' readonly value='$row[current_part]'></td>
                                 </tr>";
                         }
@@ -54,41 +60,49 @@
                                 $fadingtime="720";
                             }
                             $mouldsperladle = round($metalweight/($treewt+0.1));//100 grams spillage is choosen approximately
+                            $mp = "SELECT moulds from todayplan where part='$nk'";
+                            $mpres = $conn->query($mp);
+                            $mpresrow = $mpres->fetch_assoc();
+                            $noofmoulds= $mpresrow['plan'];
                 ?>
+                        <!-- <tr>
+                            <td class="labels"><label for='noofmoulds'>Planned Moulds</label></td>
+                            <td><input type='text' name='noofmoulds' readonly id='pattern' value='<?php echo $noofmoulds;?>'></td>
+                        </tr> -->
                         <tr>
-                            <td><label for='grade'>Grade</label></td>
+                            <td class="labels"><label for='grade'>Grade</label></td>
                             <td><input type='text' name='grade' readonly id='pattern' value='<?php echo $grade;?>'></td>
                         </tr>
                         <tr>
-                            <td><label for='mtwt'>Metal Weight</label></td>
-                            <td><input type='text' name='mtwt' readonly id='pattern' value='<?php echo $metalweight;?>' readonly></td>
+                            <td class="labels"><label for='mtwt'>Metal Weight</label></td>
+                            <td><input type='text' name='mtwt' readonly id='pattern' value='<?php echo "$metalweight"." Kgs";?>' readonly></td>
                         </tr>
                         <tr>
-                            <td><label for='mpl'>Moulds Per Ladle</label></td>
+                            <td class="labels"><label for='mpl'>Moulds Per Ladle</label></td>
                             <td><input type='text' name='mpl' readonly id='mpl' value='<?php echo $mouldsperladle;?>' readonly></td>
                         </tr>
                         <tr>
-                            <td><label for='temperature'>Pouring temperature</label></td>
-                            <td><input type='text' name='temperature' readonly id='temperature' value='<?php echo $temperature;?>' readonly></td>
+                            <td class="labels"><label for='temperature'>Pouring temperature</label></td>
+                            <td><input type='text' name='temperature' readonly id='temperature' value='<?php echo "$temperature"." C";?>' readonly></td>
                         </tr>
                         <tr>
-                            <td><label for='ptime'>Pouring time (Seconds)</label></td>
-                            <td><input type='text' name='ptime' id='ptime' readonly value='<?php echo $pouring_time;?>' readonly></td>
+                            <td class="labels"><label for='ptime'>Pouring time</label></td>
+                            <td><input type='text' name='ptime' id='ptime' readonly value='<?php echo "$pouring_time"." Seconds";?>' readonly></td>
                         </tr>
                         <tr>
-                            <td><label for='ftime'>Fading time (Seconds)</label></td>
-                            <td><input type='text' name='ftime' id='ftime' readonly value='<?php echo $fadingtime;?>' readonly></td>
+                            <td class="labels"><label for='ftime'>Fading time</label></td>
+                            <td><input type='text' name='ftime' id='ftime' readonly value='<?php echo "$fadingtime"." Seconds";?>' readonly></td>
                         </tr>
                         <tr>
-                            <td><label for='inoculant'>Inoculant</label></td>
+                            <td class="labels"><label for='inoculant'>Inoculant</label></td>
                             <td><input type='text' name='inoculant' readonly id='pattern' value='<?php echo $inoculant;?>' readonly></td>
                         </tr>
                         <tr>
-                            <td><label for='flowrate'>Flow Rate in Gms/Sec</label></td>
+                            <td class="labels"><label for='flowrate'>Flow Rate in Gms/Sec</label></td>
                             <td><input name='flowrate' id='flowrate' readonly value='<?php echo $flow_rate;?>' readonly></td>
                         </tr>
                         <tr>
-                            <td><label for='taddition'>Tundish Addition</label></td>
+                            <td class="labels"><label for='taddition'>Tundish Addition</label></td>
                             <td><input type='text' name='taddition' id='taddition' readonly value="<?php echo $taddition;?>"></td>
                         </tr>
                         <?php };?>
