@@ -4,17 +4,17 @@ body{
     background-color: lightcyan;
 }
 div.labcontent{
+    width: 90%;
     margin: auto;
-    width: 60vw;
     display: flex;
     flex-direction: column;
-    padding: 30px 0px 25px;
+    padding: 20px 0px 10px;
 }
 .labcontent div{
     margin-bottom: 20px;
 }
 input{
-    width: 300px;
+    width: 50%;
     height: 60px;
     border-radius: 30px;
     font-size: x-large;
