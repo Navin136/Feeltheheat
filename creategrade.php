@@ -19,19 +19,24 @@
             if(isset($_POST['creategrade'])){
                 $grade = $_POST['grade'];
                 $steelp = $_POST['steelp'];
+                $tinsteelp = $_POST['tinsteelp'];
+                $greysteelp = $_POST['greysteelp'];
                 $boringsp = $_POST['boringsp'];
                 $pigironp = $_POST['pigironp'];
                 $returnsp = $_POST['returnsp'];
-                if($grade == '' || $steelp == '' || $boringsp == '' || $pigironp == '' || $returnsp == ''){
+                if($grade == '' || $steelp == '' || $tinsteelp == '' || $greysteelp == '' || $boringsp == '' || $pigironp == '' || $returnsp == ''){
                     echo "Please fill all the fields";
-                }else{
+                }elseif(($steelp+$tinsteelp+$greysteelp+$boringsp+$pigironp+$returnsp)>100 ||($steelp+$tinsteelp+$greysteelp+$boringsp+$pigironp+$returnsp)<100){
+                    echo "Chargemix is not 100%. please check and enter correctly";
+                }
+                else{
                     $searchavbl = "SELECT * from chargemix where grade='$grade'";
                     $searchresult = $conn->query($searchavbl);
                     if($searchresult->num_rows>0){
                         echo "<b>$grade already exits please edit or add another</b>";
                     }
                     else{
-                        $sqlq = "INSERT INTO chargemix(grade,steelp,boringsp,pigironp,returnsp) VALUES ('$grade','$steelp','$boringsp','$pigironp','$returnsp')";
+                        $sqlq = "INSERT INTO chargemix(grade,steelp,tinsteelp,greysteelp,boringsp,pigironp,returnsp) VALUES ('$grade','$steelp','$tinsteelp','greysteelp','$boringsp','$pigironp','$returnsp')";
                         $res = $conn->query($sqlq);
                         if(!$res){
                             echo "Something you entered in wrong";
@@ -70,6 +75,7 @@
                             <option value='FCD 400K-SG Azterlan Copper'>FCD 400K-SG Azterlan Copper</option>
                             <option value='FCD 450K-SG Azterlan Tin'>FCD 450K-SG Azterlan Tin</option>
                             <option value='FCD 450K-SG Azterlan Copper'>FCD 450K-SG Azterlan Copper</option>
+                            <option value='EN GJV 300 CG Tin'>EN GJV 300 CG Tin</option>
                             <option value='SG-SiMo'>SG-SiMo</option>
                             <option value='CG-SiMo'>CG-SiMo</option>
                             <option value='CG-SiMoNi'>CG-SiMoNi</option>
@@ -79,6 +85,14 @@
             <tr>
                 <td><Label for="steelp">Steel Scrap %</Label></td>
                 <td><input name="steelp"></td>
+            </tr>
+		<tr>
+                <td><Label for="tinsteelp">Tin Steel Scrap %</Label></td>
+                <td><input name="tinsteelp"></td>
+            </tr>
+		<tr>
+                <td><Label for="greysteelp">Grey Steel Scrap %</Label></td>
+                <td><input name="greysteelp"></td>
             </tr>
             <tr>
                 <td><Label for="boringsp">Borings %</Label></td>

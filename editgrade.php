@@ -19,13 +19,17 @@
             if(isset($_POST['creategrade'])){
                 $grade = $_POST['grade'];
                 $steelp = $_POST['steelp'];
+                $tinsteelp = $_POST['tinsteelp'];
+                $greysteelp = $_POST['greysteelp'];
                 $boringsp = $_POST['boringsp'];
                 $pigironp = $_POST['pigironp'];
                 $returnsp = $_POST['returnsp'];
                 if($grade == '' || $steelp == '' || $boringsp == '' || $pigironp == '' || $returnsp == ''){
                     echo "Please fill all the fields";
+                }elseif(($steelp+$tinsteelp+$greysteelp+$boringsp+$pigironp+$returnsp)>100 ||($steelp+$tinsteelp+$greysteelp+$boringsp+$pigironp+$returnsp)<100){
+                    echo "Chargemix is not 100%. please check and enter correctly";
                 }else{
-                        $sqlq = "UPDATE chargemix SET steelp='$steelp',boringsp='$boringsp',pigironp='$pigironp',returnsp='$returnsp' WHERE grade='$grade'";
+                        $sqlq = "UPDATE chargemix SET steelp='$steelp',tinsteelp='$tinsteelp',greysteelp='$greysteelp',boringsp='$boringsp',pigironp='$pigironp',returnsp='$returnsp' WHERE grade='$grade'";
                         $res = $conn->query($sqlq);
                         if(!$res){
                             echo "Something you entered in wrong";
@@ -59,8 +63,8 @@
             <tr>
                     <td><label for='grade'>Grade</label></td>
                     <td><select id='grade' name='grade'>
-                            <option value='<?php echo $grade;?>'><?php echo $grade;?></option>
-                            <option value='FCD 500K-SG Tin'>FCD 500K-SG Tin</option>
+                            <option value='<?php echo $grade?>'><?php echo $grade?></option>
+                            <option value='FCD 500K SG Tin'>FCD 500K-SG Tin</option>
                             <option value='FCD 500K-SG Copper'>FCD 500K-SG Copper</option>
                             <option value='FCD 550K-SG Tin'>FCD 550K-SG Tin</option>
                             <option value='FCD 550K-SG Copper'>FCD 550K-SG Copper</option>
@@ -76,6 +80,7 @@
                             <option value='FCD 400K-SG Azterlan Copper'>FCD 400K-SG Azterlan Copper</option>
                             <option value='FCD 450K-SG Azterlan Tin'>FCD 450K-SG Azterlan Tin</option>
                             <option value='FCD 450K-SG Azterlan Copper'>FCD 450K-SG Azterlan Copper</option>
+                            <option value='EN GJV 300 CG Tin'>EN GJV 300 CG Tin</option>
                             <option value='SG-SiMo'>SG-SiMo</option>
                             <option value='CG-SiMo'>CG-SiMo</option>
                             <option value='CG-SiMoNi'>CG-SiMoNi</option>
@@ -85,6 +90,14 @@
             <tr>
                 <td><Label for="steelp">Steel Scrap %</Label></td>
                 <td><input name="steelp" value="<?php echo $row['steelp'];?>"></td>
+            </tr>
+            <tr>
+                <td><Label for="tinsteelp">Tin Steel Scrap %</Label></td>
+                <td><input name="tinsteelp" value="<?php echo $row['tinsteelp'];?>"></td>
+            </tr>
+            <tr>
+                <td><Label for="greysteelp">Grey Steel Scrap %</Label></td>
+                <td><input name="greysteelp" value="<?php echo $row['greysteelp'];?>"></td>
             </tr>
             <tr>
                 <td><Label for="boringsp">Borings %</Label></td>

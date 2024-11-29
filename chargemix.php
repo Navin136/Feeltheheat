@@ -32,11 +32,19 @@
                 while($row=$fetched->fetch_assoc()){
             ?>
             <tr>
-                <td rowspan=4><?php echo $row['grade'];?></td>
+                <td rowspan=6><?php echo $row['grade'];?></td>
                 <td>Steel</td>
                 <td><?php echo $row['steelp'];?></td>
                 <td><?php echo $row['steelp']*60;?></td>
-                <td rowspan=4><a id="creategradebtn" href="./editgrade.php?grade=<?php echo $row['grade'];?>">Edit</a><span id="separate"></span><a id="delbtn" href="./deletechargemix.php?grade=<?php echo $row['grade'];?>">Delete</a></td>
+                <td rowspan=6><a id="creategradebtn" href="./editgrade.php?grade=<?php echo $row['grade'];?>">Edit</a><span id="separate"></span><a id="delbtn" href="./deletechargemix.php?grade=<?php echo $row['grade'];?>">Delete</a></td>
+            </tr><tr>
+                <td>Grey Steel</td>
+                <td><?php echo $row['greysteelp'];?></td>
+                <td><?php echo $row['greysteelp']*60;?></td>
+            </tr><tr>
+                <td>Tin Steel</td>
+                <td><?php echo $row['tinsteelp'];?></td>
+                <td><?php echo $row['tinsteelp']*60;?></td>
             </tr><tr>
                 <td>Borings</td>
                 <td><?php echo $row['boringsp'];?></td>

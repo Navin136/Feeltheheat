@@ -81,6 +81,20 @@
 			<td class="tolerance greentext"><?php echo $cmfetched['steelp']*60-60*5/100*$cmfetched['steelp'];?></td>
 		</tr>
 		<tr>
+			<td class="materials">TIN STEEL</td>
+			<td class="cpercent"><?php echo $cmfetched['tinsteelp'];?></td>
+			<td class="cweight greentext"><?php echo $cmfetched['tinsteelp']*60;?></td>
+			<td class="tolerance greentext"><?php echo $cmfetched['tinsteelp']*60+60*5/100*$cmfetched['tinsteelp'];?></td>
+			<td class="tolerance greentext"><?php echo $cmfetched['tinsteelp']*60-60*5/100*$cmfetched['tinsteelp'];?></td>
+		</tr>
+		<tr>
+			<td class="materials">GREY STEEL</td>
+			<td class="cpercent"><?php echo $cmfetched['greysteelp'];?></td>
+			<td class="cweight greentext"><?php echo $cmfetched['greysteelp']*60;?></td>
+			<td class="tolerance greentext"><?php echo $cmfetched['greysteelp']*60+60*5/100*$cmfetched['greysteelp'];?></td>
+			<td class="tolerance greentext"><?php echo $cmfetched['greysteelp']*60-60*5/100*$cmfetched['greysteelp'];?></td>
+		</tr>
+		<tr>
 			<td class="materials">BORINGS</td>
 			<td class="cpercent"><?php echo $cmfetched['boringsp'];?></td>
 			<td class="cweight greentext"><?php echo $cmfetched['boringsp']*60;?></td>
@@ -103,10 +117,10 @@
 		</tr>
 		<tr>
 			<td class="materials">TOTAL</td>
-			<td class="cpercent"><?php echo $cmfetched['steelp']+$cmfetched['boringsp']+$cmfetched['pigironp']+$cmfetched['returnsp'];?></td>
-			<td class="cweight greentext"><?php echo $cmfetched['steelp']*60+$cmfetched['boringsp']*60+$cmfetched['pigironp']*60+$cmfetched['returnsp']*60;?></td>
-			<td class="tolerance greentext"><?php echo $cmfetched['steelp']*60+60*5/100*$cmfetched['steelp']+$cmfetched['boringsp']*60+60*5/100*$cmfetched['boringsp']+$cmfetched['pigironp']*60+60*5/100*$cmfetched['pigironp']+$cmfetched['returnsp']*60+60*5/100*$cmfetched['returnsp'];?></td>
-			<td class="tolerance greentext"><?php echo $cmfetched['steelp']*60-60*5/100*$cmfetched['steelp']+$cmfetched['boringsp']*60-60*5/100*$cmfetched['boringsp']+$cmfetched['pigironp']*60-60*5/100*$cmfetched['pigironp']+$cmfetched['returnsp']*60-60*5/100*$cmfetched['returnsp'];?></td>
+			<td class="cpercent"><?php echo $cmfetched['steelp']+$cmfetched['tinsteelp']+$cmfetched['greysteelp']+$cmfetched['boringsp']+$cmfetched['pigironp']+$cmfetched['returnsp'];?></td>
+			<td class="cweight greentext"><?php echo $cmfetched['steelp']*60+$cmfetched['tinsteelp']*60+$cmfetched['greysteelp']*60+$cmfetched['boringsp']*60+$cmfetched['pigironp']*60+$cmfetched['returnsp']*60;?></td>
+			<td class="tolerance greentext"><?php echo $cmfetched['steelp']*60+60*5/100*$cmfetched['steelp']+$cmfetched['tinsteelp']*60+60*5/100*$cmfetched['tinsteelp']+$cmfetched['greysteelp']*60+60*5/100*$cmfetched['greysteelp']+$cmfetched['boringsp']*60+60*5/100*$cmfetched['boringsp']+$cmfetched['pigironp']*60+60*5/100*$cmfetched['pigironp']+$cmfetched['returnsp']*60+60*5/100*$cmfetched['returnsp'];?></td>
+			<td class="tolerance greentext"><?php echo $cmfetched['steelp']*60-60*5/100*$cmfetched['steelp']+$cmfetched['tinsteelp']*60-60*5/100*$cmfetched['tinsteelp']+$cmfetched['greysteelp']*60-60*5/100*$cmfetched['greysteelp']+$cmfetched['boringsp']*60-60*5/100*$cmfetched['boringsp']+$cmfetched['pigironp']*60-60*5/100*$cmfetched['pigironp']+$cmfetched['returnsp']*60-60*5/100*$cmfetched['returnsp'];?></td>
 		</tr>
 	</table>
 	</div>

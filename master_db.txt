@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS holder(
 );
 CREATE TABLE IF NOT EXISTS todayplan(
     id INT AUTO_INCREMENT PRIMARY KEY,
-	todaydate DATE,
+    todaydate DATE,
     plan_no INT(5) ,
     part INT(10),
     moulds INT(10),
@@ -51,8 +51,10 @@ CREATE TABLE IF NOT EXISTS todayplan(
 );
 CREATE TABLE IF NOT EXISTS chargemix(
     id INT AUTO_INCREMENT PRIMARY KEY,
-	grade VARCHAR(50),
+    grade varchar(50),
     steelp INT(5),
+    tinsteelp INT(5),
+    greysteelp INT(5),
     boringsp INT(5),
     pigironp INT(5),
     returnsp INT(5),
