@@ -44,19 +44,19 @@
         }
     ?>
     <?php
-		$part = 'SELECT current_part,id from live where id=1';
+		$part = "SELECT grade from part_details where part_number='$ptn'";
 		$respart = $conn->query($part);
 		$partrow = $respart->fetch_assoc();
-		$nk = "$partrow[current_part]";
-		$sql = "SELECT * FROM part_details where part_number=".$nk;
-		$result = $conn->query($sql);
-		$row = $result->fetch_assoc();
+		$grade = "$partrow[grade]";
+        $cmq = "SELECT * from chargemix where grade='$grade'";
+        $cmqf = $conn->query($cmq);
+        $chargemix = $cmqf->fetch_assoc();
         ?>
     <div id='fbox'>
         <div id='patternbox'>
-            <h3>Pattern Chemistry</h3>
             <label for='pattern'>Pattern</label>
             <input type='text' id='pattern' readonly value=<?php echo "$ptn";?>><br>
+            <h3>Pattern Chemistry</h3>
                     <table class='spec'>
                         <td>
                             <tr class='elecomp'>C%</tr>
@@ -113,16 +113,7 @@
         </div>
         <div class='gradeselector' onchange='chargemix()'>
             <label for='grade'>Grade: </label>
-            <select id='grade' name='grade'  readonly>
-                <option value='sg-tin'>SG - Tin Route</option>
-                <option value='sg-copper'>SG - Copper Route</option>
-                <option value='sg-knu'>SG - KNU</option>
-                <option value='sg-azterlan'>SG - Azterlan</option>
-                <option value='sg-lowmoly'>SG - Low Molybdenum</option>
-                <option value='sg-highmoly'>SG - High Molybdenum</option>
-                <option value='cg-moly'>CG - Molybdenum</option>
-                <option value='simoni'>CG - SiMoNi</option>
-                </select>
+            <input type="text" id="grade" value='<?php echo "$grade";?>'></br>
                 <table>
                 <tr>
                     <th>Raw Material</th>
@@ -131,23 +122,33 @@
                 </tr>
                 <tr>
                     <td>Steel</td>
-                    <td><input id='psteel' readonly></td>
+                    <td><input id='psteel' value="<?php echo "$chargemix[steelp]";?>" readonly></td>
                     <td><input id='wsteel' readonly></td>
                 </tr>
                 <tr>
-                    <td>Foundry Returns</td>
-                    <td><input id='preturns' readonly></td>
-                    <td><input id='wreturns' readonly></td>
+                    <td>Tin Steel</td>
+                    <td><input id='ptinsteel' value="<?php echo "$chargemix[tinsteelp]";?>" readonly></td>
+                    <td><input id='wtinsteel' readonly></td>
+                </tr>
+                <tr>
+                    <td>Grey Steel</td>
+                    <td><input id='pgreysteel' value="<?php echo "$chargemix[greysteelp]";?>" readonly></td>
+                    <td><input id='wgreysteel' readonly></td>
                 </tr>
                 <tr>
                     <td>Borings</td>
-                    <td><input id='pborings' readonly></td>
+                    <td><input id='pborings' value="<?php echo "$chargemix[boringsp]";?>" readonly></td>
                     <td><input id='wborings' readonly></td>
                 </tr>
                 <tr>
                     <td>Pig Iron</td>
-                    <td><input id='ppigiron' readonly></td>
+                    <td><input id='ppigiron' value="<?php echo "$chargemix[pigironp]";?>" readonly></td>
                     <td><input id='wpigiron' readonly></td>
+                </tr>
+                <tr>
+                    <td>Foundry Returns</td>
+                    <td><input id='preturns' value="<?php echo "$chargemix[returnsp]";?>" readonly></td>
+                    <td><input id='wreturns' readonly></td>
                 </tr>
         </table>
     </div>  
@@ -159,7 +160,6 @@
         <label for='maddh'>Hi-carbon</label>
         <input type='text' class='maddh'>
         <div class='result'></div>
-        <!-- <button onclick='chargemix()' id='btn'>Give me additives</button> -->
     </div>
 </div>
     <div class="steelsuggestion"></div>
