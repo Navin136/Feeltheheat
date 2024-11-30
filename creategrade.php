@@ -36,7 +36,7 @@
                         echo "<b>$grade already exits please edit or add another</b>";
                     }
                     else{
-                        $sqlq = "INSERT INTO chargemix(grade,steelp,tinsteelp,greysteelp,boringsp,pigironp,returnsp) VALUES ('$grade','$steelp','$tinsteelp','greysteelp','$boringsp','$pigironp','$returnsp')";
+                        $sqlq = "INSERT INTO chargemix(grade,steelp,tinsteelp,greysteelp,boringsp,pigironp,returnsp) VALUES ('$grade','$steelp','$tinsteelp','$greysteelp','$boringsp','$pigironp','$returnsp')";
                         $res = $conn->query($sqlq);
                         if(!$res){
                             echo "Something you entered in wrong";
