@@ -296,32 +296,32 @@
                 <tr>
                     <td>Steel</td>
                     <td><input id='psteel' value="<?php echo "$chargemix[steelp]";?>" readonly></td>
-                    <td><input id='wsteel' readonly></td>
+                    <td><input id='wsteel' value="<?php echo $chargemix['steelp']*60?>" readonly></td>
                 </tr>
                 <tr>
                     <td>Tin Steel</td>
                     <td><input id='ptinsteel' value="<?php echo "$chargemix[tinsteelp]";?>" readonly></td>
-                    <td><input id='wtinsteel' readonly></td>
+                    <td><input id='wtinsteel' value="<?php echo $chargemix['tinsteelp']*60?>" readonly></td>
                 </tr>
                 <tr>
                     <td>Grey Steel</td>
                     <td><input id='pgreysteel' value="<?php echo "$chargemix[greysteelp]";?>" readonly></td>
-                    <td><input id='wgreysteel' readonly></td>
+                    <td><input id='wgreysteel' value="<?php echo $chargemix['greysteelp']*60?>" readonly></td>
                 </tr>
                 <tr>
                     <td>Borings</td>
                     <td><input id='pborings' value="<?php echo "$chargemix[boringsp]";?>" readonly></td>
-                    <td><input id='wborings' readonly></td>
+                    <td><input id='wborings' value="<?php echo $chargemix['boringsp']*60?>" readonly></td>
                 </tr>
                 <tr>
                     <td>Pig Iron</td>
                     <td><input id='ppigiron' value="<?php echo "$chargemix[pigironp]";?>" readonly></td>
-                    <td><input id='wpigiron' readonly></td>
+                    <td><input id='wpigiron' value="<?php echo $chargemix['pigironp']*60?>" readonly></td>
                 </tr>
                 <tr>
                     <td>Foundry Returns</td>
                     <td><input id='preturns' value="<?php echo "$chargemix[returnsp]";?>" readonly></td>
-                    <td><input id='wreturns' readonly></td>
+                    <td><input id='wreturns' value="<?php echo $chargemix['returnsp']*60?>" readonly></td>
                 </tr>
         </table>
     </div>  
