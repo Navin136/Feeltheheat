@@ -51,6 +51,179 @@
         $cmq = "SELECT * from chargemix where grade='$grade'";
         $cmqf = $conn->query($cmq);
         $chargemix = $cmqf->fetch_assoc();
+        $steelmaterial = $conn->query("SELECT * from composition where material='steel'");
+        if($steelmaterial->num_rows>0){
+            while($row=$steelmaterial->fetch_assoc()){
+                $steelc = $row['carbon'];
+                $steelsi = $row['silicon'];
+                $steelcu = $row['copper'];
+                $steelsn = $row['tin'];
+                $steelmn = $row['manganese'];
+                $steelmo = $row['molybdenum'];
+                $steelni = $row['nickel'];
+                $steelti = $row['titanium'];
+                echo "<input type='hidden' id='steelc'  value='$steelc'>";
+                echo "<input type='hidden' id='steelsi' value='$steelsi'>";
+                echo "<input type='hidden' id='steelcu' value='$steelcu'>";
+                echo "<input type='hidden' id='steelsn' value='$steelsn'>";
+                echo "<input type='hidden' id='steelmn' value='$steelmn'>";
+                echo "<input type='hidden' id='steelmo' value='$steelmo'>";
+                echo "<input type='hidden' id='steelni' value='$steelni'>";
+                echo "<input type='hidden' id='steelti' value='$steelti'>";
+            }
+        }
+        $tinsteelmaterial = $conn->query("SELECT * from composition where material='tinsteel'");
+        if($tinsteelmaterial->num_rows>0){
+            while($row=$tinsteelmaterial->fetch_assoc()){
+                $tinsteelc = $row['carbon'];
+                $tinsteelsi = $row['silicon'];
+                $tinsteelcu = $row['copper'];
+                $tinsteelsn = $row['tin'];
+                $tinsteelmn = $row['manganese'];
+                $tinsteelmo = $row['molybdenum'];
+                $tinsteelni = $row['nickel'];
+                $tinsteelti = $row['titanium'];
+                echo "<input type='hidden' id='tinsteelc'  value='$tinsteelc'>";
+                echo "<input type='hidden' id='tinsteelsi' value='$tinsteelsi'>";
+                echo "<input type='hidden' id='tinsteelcu' value='$tinsteelcu'>";
+                echo "<input type='hidden' id='tinsteelsn' value='$tinsteelsn'>";
+                echo "<input type='hidden' id='tinsteelmn' value='$tinsteelmn'>";
+                echo "<input type='hidden' id='tinsteelmo' value='$tinsteelmo'>";
+                echo "<input type='hidden' id='tinsteelni' value='$tinsteelni'>";
+                echo "<input type='hidden' id='tinsteelti' value='$tinsteelti'>";
+            }
+        }
+        $greysteelmaterial = $conn->query("SELECT * from composition where material='greysteel'");
+        if($greysteelmaterial->num_rows>0){
+            while($row=$greysteelmaterial->fetch_assoc()){
+                $greysteelc = $row['carbon'];
+                $greysteelsi = $row['silicon'];
+                $greysteelcu = $row['copper'];
+                $greysteelsn = $row['tin'];
+                $greysteelmn = $row['manganese'];
+                $greysteelmo = $row['molybdenum'];
+                $greysteelni = $row['nickel'];
+                $greysteelti = $row['titanium'];
+                echo "<input type='hidden' id='greysteelc'  value='$greysteelc'>";
+                echo "<input type='hidden' id='greysteelsi' value='$greysteelsi'>";
+                echo "<input type='hidden' id='greysteelcu' value='$greysteelcu'>";
+                echo "<input type='hidden' id='greysteelsn' value='$greysteelsn'>";
+                echo "<input type='hidden' id='greysteelmn' value='$greysteelmn'>";
+                echo "<input type='hidden' id='greysteelmo' value='$greysteelmo'>";
+                echo "<input type='hidden' id='greysteelni' value='$greysteelni'>";
+                echo "<input type='hidden' id='greysteelti' value='$greysteelti'>";
+            }
+        }
+        $boringsmaterial = $conn->query("SELECT * from composition where material='borings'");
+        if($boringsmaterial->num_rows>0){
+            while($row=$boringsmaterial->fetch_assoc()){
+                $boringsc = $row['carbon'];
+                $boringssi = $row['silicon'];
+                $boringscu = $row['copper'];
+                $boringssn = $row['tin'];
+                $boringsmn = $row['manganese'];
+                $boringsmo = $row['molybdenum'];
+                $boringsni = $row['nickel'];
+                $boringsti = $row['titanium'];
+                echo "<input type='hidden' id='boringsc'  value='$boringsc'>";
+                echo "<input type='hidden' id='boringssi' value='$boringssi'>";
+                echo "<input type='hidden' id='boringscu' value='$boringscu'>";
+                echo "<input type='hidden' id='boringssn' value='$boringssn'>";
+                echo "<input type='hidden' id='boringsmn' value='$boringsmn'>";
+                echo "<input type='hidden' id='boringsmo' value='$boringsmo'>";
+                echo "<input type='hidden' id='boringsni' value='$boringsni'>";
+                echo "<input type='hidden' id='boringsti' value='$boringsti'>";
+            }
+        }
+        $pigironmaterial = $conn->query("SELECT * from composition where material='pigiron'");
+        if($pigironmaterial->num_rows>0){
+            while($row=$pigironmaterial->fetch_assoc()){
+                $pigironc = $row['carbon'];
+                $pigironsi = $row['silicon'];
+                $pigironcu = $row['copper'];
+                $pigironsn = $row['tin'];
+                $pigironmn = $row['manganese'];
+                $pigironmo = $row['molybdenum'];
+                $pigironni = $row['nickel'];
+                $pigironti = $row['titanium'];
+                echo "<input type='hidden' id='pigironc'  value='$pigironc'>";
+                echo "<input type='hidden' id='pigironsi' value='$pigironsi'>";
+                echo "<input type='hidden' id='pigironcu' value='$pigironcu'>";
+                echo "<input type='hidden' id='pigironsn' value='$pigironsn'>";
+                echo "<input type='hidden' id='pigironmn' value='$pigironmn'>";
+                echo "<input type='hidden' id='pigironmo' value='$pigironmo'>";
+                echo "<input type='hidden' id='pigironni' value='$pigironni'>";
+                echo "<input type='hidden' id='pigironti' value='$pigironti'>";
+            }
+        }
+        if(stripos("$grade","copper")){
+            $cureturnsmaterial = $conn->query("SELECT * from composition where material='cureturns'");
+            if($cureturnsmaterial->num_rows>0){
+                while($row=$cureturnsmaterial->fetch_assoc()){
+                    $returnsc = $row['carbon'];
+                    $returnssi = $row['silicon'];
+                    $returnscu = $row['copper'];
+                    $returnssn = $row['tin'];
+                    $returnsmn = $row['manganese'];
+                    $returnsmo = $row['molybdenum'];
+                    $returnsni = $row['nickel'];
+                    $returnsti = $row['titanium'];
+                }
+            }
+        }
+        if(stripos("$grade","tin")){
+            $snreturnsmaterial = $conn->query("SELECT * from composition where material='snreturns'");
+            if($snreturnsmaterial->num_rows>0){
+                while($row=$snreturnsmaterial->fetch_assoc()){
+                    $returnsc = $row['carbon'];
+                    $returnssi = $row['silicon'];
+                    $returnscu = $row['copper'];
+                    $returnssn = $row['tin'];
+                    $returnsmn = $row['manganese'];
+                    $returnsmo = $row['molybdenum'];
+                    $returnsni = $row['nickel'];
+                    $returnsti = $row['titanium'];
+                }
+            }
+        }
+        if(stripos("$grade","sg-simo")){
+            $simoreturnsmaterial = $conn->query("SELECT * from composition where material='simoreturns'");
+            if($simoreturnsmaterial->num_rows>0){
+                while($row=$simoreturnsmaterial->fetch_assoc()){
+                    $returnsc = $row['carbon'];
+                    $returnssi = $row['silicon'];
+                    $returnscu = $row['copper'];
+                    $returnssn = $row['tin'];
+                    $returnsmn = $row['manganese'];
+                    $returnsmo = $row['molybdenum'];
+                    $returnsni = $row['nickel'];
+                    $returnsti = $row['titanium'];
+                }
+            }
+        }
+        if(stripos("$grade","simoni")){
+            $simonireturnsmaterial = $conn->query("SELECT * from composition where material='simonireturns'");
+            if($simonireturnsmaterial->num_rows>0){
+                while($row=$simonireturnsmaterial->fetch_assoc()){
+                    $returnsc = $row['carbon'];
+                    $returnssi = $row['silicon'];
+                    $returnscu = $row['copper'];
+                    $returnssn = $row['tin'];
+                    $returnsmn = $row['manganese'];
+                    $returnsmo = $row['molybdenum'];
+                    $returnsni = $row['nickel'];
+                    $returnsti = $row['titanium'];
+                }
+            }
+        }
+        echo "<input type='hidden' id='returnsc'  value='$returnsc'>";
+        echo "<input type='hidden' id='returnssi' value='$returnssi'>";
+        echo "<input type='hidden' id='returnscu' value='$returnscu'>";
+        echo "<input type='hidden' id='returnssn' value='$returnssn'>";
+        echo "<input type='hidden' id='returnsmn' value='$returnsmn'>";
+        echo "<input type='hidden' id='returnsmo' value='$returnsmo'>";
+        echo "<input type='hidden' id='returnsni' value='$returnsni'>";
+        echo "<input type='hidden' id='returnsti' value='$returnsti'>";
         ?>
     <div id='fbox'>
         <div id='patternbox'>

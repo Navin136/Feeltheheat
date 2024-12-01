@@ -55,10 +55,12 @@
                 <td><select name="material" >
                     <option value=""></option>
                     <option value="steel">Steel Scrap</option>
+                    <option value="tinsteel">Tin Steel Scrap</option>
+                    <option value="greysteel">Grey Steel Scrap</option>
                     <option value="borings">Borings</option>
                     <option value="pigiron">Pig Iron</option>
-                    <option value="sgsnreturns">SG Tin Returns</option>
-                    <option value="sgcureturns">SG CopperReturns</option>
+                    <option value="snreturns">SG Tin Returns</option>
+                    <option value="cureturns">SG CopperReturns</option>
                     <option value="cgreturns">CG Returns</option>
                     <option value="simoreturns">SiMo Returns</option>
                     <option value="simonireturns">SiMoNi Returns</option>
