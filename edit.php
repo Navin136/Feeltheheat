@@ -260,26 +260,31 @@
                     <tr>
                         <td><label for='grade'>Grade</label></td>
                         <td><select id='grade' name='grade'>
-                                <option value='<?php echo $grade;?>'><?php echo $grade;?></option>
-                                <option value='SG 400/15-Copper'>SG 400/15-Copper</option>
-                                <option value='SG 400/15-Azterlan Copper'>SG 400/15-Azterlan Copper</option>
-                                <option value='SG 450/10-Copper'>SG 450/10-Copper</option>
-                                <option value='SG 450/10-Azterlan Copper'>SG 450/10-Azterlan Copper</option>
-                                <option value='FCD 500K-SG Tin'>FCD 500K-SG Tin</option>
-                                <option value='FCD 500K-SG Copper'>FCD 500K-SG Copper</option>
-                                <option value='SG 500/7-Tin'>SG 500/7-Tin</option>
-                                <option value='SG 500/7-Copper'>SG 500/7-Copper</option>
-                                <option value='SG 500/7-Azterlan Tin'>SG 500/7-Azterlan Tin</option>
-                                <option value='SG 500/7-Azterlan Copper'>SG 500/7-Azterlan Copper</option>
-                                <option value='SG 550/6-Tin'>SG 550/6-Tin</option>
-                                <option value='SG 550/6-Copper'>SG 550/6-Copper</option>
-                                <option value='SG 550/6-Azterlan Tin'>SG 550/6-Azterlan Tin</option>
-                                <option value='SG 550/6-Azterlan Copper'>SG 550/6-Azterlan Copper</option>
-                                <option value="SG Azterlan Housing">SG Azterlan Housing</option>
-                                <option value="SG Azterlan Carrier">SG Azterlan Carrier</option>
-                                <option value='SG-SiMo'>SG-SiMo</option>
-                                <option value='CG-SiMo'>CG-SiMo</option>
-                                <option value='CG-SiMoNi'>CG-SiMoNi</option>
+                            <option value='<?php echo $grade;?>'><?php echo $grade;?></option>
+                            <option value='FCD 500K SG Tin'>FCD 500K-SG Tin</option>
+                            <option value='FCD 500K-SG Copper'>FCD 500K-SG Copper</option>
+                            <option value='FCD 550K-SG Tin'>FCD 550K-SG Tin</option>
+                            <option value='FCD 550K-SG Copper'>FCD 550K-SG Copper</option>
+                            <option value='SG 400/15-Tin'>SG 400/15-Tin</option>
+                            <option value='SG 450/10-Tin'>SG 450/10-Tin</option>
+                            <option value='SG 500/7-Tin'>SG 500/7-Tin</option>
+                            <option value='SG 550/6-Tin'>SG 550/6-Tin</option>
+                            <option value='SG 400/15-Copper'>SG 400/15-Copper</option>
+                            <option value='SG 450/10-Copper'>SG 450/10-Copper</option>
+                            <option value='SG 500/7-Copper'>SG 500/7-Copper</option>
+                            <option value='SG 550/6-Copper'>SG 550/6-Copper</option>
+                            <option value='SG 400/15-Azterlan Tin'>SG 400/15-Azterlan Tin</option>
+                            <option value='SG 450/10-Azterlan Tin'>SG 450/10-Azterlan Tin</option>
+                            <option value='SG 500/7-Azterlan Tin'>SG 500/7-Azterlan Tin</option>
+                            <option value='SG 550/6-Azterlan Tin'>SG 550/6-Azterlan Tin</option>
+                            <option value='SG 400/15-Azterlan Copper'>SG 400/15-Azterlan Copper</option>
+                            <option value='SG 450/10-Azterlan Copper'>SG 450/10-Azterlan Copper</option>
+                            <option value='SG 500/7-Azterlan Copper'>SG 500/7-Azterlan Copper</option>
+                            <option value='SG 550/6-Azterlan Copper'>SG 550/6-Azterlan Copper</option>
+                            <option value='EN GJV 300 CG Tin'>EN GJV 300 CG Tin</option>
+                            <option value='SG-SiMo'>SG-SiMo</option>
+                            <option value='CG-SiMo'>CG-SiMo</option>
+                            <option value='CG-SiMoNi'>CG-SiMoNi</option>
                             </select>
                         </td>
                     </tr>
