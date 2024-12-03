@@ -1,16 +1,6 @@
 <?php
-$conn = new mysqli('localhost', 'root', '', 'MASTER');
-if ($conn -> connect_errno){ 
-       echo "Failed to connect to MySQL: " . $conn -> connect_error; 
-       exit(); 
-}
-$sql = "select * from part_details "; 
-$result = $conn->query($sql);
-$row =[]; 
-if ($result->num_rows > 0)  
-    { 
-        // fetch all data from db into array  
-        $row = $result->fetch_all(MYSQLI_ASSOC);   
-    }
-print_r($row);
+$date= "2024-12-03";
+$firstdate = "2024-01-00";
+$nk = (strtotime($date)-strtotime("2024-01-00"))/(24*60*60);
+echo $nk;
 ?>

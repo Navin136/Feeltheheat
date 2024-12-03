@@ -18,7 +18,7 @@ input,select{
 select{
     margin-right: 30px;
 }
-#lpattern, #ltt, #lalloy{
+#lpattern, #ltt, #lalloy, #datelabel, #dclabel{
 	font-size: 30px;
 	font-weight: bolder;    
 }
@@ -55,7 +55,7 @@ input#calbtn{
 	font-size: 20px;
 	font-weight: bold;
 }
-#pattern,#alloy,#mtwt,#tt{
+#pattern,#alloy,#mtwt,#tt, .datearea{
     color: red;
     font-size: xx-large;
     font-weight: bold;

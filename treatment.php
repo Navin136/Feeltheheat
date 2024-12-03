@@ -24,6 +24,7 @@
 		$curr_patt = "SELECT * from todayplan where id='$cppid'";
 		$cresult = $conn->query($curr_patt);
 		$currresult = $cresult->fetch_assoc();
+		$datecode = (strtotime($currresult['todaydate'])-strtotime("2024-01-00"))/(24*60*60)."4";
 		$nk = "$currresult[part]";
 		$sql = "SELECT * FROM part_details where part_number=".$nk;
 		$result = $conn->query($sql);
@@ -32,6 +33,10 @@
         $reshold = $conn->query($holder);
         $rowholder =$reshold->fetch_assoc();
     echo "<div class='content'>
+        <label id='datelabel'>Date: </label>
+        <input class='datearea' type='text' readonly value=$currresult[todaydate]><br>
+        <label id='dclabel'>Datecode:</label>
+        <input class='datearea' id='dcinput' type='text' readonly value=$datecode><br>
 		<input type='hidden' readonly id='mg' value=$row[magnesium]>
 		<label for='pattern' id='lpattern'>Running pattern:</label>
 		<input type='text' readonly id='pattern' value=$row[part_number]><br>
