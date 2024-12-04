@@ -96,14 +96,14 @@ function chargemix(){
     let hcgain = document.querySelector(".maddh").value*60/furnaceweight;
 
     // bath composition
-    let bathcarbon = ((steelc*wsteel + tinsteelc*wtinsteel + greysteelc*wgreysteel + pigironc*wpigiron + returnsc*wreturns)/furnaceweight+ncgain+hcgain).toFixed(2);
-    let bathsilicon = ((steelsi*wsteel + tinsteelsi*wtinsteel + greysteelsi*wgreysteel + pigironsi*wpigiron + returnssi*wreturns)/furnaceweight).toFixed(2);
-    let bathcopper = ((steelcu*wsteel + tinsteelcu*wtinsteel + greysteelcu*wgreysteel + pigironcu*wpigiron + returnscu*wreturns)/furnaceweight).toFixed(2);
-    let bathtin = ((steelsn*wsteel + tinsteelsn*wtinsteel + greysteelsn*wgreysteel + pigironsn*wpigiron + returnssn*wreturns)/furnaceweight).toFixed(3);
-    let bathmanganese = ((steelmn*wsteel + tinsteelmn*wtinsteel + greysteelmn*wgreysteel + pigironmn*wpigiron + returnsmn*wreturns)/furnaceweight).toFixed(2);
-    let bathmolybdenum = ((steelmo*wsteel + tinsteelmo*wtinsteel + greysteelmo*wgreysteel + pigironmo*wpigiron + returnsmo*wreturns)/furnaceweight).toFixed(3);
-    let bathnickel = ((steelni*wsteel + tinsteelni*wtinsteel + greysteelni*wgreysteel + pigironni*wpigiron + returnsni*wreturns)/furnaceweight).toFixed(3);
-    let bathtitanium = ((steelti*wsteel + tinsteelti*wtinsteel + greysteelti*wgreysteel + pigironti*wpigiron + returnsti*wreturns)/furnaceweight).toFixed(2);
+    let bathcarbon = ((steelc*wsteel + tinsteelc*wtinsteel + greysteelc*wgreysteel + boringsc*wborings + pigironc*wpigiron + returnsc*wreturns)/furnaceweight+ncgain+hcgain).toFixed(2);
+    let bathsilicon = ((steelsi*wsteel + tinsteelsi*wtinsteel + greysteelsi*wgreysteel + boringssi*wborings + pigironsi*wpigiron + returnssi*wreturns)/furnaceweight).toFixed(2);
+    let bathcopper = ((steelcu*wsteel + tinsteelcu*wtinsteel + greysteelcu*wgreysteel + boringscu*wborings + pigironcu*wpigiron + returnscu*wreturns)/furnaceweight).toFixed(2);
+    let bathtin = ((steelsn*wsteel + tinsteelsn*wtinsteel + greysteelsn*wgreysteel + boringssn*wborings + pigironsn*wpigiron + returnssn*wreturns)/furnaceweight).toFixed(3);
+    let bathmanganese = ((steelmn*wsteel + tinsteelmn*wtinsteel + greysteelmn*wgreysteel + boringsmn*wborings + pigironmn*wpigiron + returnsmn*wreturns)/furnaceweight).toFixed(2);
+    let bathmolybdenum = ((steelmo*wsteel + tinsteelmo*wtinsteel + greysteelmo*wgreysteel + boringsmo*wborings + pigironmo*wpigiron + returnsmo*wreturns)/furnaceweight).toFixed(3);
+    let bathnickel = ((steelni*wsteel + tinsteelni*wtinsteel + greysteelni*wgreysteel + boringsni*wborings + pigironni*wpigiron + returnsni*wreturns)/furnaceweight).toFixed(3);
+    let bathtitanium = ((steelti*wsteel + tinsteelti*wtinsteel + greysteelti*wgreysteel + boringsti*wborings + pigironti*wpigiron + returnsti*wreturns)/furnaceweight).toFixed(2);
 
     let haddition = ((reqcarbon-bathcarbon)*furnaceweight/60).toFixed(2);
     let naddition = ((reqcarbon-bathcarbon)*furnaceweight/90).toFixed(2);
