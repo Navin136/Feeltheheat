@@ -64,7 +64,7 @@
         </table>
     </div><div>
     <div id='btndiv'><a href="./addmaterial.php" id="creategradebtn">Add Material</a></div>
-        <table>
+        <table id='compdiv'>
             <tr>
                 <th>Material</th>
                 <th>C</th>

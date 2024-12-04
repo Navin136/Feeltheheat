@@ -71,6 +71,8 @@
                 echo "<input type='hidden' id='steelni' value='$steelni'>";
                 echo "<input type='hidden' id='steelti' value='$steelti'>";
             }
+        }else{
+            echo "<p>Material composition for Steel scrap is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
         }
         $tinsteelmaterial = $conn->query("SELECT * from composition where material='tinsteel'");
         if($tinsteelmaterial->num_rows>0){
@@ -92,6 +94,8 @@
                 echo "<input type='hidden' id='tinsteelni' value='$tinsteelni'>";
                 echo "<input type='hidden' id='tinsteelti' value='$tinsteelti'>";
             }
+        }else{
+            echo "<p>Material composition for Tin Steel scrap is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
         }
         $greysteelmaterial = $conn->query("SELECT * from composition where material='greysteel'");
         if($greysteelmaterial->num_rows>0){
@@ -113,6 +117,8 @@
                 echo "<input type='hidden' id='greysteelni' value='$greysteelni'>";
                 echo "<input type='hidden' id='greysteelti' value='$greysteelti'>";
             }
+        }else{
+            echo "<p>Material composition for Grey Steel scarp is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
         }
         $boringsmaterial = $conn->query("SELECT * from composition where material='borings'");
         if($boringsmaterial->num_rows>0){
@@ -134,6 +140,8 @@
                 echo "<input type='hidden' id='boringsni' value='$boringsni'>";
                 echo "<input type='hidden' id='boringsti' value='$boringsti'>";
             }
+        }else{
+            echo "<p>Material composition for Borings is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
         }
         $pigironmaterial = $conn->query("SELECT * from composition where material='pigiron'");
         if($pigironmaterial->num_rows>0){
@@ -155,6 +163,8 @@
                 echo "<input type='hidden' id='pigironni' value='$pigironni'>";
                 echo "<input type='hidden' id='pigironti' value='$pigironti'>";
             }
+        }else{
+            echo "<p>Material composition for Pig iron is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
         }
         if(stripos("$grade","copper")){
             $cureturnsmaterial = $conn->query("SELECT * from composition where material='cureturns'");
@@ -170,6 +180,8 @@
                     $returnsti = $row['titanium'];
                 }
             }
+        }else{
+            echo "<p>Material composition for SG- Copper returns is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
         }
         if(stripos("$grade","tin")){
             $snreturnsmaterial = $conn->query("SELECT * from composition where material='snreturns'");
@@ -185,6 +197,8 @@
                     $returnsti = $row['titanium'];
                 }
             }
+        }else{
+            echo "<p>Material composition for SG-Tin returns is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
         }
         if(stripos("$grade","sg-simo")){
             $simoreturnsmaterial = $conn->query("SELECT * from composition where material='simoreturns'");
@@ -200,6 +214,8 @@
                     $returnsti = $row['titanium'];
                 }
             }
+        }else{
+            echo "<p>Material composition for SiMo returns is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
         }
         if(stripos("$grade","simoni")){
             $simonireturnsmaterial = $conn->query("SELECT * from composition where material='simonireturns'");
@@ -215,6 +231,8 @@
                     $returnsti = $row['titanium'];
                 }
             }
+        }else{
+            echo "<p>Material composition for SiMoNi returns is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
         }
         echo "<input type='hidden' id='returnsc'  value='$returnsc'>";
         echo "<input type='hidden' id='returnssi' value='$returnssi'>";

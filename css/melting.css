@@ -47,3 +47,6 @@ div.result{
 input#grade{
     width: 250px;
 }
+#complink{
+    color: red;
+}
