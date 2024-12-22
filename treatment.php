@@ -24,7 +24,11 @@
 		$curr_patt = "SELECT * from todayplan where id='$cppid'";
 		$cresult = $conn->query($curr_patt);
 		$currresult = $cresult->fetch_assoc();
-		$datecode = (strtotime($currresult['todaydate'])-strtotime("2024-01-00"))/(24*60*60)."4";
+		$dateselected=$currresult['todaydate'];
+		$yeargot = substr($dateselected,0,4);
+		$lastdigit = substr($dateselected,3,1);
+		$firstdate=$yeargot."-01-00";
+		$datecode = (strtotime($dateselected)-strtotime($firstdate))/(60*60*24).$lastdigit;
 		$nk = "$currresult[part]";
 		$sql = "SELECT * FROM part_details where part_number=".$nk;
 		$result = $conn->query($sql);

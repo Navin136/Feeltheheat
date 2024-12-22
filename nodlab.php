@@ -52,7 +52,14 @@
                             <label id="datelabel">Date: </label>
                             <input class="datearea" type="text" readonly value='<?php echo $currresult['todaydate'];?>'>
                             <label id="dclabel">Datecode:</label>
-                            <input class="datearea" id="dcinput" type="text" readonly value='<?php echo (strtotime($currresult['todaydate'])-strtotime("2024-01-00"))/(24*60*60)."4";?>'>
+                            <?php
+                                		$dateselected=$currresult['todaydate'];
+                                        $yeargot = substr($dateselected,0,4);
+                                        $lastdigit = substr($dateselected,3,1);
+                                        $firstdate=$yeargot."-01-00";
+                                        $datecode = (strtotime($dateselected)-strtotime($firstdate))/(60*60*24).$lastdigit;
+                            ?>
+                            <input class="datearea" id="dcinput" type="text" readonly value='<?php echo $datecode;?>'>
                         </div>
                         <tr>
                             <td class="labels"><label for='pattern'>Part Number</label></td>
