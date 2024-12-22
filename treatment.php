@@ -29,6 +29,11 @@
 		$lastdigit = substr($dateselected,3,1);
 		$firstdate=$yeargot."-01-00";
 		$datecode = (strtotime($dateselected)-strtotime($firstdate))/(60*60*24).$lastdigit;
+		if(strlen((string)$datecode)==2 ){
+			$datecode = "00".$datecode;
+		}elseif(strlen((string)$datecode)==3 ){
+			$datecode = "0".$datecode;
+		}
 		$nk = "$currresult[part]";
 		$sql = "SELECT * FROM part_details where part_number=".$nk;
 		$result = $conn->query($sql);
