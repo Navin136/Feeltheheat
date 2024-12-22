@@ -43,16 +43,16 @@
         $rowholder =$reshold->fetch_assoc();
     echo "<div class='content'>
         <label id='datelabel'>Date: </label>
-        <input class='datearea' type='text' readonly value=$currresult[todaydate]><br>
+        <input class='datearea' type='text' readonly value='$currresult[todaydate]'><br>
         <label id='dclabel'>Datecode:</label>
         <input class='datearea' id='dcinput' type='text' readonly value=$datecode><br>
-		<input type='hidden' readonly id='mg' value=$row[magnesium]>
+		<input type='hidden' readonly id='mg' value='$row[magnesium]'>
 		<label for='pattern' id='lpattern'>Running pattern:</label>
-		<input type='text' readonly id='pattern' value=$row[part_number]><br>
+		<input type='text' readonly id='pattern' value='$row[part_number]'><br>
 		<label for='alloy' id='lalloy'>FeSiMg Alloy type:</label>
-		<input type='text' readonly id='alloy' value=$row[alloy]><br>
+		<input type='text' readonly id='alloy' value='$row[alloy]'><br>
 		<label for='mtwt' id='lmtwt'>Metal Weight:</label>
-		<input name='mtwt' readonly id='mtwt' value=$row[metalweight]><br>
+		<input name='mtwt' readonly id='mtwt' value='$row[metalweight]'><br>
 		<label for='tt' id='ltt'>Tapping Temp:</label>
 		<input name='tt' id='tt' readonly value='1460-1490'><br><br><br>
 		<table id='alloy_steel'>
