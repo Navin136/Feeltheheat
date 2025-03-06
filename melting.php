@@ -180,9 +180,9 @@
                     $returnsti = $row['titanium'];
                 }
             }
-        }else{
+        else{
             echo "<p>Material composition for SG- Copper returns is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
-        }
+        }}
         if(stripos("$grade","tin")){
             $snreturnsmaterial = $conn->query("SELECT * from composition where material='snreturns'");
             if($snreturnsmaterial->num_rows>0){
@@ -197,9 +197,9 @@
                     $returnsti = $row['titanium'];
                 }
             }
-        }else{
+        else{
             echo "<p>Material composition for SG-Tin returns is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
-        }
+        }}
         if(stripos("$grade","sg-simo")){
             $simoreturnsmaterial = $conn->query("SELECT * from composition where material='simoreturns'");
             if($simoreturnsmaterial->num_rows>0){
@@ -214,9 +214,9 @@
                     $returnsti = $row['titanium'];
                 }
             }
-        }else{
+        else{
             echo "<p>Material composition for SiMo returns is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
-        }
+        }}
         if(stripos("$grade","simoni")){
             $simonireturnsmaterial = $conn->query("SELECT * from composition where material='simonireturns'");
             if($simonireturnsmaterial->num_rows>0){
@@ -231,9 +231,9 @@
                     $returnsti = $row['titanium'];
                 }
             }
-        }else{
+        else{
             echo "<p>Material composition for SiMoNi returns is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
-        }
+        }}
         echo "<input type='hidden' id='returnsc'  value='$returnsc'>";
         echo "<input type='hidden' id='returnssi' value='$returnssi'>";
         echo "<input type='hidden' id='returnscu' value='$returnscu'>";

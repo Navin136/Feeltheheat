@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "navin";
 $db = "MASTER";
 
 // Create connection

@@ -48,7 +48,7 @@
         <div id='tdate'><label for="tdate">Date</label>
         <input type="date" name="tdate"></div>
         <?php
-        $conn=new mysqli('localhost','root','','MASTER');
+        $conn=new mysqli('localhost','root','navin','MASTER');
         if($conn->connect_error){
             echo "Something rekt while connecting db";
         }
