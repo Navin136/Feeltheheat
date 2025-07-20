@@ -46,7 +46,7 @@
     <?php
 		$part = "SELECT grade from part_details where part_number='$ptn'";
 		$respart = $conn->query($part);
-		$partrow = $respart->fetch_assoc();
+		$partrow = $respart->fetch_assoc(); 
 		$grade = "$partrow[grade]";
         $cmq = "SELECT * from chargemix where grade='$grade'";
         $cmqf = $conn->query($cmq);
@@ -200,7 +200,7 @@
         else{
             echo "<p>Material composition for SG-Tin returns is not given. please goto <a href='addmaterial.php' id='complink'>Chargemix Page</a> to update composition</p>";
         }}
-        if(stripos("$grade","sg-simo")){
+        if(stripos("$grade","simo")){
             $simoreturnsmaterial = $conn->query("SELECT * from composition where material='simoreturns'");
             if($simoreturnsmaterial->num_rows>0){
                 while($row=$simoreturnsmaterial->fetch_assoc()){

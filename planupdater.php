@@ -12,6 +12,7 @@
 <body>
     <?php   
     include("header.php");
+    include("mysql.php");
     ?>
     <?php
         if(isset($_POST['uploadplan'])){
@@ -48,10 +49,6 @@
         <div id='tdate'><label for="tdate">Date</label>
         <input type="date" name="tdate"></div>
         <?php
-        $conn=new mysqli('localhost','root','navin','MASTER');
-        if($conn->connect_error){
-            echo "Something rekt while connecting db";
-        }
         echo "<table id='plantable'>";
         echo "<tr><th>Plan No</th>";
         echo "<th>Part</th>";
