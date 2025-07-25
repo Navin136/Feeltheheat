@@ -104,6 +104,12 @@
 				<td><input name='manganesew' readonly id='manganesew' class='weight' readonly></td>
 			</tr>
 			<tr>
+				<td><label>Graphite</label></td>
+				<td><input name='carbona' readonly id='carbona' class='base' value='$rowholder[carbon]'></td>
+				<td><input name='carbonr' readonly id='carbonr' class='req' value='$row[carbon]' ></td>
+				<td><input name='carbonw' readonly id='carbonw' class='weight' readonly></td>
+			</tr>
+			<tr>
 				<td><label>Mischmetal</label></td>
 				<td colspan='3'><input name='mischmetal' readonly id='mischmetal' class='weight' value='$row[mischmetal]' ></td>
 			</tr>

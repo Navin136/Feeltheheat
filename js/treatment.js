@@ -17,10 +17,13 @@ function calculate(){
 	let pcopper = document.getElementById("copperr").value;
 	let ptin = document.getElementById("tinr").value;
 	let pmanganese = document.getElementById("manganeser").value;
+	let pcarbon = document.getElementById("carbonr").value;
 	let fesiActual = document.getElementById("fesia").value;
     let copperActual = document.getElementById("coppera").value;
     let tinActual = document.getElementById("tina").value;
     let manganeseActual = document.getElementById("manganesea").value;
+    let carbonActual = document.getElementById("carbona").value;
+
 	
 	document.getElementById("fesiw").value = (((psilicon-fesiActual-(0.45*alloyp))*mtwt)/70).toFixed(1);
 	if(document.getElementById("fesiw").value <= 0){
@@ -37,5 +40,9 @@ function calculate(){
 	document.getElementById("manganesew").value = ((pmanganese-manganeseActual)*mtwt/68).toFixed(2);
 	if(document.getElementById("manganesew").value <= 0){
 		document.getElementById("manganesew").value = 'NA';
+	}
+	document.getElementById("carbonw").value = ((pcarbon-carbonActual)*mtwt/90).toFixed(2);
+	if(document.getElementById("carbonw").value <= 0){
+		document.getElementById("carbonw").value = "NA";
 	}
 }
