@@ -1,18 +1,11 @@
 window.onload=calculate;
 function calculate(){
-	let mg = document.getElementById('mg').value;
-	if(mg>=0.03){
-		console.log("Part is SG");
-		document.getElementById("alloyp").value = alloyp = 0.92;
-		document.getElementById("steelp").value = steelp = 0.8;
-	}else{
-		console.log("Part is CG");
-		document.getElementById("alloyp").value = alloyp = 0.3;
-		document.getElementById("steelp").value = steelp = 1;
-	}
+	let alloyp = document.getElementById("alloyp").value;
+	let coveringp = document.getElementById("coveringp").value;
 	let mtwt = document.getElementById("mtwt").value;
+	console.log(mtwt*alloyp/100);
 	document.getElementById("alloyw").value = (mtwt*alloyp/100).toFixed(2);
-	document.getElementById("steelw").value = (mtwt*steelp/100).toFixed(2);
+	document.getElementById("steelw").value = (mtwt*coveringp/100).toFixed(2);
 	let psilicon = document.getElementById("fesir").value;
 	let pcopper = document.getElementById("copperr").value;
 	let ptin = document.getElementById("tinr").value;

@@ -63,12 +63,12 @@
 			</tr>
 			<tr>
 				<td><label>FeSiMg Alloy</label></td>
-				<td><input name='alloyp' readonly id='alloyp'></td>
+				<td><input name='alloyp' readonly id='alloyp' value='$row[alloyp]'></td>
 				<td><input name='alloyw' readonly id='alloyw' class='weight'></td>
 			</tr>
 			<tr>
 				<td><label>Covering Steel</label></td>
-				<td><input name='steelp' readonly id='steelp'></td>
+				<td><input name='coveringp' readonly id='coveringp' value='$row[coveringp]'></td>
 				<td><input name='steelw' readonly id='steelw' class='weight'></td>
 			</tr>
 		</table>

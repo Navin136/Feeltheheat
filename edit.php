@@ -34,6 +34,8 @@
         $alloy =''; 
         $treewt ='';
         $grade = '';
+        $alloyp ='';
+        $coveringp ='';
         if($_SERVER['REQUEST_METHOD'] == 'GET'){
             if(!isset($_GET['part'])){
                 header("location: ./master.php");
@@ -65,6 +67,8 @@
                 $alloy = $row["alloy"];
                 $treewt = $row["treewt"];
                 $grade = $row["grade"];
+                $alloyp = $_POST["alloyp"];
+                $coveringp = $_POST["coveringp"];
             }
             else{
                 echo "<b>The selected part number is not available in database. Please create part chemistry <a href='./create.php'>Here</a> <b>";
@@ -92,7 +96,9 @@
             $alloy = $_POST["alloy"];
             $treewt = $_POST["treewt"];
             $grade = $_POST["grade"];
-            $push = "UPDATE part_details SET carbon=$c, silicon=$si, copper=$cu, tin=$sn, manganese=$mn, molybdenum=$mo, nickel=$ni, magnesium=$mg, mischmetal='$mm', laddition='$la', inoculant='$ino', flow_rate='$fr', metalweight='$mtwt', temperature='$temp', taddition='$ta', pouring_time='$pt', alloy='$alloy', treewt='$treewt', grade='$grade' WHERE part_number=$part_number";
+            $alloyp = $_POST["alloyp"];
+            $coveringp = $_POST["coveringp"];
+            $push = "UPDATE part_details SET carbon=$c, silicon=$si, copper=$cu, tin=$sn, manganese=$mn, molybdenum=$mo, nickel=$ni, magnesium=$mg, mischmetal='$mm', laddition='$la', inoculant='$ino', flow_rate='$fr', metalweight='$mtwt', temperature='$temp', taddition='$ta', pouring_time='$pt', alloy='$alloy', treewt='$treewt', grade='$grade', alloyp='$alloyp', coveringp='$coveringp' WHERE part_number=$part_number";
             $pushed=$conn->query($push);
             if(!$pushed){
                 echo "Error". $conn->error();
@@ -181,8 +187,12 @@
                                 <option value='0.05% Fesi'>0.05% Fesi</option>
                                 <option value='0.05% Bacal'>0.05% Bacal</option>
                                 <option value='0.05% Ultraseed'>0.05% Ultraseed</option>
+                                <option value='0.05% Superseed'>0.05% Superseed</option>
+                                <option value='0.05% Zircseed'>0.05% Zircseed</option>
                                 <option value='0.07% Fesi'>0.07% Fesi</option>
                                 <option value='0.07% Bacal'>0.07% Bacal</option>
+                                <option value='0.07% Superseed'>0.07% Superseed</option>
+                                <option value='0.07% Zircseed'>0.07% Zircseed</option>
                                 <option value='0.07% Ultraseed'>0.07% Ultraseed</option>
                             </select>
                         </td>
@@ -192,12 +202,22 @@
                         <td><select id='alloy' name='alloy'>
                                 <option value='<?php echo $alloy;?>'><?php echo $alloy;?></option>
                                 <option value='Lamag'>Lamag</option>
-                                <option value='5-7% FeSiMg'>5-7% FeSiMg</option>
+                                <option value='Magkastla'>Magkastla</option>
                                 <option value='1.2% RE Alloy'>1.2% RE Alloy</option>
                                 <option value='0.4% RE Alloy'>0.4% RE Alloy</option>
                                 <option value='Lamet'>Lamet</option>
                                 <option value='0% RE Alloy'>0% RE Alloy</option>
                             </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for='alloyp'>Alloy %</label></td>
+                        <td><input name="alloyp" value='<?php echo $alloyp;?>'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for='coveringp'>Covering steel %</label></td>
+                        <td><input name="coveringp" value='<?php echo $coveringp;?>'>
                         </td>
                     </tr>
                     <tr>
@@ -208,6 +228,7 @@
                                 <option value='1300'>1300 Kgs</option>
                                 <option value='1400'>1400 Kgs</option>
                                 <option value='1500'>1500 Kgs</option>
+                                <option value='1600'>1600 Kgs</option>
                                 <option value='1700'>1700 Kgs</option>
                             </select>
                         </td>
@@ -225,6 +246,7 @@
                                 <option value='Barinoc'>Barinoc</option>
                                 <option value='Fesi'>Fesi</option>
                                 <option value='Superseed'>Superseed</option>
+                                <option value='Stron'>Stron</option>
                                 <option value='Bacal'>Bacal</option>
                             </select>
                         </td>
@@ -241,11 +263,13 @@
                                 <option value='0.05% Fesi'>0.05% Fesi</option>
                                 <option value='0.05% Bacal'>0.05% Bacal</option>
                                 <option value='0.05% Ultraseed'>0.05% Ultraseed</option>
+                                <option value='0.05% Superseed'>0.05% Superseed</option>
                                 <option value='0.05% Zircseed'>0.05% Zircseed</option>
                                 <option value='0.07% Fesi'>0.07% Fesi</option>
                                 <option value='0.07% Bacal'>0.07% Bacal</option>
-                                <option value='0.07% Ultraseed'>0.07% Ultraseed</option>
+                                <option value='0.07% Superseed'>0.07% Superseed</option>
                                 <option value='0.07% Zircseed'>0.07% Zircseed</option>
+                                <option value='0.07% Ultraseed'>0.07% Ultraseed</option>
                             </select>
                         </td>
                     </tr>

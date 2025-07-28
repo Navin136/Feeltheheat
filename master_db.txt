@@ -21,6 +21,8 @@ CREATE TABLE IF NOT EXISTS part_details(
     alloy varchar(20),
     treewt DECIMAL(4,2),
     grade varchar(50),
+    alloyp DECIMAL(3,2),
+    coveringp DECIMAL(3,2),
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 CREATE TABLE IF NOT EXISTS live(
